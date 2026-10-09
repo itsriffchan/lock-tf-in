@@ -71,6 +71,7 @@ stateDiagram-v2
 | `setView(view)` | Toggles `.active` classes on views and nav buttons, updates `#breadcrumbCurrent`, closes mobile sidebar, and triggers `renderQuiz()` if switching to quizzer. |
 | `renderSubjects()` | Injects subject bento cards into `#subjectGrid` on the dashboard. Attaches click listener to navigate to Quizzer with that subject pre-selected. |
 | `renderNotes()` | Injects study summary cards into `#notesGrid` on the Study Notes view. |
+| `renderAnswerKey()` | Renders code and fill-in questions as completed question cards in the Answer key view. |
 | `renderQuiz()` | Core router for Quizzer view: renders results screen if `state.showResults`, setup screen if `!state.quizActive`, or the active question container `#questionContainer`. |
 | `renderQuizSetup()` | Renders subject selector and mode choice cards into `#quizSetup`. |
 | `startQuiz(keepScope)` | Resets session answers, sets `state.quizActive = true`, prepares question array, and renders the first question. |

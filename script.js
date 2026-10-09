@@ -1667,9 +1667,47 @@ function setView(view) {
   state.view = view;
   $$('.view').forEach((panel) => panel.classList.toggle('active', panel.dataset.viewPanel === view));
   $$('.nav-link[data-view]').forEach((link) => link.classList.toggle('active', link.dataset.view === view));
-  $('#breadcrumbCurrent').textContent = view === 'quizzer' ? 'Quizzer' : view === 'notes' ? 'Study notes' : 'Dashboard';
+  $('#breadcrumbCurrent').textContent = view === 'quizzer' ? 'Quizzer' : view === 'answer-key' ? 'Answer key' : view === 'notes' ? 'Study notes' : 'Dashboard';
   $('#sidebar')?.classList.remove('open');
   if (view === 'quizzer') renderQuiz();
+  if (view === 'answer-key') renderAnswerKey();
+}
+
+function ensureAnswerKeyView() {
+  const nav = $('.main-nav');
+  const notesView = $('#notesView');
+  if (!nav || !notesView || $('#answerKeyView')) return;
+
+  const quizzerButton = nav.querySelector('[data-view="quizzer"]');
+  const answerKeyButton = document.createElement('button');
+  answerKeyButton.className = 'nav-link';
+  answerKeyButton.dataset.view = 'answer-key';
+  answerKeyButton.type = 'button';
+  answerKeyButton.innerHTML = '<span class="nav-icon">✓</span><span>Answer key</span>';
+  quizzerButton.after(answerKeyButton);
+
+  const answerKeyView = document.createElement('section');
+  answerKeyView.className = 'view';
+  answerKeyView.id = 'answerKeyView';
+  answerKeyView.dataset.viewPanel = 'answer-key';
+  answerKeyView.innerHTML = `
+    <div class="quiz-header">
+      <div>
+        <p class="eyebrow accent">Reference library</p>
+        <h1>Answer key</h1>
+        <p class="view-intro">Completed code snippets and fill-in answers, in quiz format.</p>
+      </div>
+    </div>
+    <div class="quiz-layout">
+      <div class="quiz-main" id="answerKeyList"></div>
+      <aside class="quiz-sidebar panel">
+        <p class="eyebrow">In this answer key</p>
+        <div class="question-list" id="answerKeyNavigation"></div>
+        <div class="session-tip"><span>✦</span><p><strong>Reference</strong><br />Each blank is filled with its expected answer.</p></div>
+      </aside>
+    </div>
+  `;
+  notesView.before(answerKeyView);
 }
 
 function renderSidebarSubjects() {
@@ -2032,6 +2070,56 @@ function codeMarkup(question) {
   `;
 }
 
+function completedCodeMarkup(question) {
+  return `
+    <div class="code-editor">
+      <div class="code-toolbar"><span>python</span><span>Completed code</span></div>
+      <div class="code-body">${question.code.map((line, lineIndex) => `
+        <span class="code-line"><span class="line-no">${lineIndex + 1}</span>${line.map((part) => part.blank
+          ? `<span class="code-blank correct answer-key-code-blank" aria-label="${escapeHtml(part.aria || 'code answer')}">${escapeHtml(part.blank)}</span>`
+          : `<span class="${escapeHtml(part.className || '')}">${escapeHtml(part.text)}</span>`
+        ).join('')}</span>
+      `).join('')}</div>
+    </div>
+  `;
+}
+
+function renderAnswerKey() {
+  const answerKeyList = $('#answerKeyList');
+  const answerKeyNavigation = $('#answerKeyNavigation');
+  if (!answerKeyList || !answerKeyNavigation) return;
+
+  const answerKeyQuestions = questions.filter((question) => question.type === 'code-fill' || question.type === 'fill-blank');
+  if (!answerKeyQuestions.length) {
+    answerKeyList.innerHTML = '<article class="question-card"><p class="eyebrow">Answer key</p><h2>Loading question banks…</h2></article>';
+    answerKeyNavigation.innerHTML = '';
+    return;
+  }
+
+  answerKeyList.innerHTML = answerKeyQuestions.map((question, index) => {
+    const answerMarkup = question.type === 'code-fill'
+      ? completedCodeMarkup(question)
+      : `<div class="fill-blank-card"><div class="fill-blank-input-wrap"><input class="fill-blank-input correct" type="text" value="${escapeHtml(question.answer)}" aria-label="Correct answer" readonly /></div></div>`;
+    return `
+      <article class="question-card answer-key-question" id="answer-key-question-${escapeHtml(question.id)}">
+        <div class="question-meta">
+          <span class="question-type">${escapeHtml(question.label || 'Question')}</span>
+          <span>${index + 1} of ${answerKeyQuestions.length}</span>
+        </div>
+        <h2>${escapeHtml(question.title)}</h2>
+        ${answerMarkup}
+      </article>
+    `;
+  }).join('');
+
+  answerKeyNavigation.innerHTML = answerKeyQuestions.map((question, index) => `
+    <button class="question-number" data-answer-key-number="${escapeHtml(question.id)}" type="button" aria-label="Go to answer ${index + 1}">${index + 1}</button>
+  `).join('');
+  $$('[data-answer-key-number]').forEach((button) => button.addEventListener('click', () => {
+    $(`#answer-key-question-${CSS.escape(button.dataset.answerKeyNumber)}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+}
+
 function multiAnswerMarkup(question) {
   const saved = state.answers[question.id] || {};
   const selectedIndices = Array.isArray(saved.selected) ? saved.selected : [];
@@ -2327,6 +2415,7 @@ function showToast(message) {
 }
 
 // Global controls
+ensureAnswerKeyView();
 const skipButton = $('#skipButton');
 if (skipButton) {
   const previousButton = document.createElement('button');
@@ -2578,6 +2667,7 @@ async function loadQuestionBank() {
     renderSubjects();
     updateDashboard();
     renderQuiz();
+    if (state.view === 'answer-key') renderAnswerKey();
   } catch (error) {
     console.info('Using embedded question fallback. Serve the app over HTTP and check question-banks/manifest.json to load question banks.', error);
   }

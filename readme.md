@@ -32,6 +32,7 @@ Students can practice on individual subjects or mixed sessions, toggle between i
   - **Fill-in-the-Blank (`fill-blank`)**: Text input with case-insensitive validation.
   - **Interactive Code Fill (`code-fill`)**: Dark-themed syntax-highlighted code editor with inline interactive blanks and automatic validation.
 - **🎛️ Quiz Selection**: Choose one or more individual subjects, then select one or more question formats on a separate setup step. Choose mixed to include every available format.
+- **📖 Answer Key**: Open a separate answer-key tab to review code-fill and fill-in-the-blank questions as completed quiz cards.
 - **🔀 Quiz Shuffling**: Optionally shuffle question order; answer choices are shuffled automatically for choice-based questions.
 - **🔄 Smart Review & Targeted Retries**:
   - Filter session results by *All*, *Correct*, or *Incorrect*.
