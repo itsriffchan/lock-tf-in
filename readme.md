@@ -22,9 +22,7 @@ Students can practice on individual subjects or mixed sessions, toggle between i
   - **Programming Basics**: Variables, control flow, functions, and data structures.
   - **Web Development**: Semantic HTML, CSS layout/styling, and responsive design.
   - **Design Principles**: Visual hierarchy, proximity, layout grouping, and contrast.
-  - **CS0075 Machine Learning Algorithms**: A combined review covering linear and logistic regression, softmax, and Naive Bayes.
-  - **CS0075 Code Snippets & Fill-in-the-Blanks**: A single code-practice subject spanning regression, Naive Bayes, imports, preprocessing, KNN, and regularization. Individual question labels identify each topic and exercise format.
-  - **All Subjects**: Comprehensive mixed study set across all banks.
+  - **CS0075 Machine Learning Algorithms**: Code snippets and concepts from linear regression, logistic regression, Naive Bayes, imports, data preprocessing, KNN, and regularization.
 - **⚡ Dual Evaluation Modes**:
   - **Right Away (Immediate)**: Instant feedback and explanations after each answer.
   - **At the End (Exam Simulation)**: Answers are stored silently; complete score and question-by-question breakdown are presented at the end.
@@ -33,7 +31,7 @@ Students can practice on individual subjects or mixed sessions, toggle between i
   - **Multi-Answer (`multi-answer`)**: Select multiple options with checkbox pills and validation.
   - **Fill-in-the-Blank (`fill-blank`)**: Text input with case-insensitive validation.
   - **Interactive Code Fill (`code-fill`)**: Dark-themed syntax-highlighted code editor with inline interactive blanks and automatic validation.
-- **🎛️ Quiz Format Selection**: Choose subjects first, then select one or more question formats on a separate setup step. Choose mixed to include every available format.
+- **🎛️ Quiz Selection**: Choose one or more individual subjects, then select one or more question formats on a separate setup step. Choose mixed to include every available format.
 - **🔀 Quiz Shuffling**: Optionally shuffle question order; answer choices are shuffled automatically for choice-based questions.
 - **🔄 Smart Review & Targeted Retries**:
   - Filter session results by *All*, *Correct*, or *Incorrect*.

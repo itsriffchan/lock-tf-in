@@ -24,8 +24,9 @@ The application is powered by a centralized state container in [script.js](file:
 ```javascript
 const state = {
   view: "dashboard",            // Active view: "dashboard" | "quizzer" | "notes"
-  sessionSubject: "all",        // Filter: "all" | "programming" | "web" | "design"
-  sessionQuestionIds: null,     // Array of active question IDs in current session (or null for all in subject)
+  sessionSubject: "all",        // Selected subject ID, or "all" while multiple subjects are selected
+  sessionSubjects: null,        // Selected subject IDs; null means all available subjects initially
+  sessionQuestionIds: null,     // Array of active question IDs in current session (or null for the selected subjects)
   sessionSetIds: null,          // Preserved scope of original session (used for "Retry all")
   answerMode: "immediate",      // Evaluation timing: "immediate" | "end"
   quizActive: false,            // Whether a quiz is actively being solved
@@ -125,7 +126,7 @@ If asked to implement upcoming question types, support:
 1. `multi-answer`: Multiple checkboxes (`answers: [0, 2, 3]`, `selectCount: 3`).
 2. `fill-blank`: Single text input (`answer: "while"`, `caseSensitive: false`).
 
-In `CS0075-Code-Snippets-and-Fill-Blanks-Question-Bank.json`, use the single subject ID `cs0075-code-snippets`. Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review.
+In `CS0075-Code-Snippets-and-Fill-Blanks-Question-Bank.json`, use the single subject ID `cs0075-code-snippets`, displayed as “CS0075 Machine Learning Algorithms.” Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review.
 
 ---
 

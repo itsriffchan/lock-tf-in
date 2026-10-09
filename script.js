@@ -1586,7 +1586,7 @@ const knownSubjectMeta = {
   "logistic-regression": { title: "Logistic Regression", desc: "Sigmoid, odds, log loss, and classification", icon: "🎯", color: "coral" },
   "softmax": { title: "Softmax Regression", desc: "Multiclass logits, probabilities, and cross-entropy", icon: "✦", color: "gold" },
   "naive-bayes": { title: "Naive Bayes", desc: "Bayes rule, priors, posteriors, and text classification", icon: "⚖", color: "green" },
-  "cs0075-code-snippets": { title: "CS0075 Code Snippets & Fill-in-the-Blanks", desc: "Regression, Naive Bayes, imports, preprocessing, KNN, and regularization", icon: "⌘", color: "coral" }
+  "cs0075-code-snippets": { title: "CS0075 Machine Learning Algorithms", desc: "Code snippets and concepts from linear regression, logistic regression, Naive Bayes, imports, data preprocessing, KNN, and regularization", icon: "⌘", color: "coral" }
 };
 
 const subjectGroups = {
@@ -1678,9 +1678,6 @@ function renderSidebarSubjects() {
   const currentSubjects = getSubjects();
   sidebarSection.innerHTML = `
     <p class="eyebrow">Subjects</p>
-    <button class="subject-link ${state.sessionSubject === 'all' ? 'active' : ''}" data-sidebar-subject="all" type="button">
-      <span class="subject-dot all"></span>All subjects
-    </button>
     ${currentSubjects.map((s) => `
       <button class="subject-link ${state.sessionSubject === s.id ? 'active' : ''}" data-sidebar-subject="${s.id}" type="button">
         <span class="subject-dot ${s.color}"></span>${escapeHtml(s.title)}
@@ -1690,6 +1687,7 @@ function renderSidebarSubjects() {
   $$('[data-sidebar-subject]').forEach((button) => {
     button.addEventListener('click', () => {
       state.sessionSubject = button.dataset.sidebarSubject;
+      state.sessionSubjects = [state.sessionSubject];
       state.sessionQuestionIds = null;
       state.quizSetupStep = 'subjects';
       state.quizActive = false;
@@ -1717,6 +1715,7 @@ function renderSubjects() {
   $$('[data-subject-card]').forEach((card) => {
     card.addEventListener('click', () => {
       state.sessionSubject = card.dataset.subjectCard;
+      state.sessionSubjects = [state.sessionSubject];
       state.sessionQuestionIds = null;
       state.quizSetupStep = 'subjects';
       state.quizActive = false;
@@ -2418,12 +2417,21 @@ function renderQuizSetup() {
   $("#startQuizButton").addEventListener("click", () => startQuiz(false));
 }
 
-state.sessionSubjects = ["all"];
+state.sessionSubjects = null;
 
-function getSelectedSubjects() { if (state.sessionSubject !== "all" && (!Array.isArray(state.sessionSubjects) || (state.sessionSubjects.length === 1 && state.sessionSubjects[0] === "all"))) return [state.sessionSubject]; if (Array.isArray(state.sessionSubjects) && state.sessionSubjects.length) return state.sessionSubjects; return ["all"]; }
+function getSelectedSubjects() {
+  const availableSubjectIds = getSubjects().map((subject) => subject.id);
+  if (Array.isArray(state.sessionSubjects)) {
+    return state.sessionSubjects.filter((subject) => availableSubjectIds.includes(subject));
+  }
+  if (state.sessionSubject !== "all" && availableSubjectIds.includes(state.sessionSubject)) {
+    return [state.sessionSubject];
+  }
+  return availableSubjectIds;
+}
 function questionsForSelectedSubjects() {
   const selected = getSelectedSubjects();
-  return selected.includes("all") ? questions : questions.filter((question) => selected.some((subject) => {
+  return questions.filter((question) => selected.some((subject) => {
     const group = subjectGroups[subject];
     return group ? group.subjects.includes(question.subject) : subject === question.subject;
   }));
@@ -2441,9 +2449,9 @@ function filteredQuestions() {
 
 function renderQuizSetup() {
   const currentSubjects = getSubjects();
-  const setupSubjects = [{ id: "all", title: "All subjects", desc: "A mixed review across every topic", count: `${questions.length} questions`, icon: "✦", color: "blue" }, ...currentSubjects];
+  const setupSubjects = currentSubjects;
   const selected = getSelectedSubjects();
-  const selectedCount = selected.includes("all") ? currentSubjects.length : selected.length;
+  const selectedCount = selected.length;
   const selectedQuestions = questionsForSelectedSubjects();
   const availableQuestions = subjectQuestions();
   const questionTypeOptions = [
@@ -2466,25 +2474,20 @@ function renderQuizSetup() {
         <section class="setup-subjects">
           <p class="eyebrow">Subjects · ${selectedCount} selected</p>
           <div class="setup-subject-grid">${setupSubjects.map((subject) => {
-            const isSelected = subject.id === "all" ? selected.includes("all") : selected.includes(subject.id);
+            const isSelected = selected.includes(subject.id);
             return `<button class="setup-subject-card ${isSelected ? "selected" : ""}" data-setup-subject="${subject.id}" type="button" aria-pressed="${isSelected}"><span class="subject-card-icon ${subject.color}">${subject.icon}</span><span><strong>${escapeHtml(subject.title)}</strong><small>${escapeHtml(subject.desc)}</small></span><em>${escapeHtml(subject.count)}</em></button>`;
           }).join("")}</div>
         </section>
-        <aside class="panel setup-start-panel"><p class="eyebrow">Next</p><h2>${selectedCount} subject${selectedCount === 1 ? "" : "s"} selected.</h2><p>Choose the question formats you want on the next step.</p><button class="primary-button start-quiz-button" id="continueToFormatsButton" type="button">Choose question types <span>→</span></button></aside>
+        <aside class="panel setup-start-panel"><p class="eyebrow">Next</p><h2>${selectedCount} subject${selectedCount === 1 ? "" : "s"} selected.</h2><p>Choose the question formats you want on the next step.</p><button class="primary-button start-quiz-button" id="continueToFormatsButton" type="button" ${selectedCount ? "" : "disabled"}>Choose question types <span>→</span></button></aside>
       </div>`;
 
     $$('[data-setup-subject]').forEach((button) => button.addEventListener("click", () => {
       const id = button.dataset.setupSubject;
-      if (id === "all") {
-        state.sessionSubjects = ["all"];
-        state.sessionSubject = "all";
-      } else {
-        let next = selected.includes("all") ? [] : [...selected];
-        next = next.includes(id) ? next.filter((subject) => subject !== id) : [...next, id];
-        if (!next.length) next = ["all"];
-        state.sessionSubjects = next;
-        state.sessionSubject = next.length === 1 ? next[0] : "all";
-      }
+      const next = selected.includes(id)
+        ? selected.filter((subject) => subject !== id)
+        : [...selected, id];
+      state.sessionSubjects = next;
+      state.sessionSubject = next.length === 1 ? next[0] : "all";
       state.sessionQuestionIds = null;
       renderSidebarSubjects();
       renderQuizSetup();
@@ -2516,7 +2519,7 @@ function renderQuizSetup() {
         <div class="question-type-options" role="group" aria-label="Question format">${questionTypeMarkup}</div>
         <label class="shuffle-questions-option"><input id="shuffleQuestionsToggle" type="checkbox" ${state.shuffleQuestions ? 'checked' : ''}><span><strong>Shuffle all questions</strong><small>Randomize the order of questions in this quiz.</small></span></label>
       </section>
-      <aside class="panel setup-start-panel"><p class="eyebrow">Ready?</p><h2>${selectedCount} subject${selectedCount === 1 ? "" : "s"} selected.</h2><p>${availableQuestions.length} question${availableQuestions.length === 1 ? '' : 's'} match the selected formats.</p><button class="primary-button start-quiz-button" id="startQuizButton" type="button" ${availableQuestions.length ? '' : 'disabled'}>Start quiz <span>→</span></button><button class="secondary-button setup-back-button" id="backToSubjectsButton" type="button">← Back to subjects</button></aside>
+      <aside class="panel setup-start-panel"><p class="eyebrow">Ready?</p><h2>${selectedCount} subject${selectedCount === 1 ? "" : "s"} selected.</h2><p>${availableQuestions.length} question${availableQuestions.length === 1 ? '' : 's'} match the selected formats.</p><button class="primary-button start-quiz-button" id="startQuizButton" type="button" ${availableQuestions.length && selectedCount ? '' : 'disabled'}>Start quiz <span>→</span></button><button class="secondary-button setup-back-button" id="backToSubjectsButton" type="button">← Back to subjects</button></aside>
     </div>`;
 
   $$('[data-question-type]').forEach((button) => button.addEventListener('click', () => {
