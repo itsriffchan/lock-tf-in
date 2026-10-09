@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Midterm Reviewer - a focused study and quiz workspace." />
+    <title>lock tf in — Reviewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" role="img"><path d="M10.5 14V10a5.5 5.5 0 0 1 11 0v4" /><rect x="6.5" y="13" width="19" height="14" rx="3" /><circle cx="16" cy="20" r="1.7" /></svg></div>
+          <div>
+            <strong>lock tf in</strong>
+            <span>Reviewer</span>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-view="dashboard" type="button">
+            <span class="nav-icon">⌂</span><span>Dashboard</span>
+          </button>
+          <button class="nav-link" data-view="quizzer" type="button">
+            <span class="nav-icon">✦</span><span>Quizzer</span>
+          </button>
+          <button class="nav-link" data-view="notes" type="button">
+            <span class="nav-icon">▤</span><span>Study notes</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-section">
+          <p class="eyebrow">Subjects</p>
+          <button class="subject-link" data-subject="all" type="button"><span class="subject-dot all"></span>All subjects</button>
+          <button class="subject-link" data-subject="programming" type="button"><span class="subject-dot blue"></span>Programming</button>
+          <button class="subject-link" data-subject="web" type="button"><span class="subject-dot coral"></span>Web development</button>
+          <button class="subject-link" data-subject="design" type="button"><span class="subject-dot gold"></span>Design principles</button>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="streak-card">
+            <span class="streak-flame">✦</span>
+            <div><strong id="streakValue">3 day streak</strong><small>Keep it going!</small></div>
+          </div>
+          <button class="nav-link" id="themeToggle" type="button"><span class="nav-icon">◐</span><span>Toggle theme</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation" type="button">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><span>/</span><strong id="breadcrumbCurrent">Dashboard</strong></div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="searchButton" aria-label="Focus search" type="button">⌕</button>
+            <div class="avatar" aria-label="Student profile">JD</div>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section class="view active" id="dashboardView" data-view-panel="dashboard">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <p class="eyebrow accent">Your study space</p>
+                <h1>Lock in your midterm<br /><em>one session at a time.</em></h1>
+                <p class="hero-description">Small sessions add up. Pick a subject, test what you know, and keep moving forward.</p>
+                <button class="primary-button" data-go-to="quizzer" type="button">Start a quiz <span>→</span></button>
+              </div>
+              <div class="hero-illustration" aria-hidden="true">
+                <div class="hero-lock"><svg viewBox="0 0 100 100"><path d="M34 43V29a16 16 0 0 1 32 0v14" /><rect x="20" y="40" width="60" height="43" rx="8" /><circle cx="50" cy="59" r="4" /><path d="M50 63v10" /></svg></div>
+                <div class="hero-label">LOCK<br /><strong>TF IN</strong></div>
+              </div>
+            </div>
+
+            <div class="section-heading"><div><p class="eyebrow">Overview</p><h2>What would you like to review?</h2></div><span class="muted">Updated just now</span></div>
+            <div class="subject-grid" id="subjectGrid"></div>
+
+            <div class="dashboard-lower">
+              <section class="panel progress-panel">
+                <div class="panel-heading"><div><p class="eyebrow">This week</p><h2>Your progress</h2></div><span class="progress-percent" id="progressPercent">0%</span></div>
+                <div class="progress-bar"><span id="progressBarFill"></span></div>
+                <div class="progress-meta"><span id="progressLabel">0 of 10 questions answered</span><span>Goal: 10 questions</span></div>
+                <div class="week-bars" id="weekBars" aria-label="Weekly study activity"></div>
+              </section>
+              <section class="panel continue-panel">
+                <p class="eyebrow">Continue where you left off</p>
+                <div class="continue-title"><span class="subject-dot blue"></span><div><h3>Programming basics</h3><p>Variables, loops, and functions</p></div></div>
+                <div class="mini-progress"><span></span></div>
+                <div class="continue-meta"><span>Question 4 of 10</span><button class="text-button" data-go-to="quizzer" type="button">Continue →</button></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" id="quizzerView" data-view-panel="quizzer">
+            <div id="quizSetup"><div class="quiz-header setup-header"><div><p class="eyebrow accent">Practice mode</p><h1>Choose what to lock in.</h1><p class="view-intro">Pick one or more subjects for this review session.</p></div></div><div class="panel setup-start-panel"><p class="eyebrow">Loading question banks</p><h2>Preparing your subjects…</h2></div></div>
+            <div id="quizSession" hidden>
+              <div class="quiz-header">
+                <div><p class="eyebrow accent">Practice mode</p><h1>Quizzer</h1></div>
+                <div class="quiz-score"><span class="eyebrow">Session score</span><strong id="sessionScore">0 / 0</strong><button class="text-button" id="changeSubjectButton" type="button">Change subject</button></div>
+              </div>
+              <div class="quiz-layout">
+                <div class="quiz-main">
+                  <div id="questionContainer"></div>
+                  <div class="quiz-navigation"><div class="quiz-navigation-left"><button class="secondary-button" id="skipButton" type="button">Skip</button><label class="answer-toggle"><span class="toggle-copy"><strong>Answers</strong><small id="answerModeLabel">Right away</small></span><input id="answerModeToggle" type="checkbox" role="switch" /><span class="toggle-track"><span></span></span></label></div><button class="primary-button" id="nextButton" type="button" disabled>Next question <span>→</span></button></div>
+                </div>
+                <aside class="quiz-sidebar panel"><p class="eyebrow">In this session</p><div class="question-list" id="questionList"></div><div class="session-tip"><span>✦</span><p><strong>Study tip</strong><br />Try explaining your answer out loud before checking it.</p></div></aside>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="notesView" data-view-panel="notes">
+            <div class="quiz-header"><div><p class="eyebrow accent">Reference library</p><h1>Study notes</h1><p class="view-intro">A small, searchable collection of reminders for your review sessions.</p></div></div>
+            <div class="notes-grid" id="notesGrid"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js?v=20261010"></script>
+  </body>
+</html>

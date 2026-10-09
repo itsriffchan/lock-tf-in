@@ -1,0 +1,3286 @@
+[
+  {
+    "id": 2001,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Load the Iris dataset, keep the two petal columns, and assign the predictor and target.",
+    "explanation": "load_dataset loads Iris; petal_length becomes X and petal_width becomes y.",
+    "code": [
+      [
+        {
+          "text": "import seaborn as sns"
+        }
+      ],
+      [
+        {
+          "text": "iris = sns."
+        },
+        {
+          "blank": "load_dataset",
+          "aria": "dataset-loading function"
+        },
+        {
+          "text": "(\"iris\")"
+        }
+      ],
+      [
+        {
+          "text": "iris = iris[['petal_length', 'petal_width']]"
+        }
+      ],
+      [
+        {
+          "blank": "X",
+          "aria": "feature variable"
+        },
+        {
+          "text": " = iris[['petal_length']]"
+        }
+      ],
+      [
+        {
+          "blank": "y",
+          "aria": "target variable"
+        },
+        {
+          "text": " = iris[['petal_width']]"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2002,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Create the scatter plot and label both axes using the notebook's exact syntax.",
+    "explanation": "The plotting object calls scatter, xlabel, ylabel, and title.",
+    "code": [
+      [
+        {
+          "text": "import matplotlib.pyplot as plt"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "scatter",
+          "aria": "scatter-plot function"
+        },
+        {
+          "text": "(X, y)"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "xlabel",
+          "aria": "x-axis label function"
+        },
+        {
+          "text": "('Petal Length')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "ylabel",
+          "aria": "y-axis label function"
+        },
+        {
+          "text": "('Petal Width')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "title",
+          "aria": "title function"
+        },
+        {
+          "text": "('Scatter Plot of Petal Length vs. Petal Width')"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2003,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Split 40% of the Iris data into the test set with reproducible state 23, then train LinearRegression.",
+    "explanation": "test_size specifies the test proportion and random_state makes the split reproducible.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.model_selection import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(X, y, "
+        },
+        {
+          "blank": "test_size",
+          "aria": "test proportion parameter"
+        },
+        {
+          "text": "=0.4, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=23)"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn.linear_model import LinearRegression"
+        }
+      ],
+      [
+        {
+          "text": "lr = "
+        },
+        {
+          "blank": "LinearRegression()",
+          "aria": "model constructor"
+        }
+      ],
+      [
+        {
+          "text": "lr."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2004,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Retrieve the fitted intercept and coefficients, then predict the training values.",
+    "explanation": "Fitted sklearn attributes end in underscores; predict produces the model outputs.",
+    "code": [
+      [
+        {
+          "text": "c = lr."
+        },
+        {
+          "blank": "intercept_",
+          "aria": "fitted intercept attribute"
+        }
+      ],
+      [
+        {
+          "text": "m = lr."
+        },
+        {
+          "blank": "coef_",
+          "aria": "fitted coefficient attribute"
+        }
+      ],
+      [
+        {
+          "text": "Y_pred_train = m*X_train + c"
+        }
+      ],
+      [
+        {
+          "text": "Y_pred_train."
+        },
+        {
+          "blank": "flatten",
+          "aria": "array-flattening method"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "Y_pred_train1 = lr."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_train)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2005,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Plot the training observations and the fitted regression line.",
+    "explanation": "scatter plots the observations, plot draws the prediction line, and show displays the figure.",
+    "code": [
+      [
+        {
+          "text": "import matplotlib.pyplot as plt"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "scatter",
+          "aria": "observation plotting function"
+        },
+        {
+          "text": "(X_train, y_train, color='blue')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "plot",
+          "aria": "line plotting function"
+        },
+        {
+          "text": "(X_train, Y_pred_train1, color='red')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "xlabel",
+          "aria": "x-axis label function"
+        },
+        {
+          "text": "('Petal Length')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "ylabel",
+          "aria": "y-axis label function"
+        },
+        {
+          "text": "('Petal Width')"
+        }
+      ],
+      [
+        {
+          "text": "plt."
+        },
+        {
+          "blank": "show",
+          "aria": "display function"
+        },
+        {
+          "text": "()"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2006,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Code",
+    "type": "code-fill",
+    "title": "Train the multiple linear-regression model and evaluate its test predictions.",
+    "explanation": "fit trains the model, predict generates y_pred, and the two imported metrics evaluate its errors and fit.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.metrics import "
+        },
+        {
+          "blank": "r2_score",
+          "aria": "R squared function"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "blank": "mean_squared_error",
+          "aria": "MSE function"
+        }
+      ],
+      [
+        {
+          "text": "lr = "
+        },
+        {
+          "blank": "LinearRegression()",
+          "aria": "model constructor"
+        }
+      ],
+      [
+        {
+          "text": "lr."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "y_pred = lr."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Coefficients:\", lr."
+        },
+        {
+          "blank": "coef_",
+          "aria": "fitted coefficient attribute"
+        },
+        {
+          "text": ")"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Intercept:\", lr."
+        },
+        {
+          "blank": "intercept_",
+          "aria": "fitted intercept attribute"
+        },
+        {
+          "text": ")"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Mean Squared Error:\", "
+        },
+        {
+          "blank": "mean_squared_error",
+          "aria": "MSE function"
+        },
+        {
+          "text": "(y_test, y_pred))"
+        }
+      ],
+      [
+        {
+          "text": "print(\"R^2 Score:\", "
+        },
+        {
+          "blank": "r2_score",
+          "aria": "R squared function"
+        },
+        {
+          "text": "(y_test, y_pred))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2007,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Load the breast-cancer dataset and create its feature DataFrame.",
+    "explanation": "The dataset loader returns df_cancer; DataFrame uses its data and feature_names.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.datasets import "
+        },
+        {
+          "blank": "load_breast_cancer",
+          "aria": "dataset loader"
+        }
+      ],
+      [
+        {
+          "text": "df_cancer = "
+        },
+        {
+          "blank": "load_breast_cancer",
+          "aria": "dataset loader"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "print(df_cancer."
+        },
+        {
+          "blank": "keys",
+          "aria": "dataset keys method"
+        },
+        {
+          "text": "())"
+        }
+      ],
+      [
+        {
+          "text": "df=pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "(df_cancer."
+        },
+        {
+          "blank": "data",
+          "aria": "feature matrix attribute"
+        },
+        {
+          "text": ",columns=df_cancer."
+        },
+        {
+          "blank": "feature_names",
+          "aria": "feature names attribute"
+        },
+        {
+          "text": ")"
+        }
+      ],
+      [
+        {
+          "text": "df."
+        },
+        {
+          "blank": "head",
+          "aria": "preview method"
+        },
+        {
+          "text": "()"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2008,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Use 30% test data with reproducible state 1, then create LogisticRegression with a maximum of 100 iterations and train it.",
+    "explanation": "test_size and random_state configure the split; max_iter sets the model's maximum iterations.",
+    "code": [
+      [
+        {
+          "text": "X = df_cancer."
+        },
+        {
+          "blank": "data",
+          "aria": "feature matrix attribute"
+        }
+      ],
+      [
+        {
+          "text": "y = df_cancer."
+        },
+        {
+          "blank": "target",
+          "aria": "target vector attribute"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(X, y, "
+        },
+        {
+          "blank": "test_size",
+          "aria": "test proportion parameter"
+        },
+        {
+          "text": "=0.3, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=1)"
+        }
+      ],
+      [
+        {
+          "text": "logistic = LogisticRegression("
+        },
+        {
+          "blank": "max_iter",
+          "aria": "maximum iterations parameter"
+        },
+        {
+          "text": "=100)"
+        }
+      ],
+      [
+        {
+          "text": "logistic."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2009,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Check training and testing accuracy, then generate the predicted labels.",
+    "explanation": "score evaluates accuracy and predict returns the labels for X_test.",
+    "code": [
+      [
+        {
+          "text": "print(\"Model Accuracy - Training : {:.2f}\".format(logistic."
+        },
+        {
+          "blank": "score",
+          "aria": "accuracy method"
+        },
+        {
+          "text": "(X_train, y_train)))"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Model Accuracy - Testing: {:.2f}\".format(logistic."
+        },
+        {
+          "blank": "score",
+          "aria": "accuracy method"
+        },
+        {
+          "text": "(X_test, y_test)))"
+        }
+      ],
+      [
+        {
+          "text": "y_predict = logistic."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "print('Predicted Labels for Y:', y_predict)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2010,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Scale the breast-cancer DataFrame without losing its column names.",
+    "explanation": "fit_transform learns scaling parameters and returns scaled values, which are wrapped in a DataFrame with the original columns.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.preprocessing import "
+        },
+        {
+          "blank": "StandardScaler",
+          "aria": "scaler class"
+        }
+      ],
+      [
+        {
+          "text": "scaler = "
+        },
+        {
+          "blank": "StandardScaler()",
+          "aria": "scaler constructor"
+        }
+      ],
+      [
+        {
+          "text": "scaled_df = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "(scaler."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit-and-scale method"
+        },
+        {
+          "text": "(df),columns=df.columns)"
+        }
+      ],
+      [
+        {
+          "text": "scaled_df"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2011,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Load insurance_data.csv from a generic data folder, use age as X and bought_insurance as y, then make a 30% reproducible test split with state 0.",
+    "explanation": "read_csv loads the file; test_size and random_state configure the requested split.",
+    "code": [
+      [
+        {
+          "text": "df = pd."
+        },
+        {
+          "blank": "read_csv",
+          "aria": "CSV-loading function"
+        },
+        {
+          "text": "(\"/path/to/data/insurance_data.csv\")"
+        }
+      ],
+      [
+        {
+          "text": "df."
+        },
+        {
+          "blank": "head",
+          "aria": "preview method"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "X = df[["
+        },
+        {
+          "blank": "'age'",
+          "aria": "predictor column"
+        },
+        {
+          "text": "]]"
+        }
+      ],
+      [
+        {
+          "text": "y = df."
+        },
+        {
+          "blank": "bought_insurance",
+          "aria": "target column"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = train_test_split(X,y, "
+        },
+        {
+          "blank": "test_size",
+          "aria": "test proportion parameter"
+        },
+        {
+          "text": " = 0.3, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=0)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2012,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Train the insurance classifier, evaluate it, and predict a new age of 50.",
+    "explanation": "fit trains the model, score evaluates the test set, and predict classifies the new DataFrame row.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.linear_model import "
+        },
+        {
+          "blank": "LogisticRegression",
+          "aria": "classifier class"
+        }
+      ],
+      [
+        {
+          "text": "log_reg = "
+        },
+        {
+          "blank": "LogisticRegression()",
+          "aria": "classifier constructor"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "score",
+          "aria": "accuracy method"
+        },
+        {
+          "text": "(X_test,y_test)"
+        }
+      ],
+      [
+        {
+          "text": "x_new = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "([[50]], columns=["
+        },
+        {
+          "blank": "'age'",
+          "aria": "feature name"
+        },
+        {
+          "text": "])"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(x_new)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2013,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Scale age correctly: fit on the dataset, then transform a new observation without refitting.",
+    "explanation": "fit_transform is used on df[['age']], whereas transform alone is used on x_new.",
+    "code": [
+      [
+        {
+          "text": "scaler = "
+        },
+        {
+          "blank": "StandardScaler()",
+          "aria": "scaler constructor"
+        }
+      ],
+      [
+        {
+          "text": "scaled_age = scaler."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit-and-scale method"
+        },
+        {
+          "text": "(df[['age']])"
+        }
+      ],
+      [
+        {
+          "text": "df['age'] = scaled_age"
+        }
+      ],
+      [
+        {
+          "text": "x_new = pd.DataFrame([[50]], columns=['age'])"
+        }
+      ],
+      [
+        {
+          "text": "x_new = scaler."
+        },
+        {
+          "blank": "transform",
+          "aria": "transform-only method"
+        },
+        {
+          "text": "(x_new)           #x_new becomes array"
+        }
+      ],
+      [
+        {
+          "text": "prediction = log_reg."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(x_new)            "
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2015,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Code",
+    "type": "code-fill",
+    "title": "Train the linear SVM and compute accuracy, precision, and recall.",
+    "explanation": "SVC is fitted, used for prediction, and evaluated through the metrics module.",
+    "code": [
+      [
+        {
+          "text": "from sklearn import svm, metrics"
+        }
+      ],
+      [
+        {
+          "text": "classify = svm."
+        },
+        {
+          "blank": "SVC",
+          "aria": "support vector classifier"
+        },
+        {
+          "text": "(kernel="
+        },
+        {
+          "blank": "'linear'",
+          "aria": "kernel value"
+        },
+        {
+          "text": ")"
+        }
+      ],
+      [
+        {
+          "text": "classify."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "y_predict = classify."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "print('Model Accuracy:', metrics."
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy metric"
+        },
+        {
+          "text": "(y_test, y_predict).round(4))"
+        }
+      ],
+      [
+        {
+          "text": "print('Precision:', metrics."
+        },
+        {
+          "blank": "precision_score",
+          "aria": "precision metric"
+        },
+        {
+          "text": "(y_test, y_predict).round(4))"
+        }
+      ],
+      [
+        {
+          "text": "print('Recall:', metrics."
+        },
+        {
+          "blank": "recall_score",
+          "aria": "recall metric"
+        },
+        {
+          "text": "(y_test, y_predict).round(4))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2017,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Use 30% of the diabetes data for testing with reproducible state 1, then train GaussianNB.",
+    "explanation": "test_size and random_state configure the split; fit trains the GaussianNB model.",
+    "code": [
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(X, y, "
+        },
+        {
+          "blank": "test_size",
+          "aria": "test proportion parameter"
+        },
+        {
+          "text": "=0.3, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=1)"
+        }
+      ],
+      [
+        {
+          "text": "gnb = "
+        },
+        {
+          "blank": "GaussianNB()",
+          "aria": "classifier constructor"
+        }
+      ],
+      [
+        {
+          "text": "gnb."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2018,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Retrieve GaussianNB's learned means, variances, and class labels.",
+    "explanation": "The fitted attributes theta_, var_, and classes_ all require trailing underscores.",
+    "code": [
+      [
+        {
+          "text": "means = gnb."
+        },
+        {
+          "blank": "theta_",
+          "aria": "fitted means attribute"
+        }
+      ],
+      [
+        {
+          "text": "variances = gnb."
+        },
+        {
+          "blank": "var_",
+          "aria": "fitted variances attribute"
+        }
+      ],
+      [
+        {
+          "text": "for class_idx in range(len(gnb."
+        },
+        {
+          "blank": "classes_",
+          "aria": "fitted classes attribute"
+        },
+        {
+          "text": ")):"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2020,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Predict the diabetes test labels and calculate accuracy and the confusion matrix.",
+    "explanation": "predict creates y_pred; accuracy_score and confusion_matrix compare it with y_test.",
+    "code": [
+      [
+        {
+          "text": "y_pred = gnb."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "accuracy = "
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy function"
+        },
+        {
+          "text": "(y_test, y_pred)"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn.metrics import "
+        },
+        {
+          "blank": "confusion_matrix",
+          "aria": "confusion-matrix function"
+        },
+        {
+          "text": "  "
+        }
+      ],
+      [
+        {
+          "text": "cm = "
+        },
+        {
+          "blank": "confusion_matrix",
+          "aria": "confusion-matrix function"
+        },
+        {
+          "text": "(y_test, y_pred)  "
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2021,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Build the new diabetes observation as a DataFrame and predict its class.",
+    "explanation": "The DataFrame uses the same eight feature names before gnb.predict is called.",
+    "code": [
+      [
+        {
+          "text": "x_new = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "(x_new, columns=["
+        },
+        {
+          "blank": "'Pregnancies'",
+          "aria": "first feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'Glucose'",
+          "aria": "second feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'BloodPressure'",
+          "aria": "third feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'SkinThickness'",
+          "aria": "fourth feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'Insulin'",
+          "aria": "fifth feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'BMI'",
+          "aria": "sixth feature name"
+        },
+        {
+          "text": ","
+        }
+      ],
+      [
+        {
+          "text": "                                     "
+        },
+        {
+          "blank": "'DiabetesPedigreeFunction'",
+          "aria": "seventh feature name"
+        },
+        {
+          "text": ","
+        },
+        {
+          "blank": "'Age'",
+          "aria": "eighth feature name"
+        },
+        {
+          "text": "])"
+        }
+      ],
+      [
+        {
+          "text": "prediction = gnb."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(x_new)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2024,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Encode the fruit columns, then separate Color and Size from the Fruit target.",
+    "explanation": "Each encoder learns its own mappings through fit_transform; X contains Color and Size.",
+    "code": [
+      [
+        {
+          "text": "le_color = "
+        },
+        {
+          "blank": "LabelEncoder()",
+          "aria": "Color encoder constructor"
+        }
+      ],
+      [
+        {
+          "text": "le_size = "
+        },
+        {
+          "blank": "LabelEncoder()",
+          "aria": "Size encoder constructor"
+        }
+      ],
+      [
+        {
+          "text": "le_fruit = "
+        },
+        {
+          "blank": "LabelEncoder()",
+          "aria": "Fruit encoder constructor"
+        }
+      ],
+      [
+        {
+          "text": "df['Color'] = le_color."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn-and-encode method"
+        },
+        {
+          "text": "(df['Color'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Size'] = le_size."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn-and-encode method"
+        },
+        {
+          "text": "(df['Size'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Fruit'] = le_fruit."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn-and-encode method"
+        },
+        {
+          "text": "(df['Fruit'])"
+        }
+      ],
+      [
+        {
+          "text": "X = df[['Color', 'Size']]"
+        }
+      ],
+      [
+        {
+          "text": "y = df['Fruit']"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2025,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Code",
+    "type": "code-fill",
+    "title": "Train CategoricalNB, encode a new Red/Large observation, and decode its prediction.",
+    "explanation": "The trained encoders use transform for new values, while inverse_transform restores the fruit label.",
+    "code": [
+      [
+        {
+          "text": "cnb = "
+        },
+        {
+          "blank": "CategoricalNB()",
+          "aria": "classifier constructor"
+        }
+      ],
+      [
+        {
+          "text": "cnb."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X, y)"
+        }
+      ],
+      [
+        {
+          "text": "    'Color': le_color."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Color"
+        },
+        {
+          "text": "(['Red']),"
+        }
+      ],
+      [
+        {
+          "text": "    'Size': le_size."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Size"
+        },
+        {
+          "text": "(['Large'])"
+        }
+      ],
+      [
+        {
+          "text": "prediction = cnb."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(new_data)"
+        }
+      ],
+      [
+        {
+          "text": "predicted_fruit = le_fruit."
+        },
+        {
+          "blank": "inverse_transform",
+          "aria": "decode predicted label"
+        },
+        {
+          "text": "(prediction)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2026,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "What fitted LinearRegression attribute is used to access the coefficients? _____",
+    "answer": "coef_",
+    "caseSensitive": true,
+    "explanation": "The exact attribute is coef_ with a trailing underscore."
+  },
+  {
+    "id": 2027,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "What fitted LinearRegression attribute is used to access the intercept? _____",
+    "answer": "intercept_",
+    "caseSensitive": true,
+    "explanation": "The exact attribute is intercept_ with a trailing underscore."
+  },
+  {
+    "id": 2028,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "What function from sklearn.metrics calculates the coefficient of determination in the notebook? _____",
+    "answer": "r2_score",
+    "caseSensitive": true,
+    "explanation": "The notebook imports and calls r2_score."
+  },
+  {
+    "id": 2029,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "What function calculates the mean squared error in the multiple linear-regression example? _____",
+    "answer": "mean_squared_error",
+    "caseSensitive": true,
+    "explanation": "The exact imported function is mean_squared_error."
+  },
+  {
+    "id": 2030,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "Which method trains the LinearRegression object on X_train and y_train? _____",
+    "answer": "fit",
+    "caseSensitive": true,
+    "explanation": "The model is trained with lr.fit(X_train, y_train)."
+  },
+  {
+    "id": 2031,
+    "subject": "cs0075-code-snippets",
+    "label": "Linear Regression Fill-in",
+    "type": "fill-blank",
+    "title": "Which method generates Y_pred_train1 from X_train? _____",
+    "answer": "predict",
+    "caseSensitive": true,
+    "explanation": "The notebook uses lr.predict(X_train)."
+  },
+  {
+    "id": 2034,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the parameter name needed to allow LogisticRegression a maximum of 100 iterations: LogisticRegression(_____=100)",
+    "answer": "max_iter",
+    "caseSensitive": true,
+    "explanation": "max_iter controls the maximum number of solver iterations."
+  },
+  {
+    "id": 2037,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Fill-in",
+    "type": "fill-blank",
+    "title": "Which method both learns scaling parameters and transforms the supplied data? _____",
+    "answer": "fit_transform",
+    "caseSensitive": true,
+    "explanation": "fit_transform combines fitting and transformation."
+  },
+  {
+    "id": 2038,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Fill-in",
+    "type": "fill-blank",
+    "title": "Which method applies already-learned scaling parameters to new data? _____",
+    "answer": "transform",
+    "caseSensitive": true,
+    "explanation": "transform does not refit the scaler."
+  },
+  {
+    "id": 2039,
+    "subject": "cs0075-code-snippets",
+    "label": "Logistic Regression Fill-in",
+    "type": "fill-blank",
+    "title": "What method returns the classifier's mean accuracy for the supplied X and y? _____",
+    "answer": "score",
+    "caseSensitive": true,
+    "explanation": "The notebook calls log_reg.score on training and test sets."
+  },
+  {
+    "id": 2042,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "What fitted GaussianNB attribute stores the per-class feature means? _____",
+    "answer": "theta_",
+    "caseSensitive": true,
+    "explanation": "The exact attribute is theta_ with a trailing underscore."
+  },
+  {
+    "id": 2043,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "What fitted GaussianNB attribute stores the per-class feature variances? _____",
+    "answer": "var_",
+    "caseSensitive": true,
+    "explanation": "The exact attribute is var_ with a trailing underscore."
+  },
+  {
+    "id": 2044,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "What fitted GaussianNB attribute lists the known class labels? _____",
+    "answer": "classes_",
+    "caseSensitive": true,
+    "explanation": "The exact attribute is classes_ with a trailing underscore."
+  },
+  {
+    "id": 2045,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "What variable stores the Gaussian Naive Bayes model in the notebooks? _____",
+    "answer": "gnb",
+    "caseSensitive": true,
+    "explanation": "The model is created with gnb = GaussianNB()."
+  },
+  {
+    "id": 2046,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "What variable stores the Categorical Naive Bayes model in the fruit notebook? _____",
+    "answer": "cnb",
+    "caseSensitive": true,
+    "explanation": "The model is created with cnb = CategoricalNB()."
+  },
+  {
+    "id": 2047,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "Which pandas function creates the feature-versus-class frequency table? _____",
+    "answer": "crosstab",
+    "caseSensitive": true,
+    "explanation": "The notebook calls pd.crosstab."
+  },
+  {
+    "id": 2048,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "Which pandas function combines each feature frequency table into frequency_table? _____",
+    "answer": "concat",
+    "caseSensitive": true,
+    "explanation": "The notebook calls pd.concat."
+  },
+  {
+    "id": 2049,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "Which LabelEncoder method learns category mappings and encodes the training column? _____",
+    "answer": "fit_transform",
+    "caseSensitive": true,
+    "explanation": "The training columns use fit_transform."
+  },
+  {
+    "id": 2050,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "Which LabelEncoder method encodes new categories using an existing mapping? _____",
+    "answer": "transform",
+    "caseSensitive": true,
+    "explanation": "The new Color and Size values use transform."
+  },
+  {
+    "id": 2051,
+    "subject": "cs0075-code-snippets",
+    "label": "Naive Bayes Fill-in",
+    "type": "fill-blank",
+    "title": "Which LabelEncoder method converts the encoded prediction back to a fruit name? _____",
+    "answer": "inverse_transform",
+    "caseSensitive": true,
+    "explanation": "The prediction is decoded with le_fruit.inverse_transform."
+  },
+  {
+    "id": 2052,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import train_test_split",
+    "answer": "model_selection",
+    "caseSensitive": true,
+    "explanation": "train_test_split is imported from sklearn.model_selection."
+  },
+  {
+    "id": 2053,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import LinearRegression",
+    "answer": "linear_model",
+    "caseSensitive": true,
+    "explanation": "LinearRegression is imported from sklearn.linear_model."
+  },
+  {
+    "id": 2054,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import LogisticRegression",
+    "answer": "linear_model",
+    "caseSensitive": true,
+    "explanation": "LogisticRegression is imported from sklearn.linear_model."
+  },
+  {
+    "id": 2055,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import StandardScaler",
+    "answer": "preprocessing",
+    "caseSensitive": true,
+    "explanation": "StandardScaler is imported from sklearn.preprocessing."
+  },
+  {
+    "id": 2056,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import GaussianNB",
+    "answer": "naive_bayes",
+    "caseSensitive": true,
+    "explanation": "GaussianNB is imported from sklearn.naive_bayes."
+  },
+  {
+    "id": 2057,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import CategoricalNB",
+    "answer": "naive_bayes",
+    "caseSensitive": true,
+    "explanation": "CategoricalNB is imported from sklearn.naive_bayes."
+  },
+  {
+    "id": 2058,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import LabelEncoder",
+    "answer": "preprocessing",
+    "caseSensitive": true,
+    "explanation": "LabelEncoder is imported from sklearn.preprocessing."
+  },
+  {
+    "id": 2059,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import accuracy_score",
+    "answer": "metrics",
+    "caseSensitive": true,
+    "explanation": "accuracy_score is imported from sklearn.metrics."
+  },
+  {
+    "id": 2060,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import confusion_matrix",
+    "answer": "metrics",
+    "caseSensitive": true,
+    "explanation": "confusion_matrix is imported from sklearn.metrics."
+  },
+  {
+    "id": 2061,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: from sklearn._____ import r2_score",
+    "answer": "metrics",
+    "caseSensitive": true,
+    "explanation": "r2_score is imported from sklearn.metrics."
+  },
+  {
+    "id": 2064,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import needed to load scikit-learn's built-in breast-cancer dataset: from sklearn.datasets import _____",
+    "answer": "load_breast_cancer",
+    "caseSensitive": true,
+    "explanation": "load_breast_cancer is the dataset loader used by the logistic-regression notebooks."
+  },
+  {
+    "id": 2065,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: import _____ as pd",
+    "answer": "pandas",
+    "caseSensitive": true,
+    "explanation": "The notebooks use the conventional pandas alias pd."
+  },
+  {
+    "id": 2066,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: import _____ as np",
+    "answer": "numpy",
+    "caseSensitive": true,
+    "explanation": "The notebooks use the conventional NumPy alias np."
+  },
+  {
+    "id": 2067,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: import _____ as sns",
+    "answer": "seaborn",
+    "caseSensitive": true,
+    "explanation": "The linear-regression notebook imports seaborn as sns."
+  },
+  {
+    "id": 2068,
+    "subject": "cs0075-code-snippets",
+    "label": "Import Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import: import matplotlib._____ as plt",
+    "answer": "pyplot",
+    "caseSensitive": true,
+    "explanation": "The plotting module is matplotlib.pyplot."
+  },
+  {
+    "id": 2069,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Inspect missing values, count them per column, and calculate the mean of Age.",
+    "explanation": "isna identifies missing entries, sum counts them by column, and mean calculates the average Age.",
+    "code": [
+      [
+        {
+          "text": "print(df."
+        },
+        {
+          "blank": "isna",
+          "aria": "missing-value detection method"
+        },
+        {
+          "text": "())"
+        }
+      ],
+      [
+        {
+          "text": "missing_values_summary = df."
+        },
+        {
+          "blank": "isna",
+          "aria": "missing-value detection method"
+        },
+        {
+          "text": "()."
+        },
+        {
+          "blank": "sum",
+          "aria": "aggregation method"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "age_mean = df["
+        },
+        {
+          "blank": "'Age'",
+          "aria": "age column"
+        },
+        {
+          "text": "]."
+        },
+        {
+          "blank": "mean",
+          "aria": "average method"
+        },
+        {
+          "text": "()"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2070,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Create one imputer that uses the most frequent Outcome and another that uses the mean Age.",
+    "explanation": "SimpleImputer uses strategy to choose the replacement rule and missing_values to identify NaN entries.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.impute import "
+        },
+        {
+          "blank": "SimpleImputer",
+          "aria": "imputer class"
+        }
+      ],
+      [
+        {
+          "text": "imputerMode = "
+        },
+        {
+          "blank": "SimpleImputer",
+          "aria": "imputer class"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "strategy",
+          "aria": "imputation strategy parameter"
+        },
+        {
+          "text": "="
+        },
+        {
+          "blank": "'most_frequent'",
+          "aria": "mode strategy"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "blank": "missing_values",
+          "aria": "missing-value marker parameter"
+        },
+        {
+          "text": "=np.nan)"
+        }
+      ],
+      [
+        {
+          "text": "imputerMean = "
+        },
+        {
+          "blank": "SimpleImputer",
+          "aria": "imputer class"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "strategy",
+          "aria": "imputation strategy parameter"
+        },
+        {
+          "text": "="
+        },
+        {
+          "blank": "'mean'",
+          "aria": "mean strategy"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "blank": "missing_values",
+          "aria": "missing-value marker parameter"
+        },
+        {
+          "text": "=np.nan)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2071,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Fit the mean imputer on Age and the mode imputer on Outcome, then replace each column's missing values.",
+    "explanation": "fit learns the replacement statistic; transform applies it to the corresponding column.",
+    "code": [
+      [
+        {
+          "text": "imputerMean."
+        },
+        {
+          "blank": "fit",
+          "aria": "learn imputation statistic"
+        },
+        {
+          "text": "(df[["
+        },
+        {
+          "blank": "'Age'",
+          "aria": "mean-imputed column"
+        },
+        {
+          "text": "]])"
+        }
+      ],
+      [
+        {
+          "text": "df["
+        },
+        {
+          "blank": "'Age'",
+          "aria": "mean-imputed column"
+        },
+        {
+          "text": "] = imputerMean."
+        },
+        {
+          "blank": "transform",
+          "aria": "apply learned imputation"
+        },
+        {
+          "text": "(df[["
+        },
+        {
+          "blank": "'Age'",
+          "aria": "mean-imputed column"
+        },
+        {
+          "text": "]])"
+        }
+      ],
+      [
+        {
+          "text": "imputerMode."
+        },
+        {
+          "blank": "fit",
+          "aria": "learn imputation statistic"
+        },
+        {
+          "text": "(df[["
+        },
+        {
+          "blank": "'Outcome'",
+          "aria": "mode-imputed column"
+        },
+        {
+          "text": "]])"
+        }
+      ],
+      [
+        {
+          "text": "df["
+        },
+        {
+          "blank": "'Outcome'",
+          "aria": "mode-imputed column"
+        },
+        {
+          "text": "] = imputerMode."
+        },
+        {
+          "blank": "transform",
+          "aria": "apply learned imputation"
+        },
+        {
+          "text": "(df[["
+        },
+        {
+          "blank": "'Outcome'",
+          "aria": "mode-imputed column"
+        },
+        {
+          "text": "]])"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2072,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Complete the function that detects values that cannot be converted to integers.",
+    "explanation": "enumerate supplies indices, int attempts conversion, and the exception handler records invalid rows.",
+    "code": [
+      [
+        {
+          "text": "def validate_integer_values(df, column_name):"
+        }
+      ],
+      [
+        {
+          "text": "    invalid_indices = []"
+        }
+      ],
+      [
+        {
+          "text": "    for idx, value in "
+        },
+        {
+          "blank": "enumerate",
+          "aria": "indexed iteration function"
+        },
+        {
+          "text": "(df[column_name]):"
+        }
+      ],
+      [
+        {
+          "text": "        try:"
+        }
+      ],
+      [
+        {
+          "text": "            int_value = "
+        },
+        {
+          "blank": "int",
+          "aria": "integer conversion function"
+        },
+        {
+          "text": "(value)"
+        }
+      ],
+      [
+        {
+          "text": "        except ("
+        },
+        {
+          "blank": "ValueError",
+          "aria": "invalid-value exception"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "blank": "TypeError",
+          "aria": "invalid-type exception"
+        },
+        {
+          "text": "):"
+        }
+      ],
+      [
+        {
+          "text": "            noise_loc = idx"
+        }
+      ],
+      [
+        {
+          "text": "            invalid_indices."
+        },
+        {
+          "blank": "append",
+          "aria": "list insertion method"
+        },
+        {
+          "text": "(noise_loc+2)"
+        }
+      ],
+      [
+        {
+          "text": "    return invalid_indices"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2073,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Complete the function that records the spreadsheet row numbers containing missing values.",
+    "explanation": "enumerate supplies indices, pd.isnull detects NaN, and append records each adjusted row number.",
+    "code": [
+      [
+        {
+          "text": "def check_missing_values(df, column_name):"
+        }
+      ],
+      [
+        {
+          "text": "    missing_indices = []"
+        }
+      ],
+      [
+        {
+          "text": "    for idx, value in "
+        },
+        {
+          "blank": "enumerate",
+          "aria": "indexed iteration function"
+        },
+        {
+          "text": "(df[column_name]):"
+        }
+      ],
+      [
+        {
+          "text": "        if pd."
+        },
+        {
+          "blank": "isnull",
+          "aria": "missing-value test"
+        },
+        {
+          "text": "(value):   # True if value is NaN"
+        }
+      ],
+      [
+        {
+          "text": "            missing_indices."
+        },
+        {
+          "blank": "append",
+          "aria": "list insertion method"
+        },
+        {
+          "text": "(idx+2)"
+        }
+      ],
+      [
+        {
+          "text": "    return missing_indices"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2074,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Standardize DiabetesPedigreeFunction and save the result as Scaled_DPF.",
+    "explanation": "StandardScaler learns the column's scaling parameters and fit_transform applies them.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.preprocessing import "
+        },
+        {
+          "blank": "StandardScaler",
+          "aria": "standardization class"
+        }
+      ],
+      [
+        {
+          "text": "column_to_scale = df[["
+        },
+        {
+          "blank": "'DiabetesPedigreeFunction'",
+          "aria": "source column"
+        },
+        {
+          "text": "]]"
+        }
+      ],
+      [
+        {
+          "text": "scaler = "
+        },
+        {
+          "blank": "StandardScaler",
+          "aria": "standardization class"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "scaled_column = scaler."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit-and-scale method"
+        },
+        {
+          "text": "(column_to_scale)"
+        }
+      ],
+      [
+        {
+          "text": "df["
+        },
+        {
+          "blank": "'Scaled_DPF'",
+          "aria": "output column"
+        },
+        {
+          "text": "] = scaled_column"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2075,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Code",
+    "type": "code-fill",
+    "title": "Select every numeric column and rescale them with MinMaxScaler.",
+    "explanation": "select_dtypes identifies numeric columns and fit_transform rescales only those columns.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.preprocessing import "
+        },
+        {
+          "blank": "MinMaxScaler",
+          "aria": "min-max scaling class"
+        }
+      ],
+      [
+        {
+          "text": "scaler = "
+        },
+        {
+          "blank": "MinMaxScaler",
+          "aria": "min-max scaling class"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "numeric_cols = df."
+        },
+        {
+          "blank": "select_dtypes",
+          "aria": "data-type selection method"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "include",
+          "aria": "included-types parameter"
+        },
+        {
+          "text": "="
+        },
+        {
+          "blank": "'number'",
+          "aria": "numeric type selector"
+        },
+        {
+          "text": ").columns"
+        }
+      ],
+      [
+        {
+          "text": "df[numeric_cols] = scaler."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit-and-scale method"
+        },
+        {
+          "text": "(df[numeric_cols])"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2076,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Load Iris and split its data and target reproducibly with state 0.",
+    "explanation": "load_iris returns the dataset; train_test_split uses random_state to reproduce the same split.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.datasets import "
+        },
+        {
+          "blank": "load_iris",
+          "aria": "Iris dataset loader"
+        }
+      ],
+      [
+        {
+          "text": "iris_dataset = "
+        },
+        {
+          "blank": "load_iris",
+          "aria": "Iris dataset loader"
+        },
+        {
+          "text": "()"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn.model_selection import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(iris_dataset["
+        },
+        {
+          "blank": "'data'",
+          "aria": "feature matrix key"
+        },
+        {
+          "text": "], iris_dataset["
+        },
+        {
+          "blank": "'target'",
+          "aria": "target key"
+        },
+        {
+          "text": "], "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=0)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2077,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Create a DataFrame from the Iris training features while preserving their feature names.",
+    "explanation": "DataFrame receives X_train and uses iris_dataset.feature_names as its columns.",
+    "code": [
+      [
+        {
+          "text": "print(X_train.shape)"
+        }
+      ],
+      [
+        {
+          "text": "print(X_test.shape)"
+        }
+      ],
+      [
+        {
+          "text": "iris_dataframe = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "(X_train, "
+        },
+        {
+          "blank": "columns",
+          "aria": "column labels parameter"
+        },
+        {
+          "text": "=iris_dataset."
+        },
+        {
+          "blank": "feature_names",
+          "aria": "dataset feature names attribute"
+        },
+        {
+          "text": ")"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2078,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Test K values from 1 through 9 by training each KNN model and recording its training and testing accuracy.",
+    "explanation": "n_neighbors receives the current K; fit trains each model, predict generates labels, and accuracy_score evaluates them.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.metrics import "
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy function"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn.neighbors import "
+        },
+        {
+          "blank": "KNeighborsClassifier",
+          "aria": "KNN classifier"
+        }
+      ],
+      [
+        {
+          "text": "neighbors = range(1, 10)"
+        }
+      ],
+      [
+        {
+          "text": "for n in neighbors:"
+        }
+      ],
+      [
+        {
+          "text": "    knn = "
+        },
+        {
+          "blank": "KNeighborsClassifier",
+          "aria": "KNN classifier"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "n_neighbors",
+          "aria": "neighbor-count parameter"
+        },
+        {
+          "text": "=n)"
+        }
+      ],
+      [
+        {
+          "text": "    knn."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "    train_accuracies.append("
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy function"
+        },
+        {
+          "text": "(y_train, knn."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_train)))"
+        }
+      ],
+      [
+        {
+          "text": "    test_accuracies.append("
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy function"
+        },
+        {
+          "text": "(y_test, knn."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2079,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Train the Iris KNN model with K=3, predict the test set, and display the predicted species names and test score.",
+    "explanation": "n_neighbors selects K; predict creates numeric labels and target_names maps them to species names.",
+    "code": [
+      [
+        {
+          "text": "knn = "
+        },
+        {
+          "blank": "KNeighborsClassifier",
+          "aria": "KNN classifier"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "n_neighbors",
+          "aria": "neighbor-count parameter"
+        },
+        {
+          "text": "=3)"
+        }
+      ],
+      [
+        {
+          "text": "knn."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "prediction = knn."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "print(iris_dataset["
+        },
+        {
+          "blank": "'target_names'",
+          "aria": "class names key"
+        },
+        {
+          "text": "][prediction])"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Test set score: {:.2f}\".format(knn.score(X_test, y_test)))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2080,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Create a breast-cancer DataFrame, separate target from predictors, and make a stratified split with reproducible state 66.",
+    "explanation": "drop removes the target from X; stratify preserves class proportions and random_state reproduces the split.",
+    "code": [
+      [
+        {
+          "text": "df = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "(data=cancer.data, columns=cancer."
+        },
+        {
+          "blank": "feature_names",
+          "aria": "feature-name attribute"
+        },
+        {
+          "text": ")"
+        }
+      ],
+      [
+        {
+          "text": "df['target'] = cancer.target"
+        }
+      ],
+      [
+        {
+          "text": "X = df."
+        },
+        {
+          "blank": "drop",
+          "aria": "column-removal method"
+        },
+        {
+          "text": "(columns='target')  # Features"
+        }
+      ],
+      [
+        {
+          "text": "y = df['target']               # Target"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(X, y, "
+        },
+        {
+          "blank": "stratify",
+          "aria": "class-balance parameter"
+        },
+        {
+          "text": "=y, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": "=66)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2081,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Train the breast-cancer KNN model with K=6, then generate test predictions and test accuracy.",
+    "explanation": "n_neighbors selects K, fit trains the model, predict returns labels, and score returns accuracy.",
+    "code": [
+      [
+        {
+          "text": "knn = "
+        },
+        {
+          "blank": "KNeighborsClassifier",
+          "aria": "KNN classifier"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "n_neighbors",
+          "aria": "neighbor-count parameter"
+        },
+        {
+          "text": "=6)     #build the model"
+        }
+      ],
+      [
+        {
+          "text": "knn."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)                     #train the model"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Test set predictions: {}\".format(knn."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)))"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Test set accuracy: {:.2f}\".format(knn."
+        },
+        {
+          "blank": "score",
+          "aria": "accuracy method"
+        },
+        {
+          "text": "(X_test, y_test)))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2082,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Code",
+    "type": "code-fill",
+    "title": "Convert a prepared feature dictionary into one row, predict its cancer class, and map the numeric result to a label.",
+    "explanation": "DataFrame constructs the input row, predict returns the class index, and prediction[0] selects the label position.",
+    "code": [
+      [
+        {
+          "text": "new_data = pd."
+        },
+        {
+          "blank": "DataFrame",
+          "aria": "DataFrame constructor"
+        },
+        {
+          "text": "([data_dict])"
+        }
+      ],
+      [
+        {
+          "text": "prediction = knn."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(new_data)"
+        }
+      ],
+      [
+        {
+          "text": "target_names = ['malignant', 'benign']"
+        }
+      ],
+      [
+        {
+          "text": "predicted_label = target_names["
+        },
+        {
+          "blank": "prediction[0]",
+          "aria": "first predicted class index"
+        },
+        {
+          "text": "]"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2083,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Code",
+    "type": "code-fill",
+    "title": "Load Boston.csv from a generic data folder and remove rows containing missing values in place.",
+    "explanation": "read_csv loads the table; dropna removes incomplete rows and inplace modifies boston directly.",
+    "code": [
+      [
+        {
+          "text": "boston = pd."
+        },
+        {
+          "blank": "read_csv",
+          "aria": "CSV-loading function"
+        },
+        {
+          "text": "('/path/to/data/Boston.csv')"
+        }
+      ],
+      [
+        {
+          "text": "boston."
+        },
+        {
+          "blank": "dropna",
+          "aria": "missing-row removal method"
+        },
+        {
+          "text": "("
+        },
+        {
+          "blank": "inplace",
+          "aria": "modify-original parameter"
+        },
+        {
+          "text": " = True)    "
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2084,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Code",
+    "type": "code-fill",
+    "title": "Select the Boston predictors and medv target, then make a 30% reproducible test split with state 0.",
+    "explanation": "iloc selects the predictor columns; test_size and random_state configure the split.",
+    "code": [
+      [
+        {
+          "text": "X = df."
+        },
+        {
+          "blank": "iloc",
+          "aria": "position-based selection method"
+        },
+        {
+          "text": "[:, 1:14]            #features "
+        }
+      ],
+      [
+        {
+          "text": "y = df["
+        },
+        {
+          "blank": "'medv'",
+          "aria": "target column"
+        },
+        {
+          "text": "]                  #target"
+        }
+      ],
+      [
+        {
+          "text": "X_train, X_test, y_train, y_test = "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "data-splitting function"
+        },
+        {
+          "text": "(X,y, "
+        },
+        {
+          "blank": "test_size",
+          "aria": "test proportion parameter"
+        },
+        {
+          "text": " = 0.3, "
+        },
+        {
+          "blank": "random_state",
+          "aria": "reproducibility parameter"
+        },
+        {
+          "text": " = 0)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2085,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Code",
+    "type": "code-fill",
+    "title": "Train ordinary linear regression, predict the test set, and calculate R-squared and MSE.",
+    "explanation": "fit trains the model, predict creates y_test_pred, and the metrics functions evaluate it.",
+    "code": [
+      [
+        {
+          "text": "lm = "
+        },
+        {
+          "blank": "LinearRegression()",
+          "aria": "linear regression constructor"
+        }
+      ],
+      [
+        {
+          "text": "lm."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "y_test_pred = lm."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ],
+      [
+        {
+          "text": "print('R^2:', metrics."
+        },
+        {
+          "blank": "r2_score",
+          "aria": "R-squared function"
+        },
+        {
+          "text": "(y_test, y_test_pred))"
+        }
+      ],
+      [
+        {
+          "text": "print('MSE:',metrics."
+        },
+        {
+          "blank": "mean_squared_error",
+          "aria": "MSE function"
+        },
+        {
+          "text": "(y_test, y_test_pred))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2086,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Code",
+    "type": "code-fill",
+    "title": "Train default Ridge and Lasso models, report their scores, and count the coefficients each model keeps nonzero.",
+    "explanation": "fit trains each regularized model; score evaluates it and coef_ exposes the fitted coefficients.",
+    "code": [
+      [
+        {
+          "text": "ridge = "
+        },
+        {
+          "blank": "Ridge()",
+          "aria": "Ridge constructor"
+        },
+        {
+          "text": "."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Score : {:.2f}\".format(ridge."
+        },
+        {
+          "blank": "score",
+          "aria": "model scoring method"
+        },
+        {
+          "text": "(X_train,y_train)))"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Features Used : {}\".format(np.sum(ridge."
+        },
+        {
+          "blank": "coef_",
+          "aria": "fitted coefficients attribute"
+        },
+        {
+          "text": " != 0)))"
+        }
+      ],
+      [
+        {
+          "text": "lasso = "
+        },
+        {
+          "blank": "Lasso()",
+          "aria": "Lasso constructor"
+        },
+        {
+          "text": "."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Score : {:.2f}\".format(lasso."
+        },
+        {
+          "blank": "score",
+          "aria": "model scoring method"
+        },
+        {
+          "text": "(X_train,y_train)))"
+        }
+      ],
+      [
+        {
+          "text": "print(\"Features Used : {}\".format(np.sum(lasso."
+        },
+        {
+          "blank": "coef_",
+          "aria": "fitted coefficients attribute"
+        },
+        {
+          "text": " != 0)))"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2087,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Code",
+    "type": "code-fill",
+    "title": "Fit Ridge and Lasso using the supplied alpha values 10 and 0.01.",
+    "explanation": "alpha sets regularization strength, while fit trains each configured model.",
+    "code": [
+      [
+        {
+          "text": "ridge = Ridge("
+        },
+        {
+          "blank": "alpha",
+          "aria": "regularization-strength parameter"
+        },
+        {
+          "text": "=10)."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ],
+      [
+        {
+          "text": "ridge = Ridge("
+        },
+        {
+          "blank": "alpha",
+          "aria": "regularization-strength parameter"
+        },
+        {
+          "text": "=0.01)."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ],
+      [
+        {
+          "text": "lasso = Lasso("
+        },
+        {
+          "blank": "alpha",
+          "aria": "regularization-strength parameter"
+        },
+        {
+          "text": "=10)."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ],
+      [
+        {
+          "text": "lasso = Lasso("
+        },
+        {
+          "blank": "alpha",
+          "aria": "regularization-strength parameter"
+        },
+        {
+          "text": "=0.01)."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train,y_train)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2088,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import for the missing-value replacement class: from sklearn.impute import _____",
+    "answer": "SimpleImputer",
+    "caseSensitive": true,
+    "explanation": "SimpleImputer is imported from sklearn.impute."
+  },
+  {
+    "id": 2089,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "Which sklearn module contains SimpleImputer? sklearn._____",
+    "answer": "impute",
+    "caseSensitive": true,
+    "explanation": "The complete module path is sklearn.impute."
+  },
+  {
+    "id": 2090,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "In SimpleImputer(strategy='mean'), what parameter chooses the replacement rule? _____",
+    "answer": "strategy",
+    "caseSensitive": true,
+    "explanation": "strategy selects rules such as mean or most_frequent."
+  },
+  {
+    "id": 2091,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "Which SimpleImputer parameter specifies what value represents missing data? _____",
+    "answer": "missing_values",
+    "caseSensitive": true,
+    "explanation": "missing_values identifies the marker to replace, such as np.nan."
+  },
+  {
+    "id": 2092,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "Which pandas DataFrame method used in the notebook returns True where values are missing? _____",
+    "answer": "isna",
+    "caseSensitive": true,
+    "explanation": "The notebook calls df.isna()."
+  },
+  {
+    "id": 2093,
+    "subject": "cs0075-code-snippets",
+    "label": "Data Preprocessing Fill-in",
+    "type": "fill-blank",
+    "title": "Which DataFrame method selects columns by data type before MinMax scaling? _____",
+    "answer": "select_dtypes",
+    "caseSensitive": true,
+    "explanation": "The notebook uses df.select_dtypes(include='number')."
+  },
+  {
+    "id": 2094,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the KNN import: from sklearn.neighbors import _____",
+    "answer": "KNeighborsClassifier",
+    "caseSensitive": true,
+    "explanation": "KNeighborsClassifier is imported from sklearn.neighbors."
+  },
+  {
+    "id": 2095,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Fill-in",
+    "type": "fill-blank",
+    "title": "Which sklearn module contains KNeighborsClassifier? sklearn._____",
+    "answer": "neighbors",
+    "caseSensitive": true,
+    "explanation": "The complete module path is sklearn.neighbors."
+  },
+  {
+    "id": 2096,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Fill-in",
+    "type": "fill-blank",
+    "title": "In KNeighborsClassifier(_____=3), which parameter sets K?",
+    "answer": "n_neighbors",
+    "caseSensitive": true,
+    "explanation": "n_neighbors specifies how many neighbors vote on the prediction."
+  },
+  {
+    "id": 2097,
+    "subject": "cs0075-code-snippets",
+    "label": "KNN Fill-in",
+    "type": "fill-blank",
+    "title": "Which train_test_split parameter preserves the class proportions of y? _____",
+    "answer": "stratify",
+    "caseSensitive": true,
+    "explanation": "Passing stratify=y preserves the target-class distribution across the split."
+  },
+  {
+    "id": 2098,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Fill-in",
+    "type": "fill-blank",
+    "title": "Which pandas method removes rows containing missing values? _____",
+    "answer": "dropna",
+    "caseSensitive": true,
+    "explanation": "The Boston example calls boston.dropna."
+  },
+  {
+    "id": 2099,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Fill-in",
+    "type": "fill-blank",
+    "title": "Which dropna parameter makes the method modify the original DataFrame? _____",
+    "answer": "inplace",
+    "caseSensitive": true,
+    "explanation": "Setting inplace=True modifies the existing DataFrame."
+  },
+  {
+    "id": 2100,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import for L2-regularized linear regression: from sklearn.linear_model import _____",
+    "answer": "Ridge",
+    "caseSensitive": true,
+    "explanation": "Ridge performs L2-regularized linear regression."
+  },
+  {
+    "id": 2101,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Fill-in",
+    "type": "fill-blank",
+    "title": "Complete the import for L1-regularized linear regression: from sklearn.linear_model import _____",
+    "answer": "Lasso",
+    "caseSensitive": true,
+    "explanation": "Lasso performs L1-regularized linear regression."
+  },
+  {
+    "id": 2102,
+    "subject": "cs0075-code-snippets",
+    "label": "Regularization Fill-in",
+    "type": "fill-blank",
+    "title": "Which Ridge and Lasso parameter controls regularization strength? _____",
+    "answer": "alpha",
+    "caseSensitive": true,
+    "explanation": "alpha controls how strongly the coefficients are penalized."
+  }
+]

@@ -1,0 +1,845 @@
+[
+  {
+    "id": 2001,
+    "subject": "intro-ml",
+    "label": "Introduction to Machine Learning",
+    "type": "multiple-choice",
+    "title": "In the module's learning-and-prediction workflow, what does a trained model use to produce predicted data?",
+    "options": [
+      "New data",
+      "Only the labels from training data",
+      "A new target name",
+      "The feature names"
+    ],
+    "answer": 0,
+    "explanation": "The workflow shows new data entering the trained model during the prediction phase to produce predicted data."
+  },
+  {
+    "id": 2002,
+    "subject": "intro-ml",
+    "label": "Introduction to Machine Learning",
+    "type": "multiple-choice",
+    "title": "Which activity is listed as part of preprocessing in the module's machine-learning workflow?",
+    "options": [
+      "Clean data",
+      "Choose the final class by argmax",
+      "Calculate a posterior probability",
+      "Apply an ordinal cut point"
+    ],
+    "answer": 0,
+    "explanation": "The introductory workflow lists clean data and format data under preprocessing."
+  },
+  {
+    "id": 2003,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "multiple-choice",
+    "title": "For the scaler example with original values [10, 20, 30, 40, 50], what value is produced for 30 by StandardScaler?",
+    "options": [
+      "-1.41",
+      "-0.71",
+      "0.00",
+      "1.41"
+    ],
+    "answer": 2,
+    "explanation": "The scaler notes show the transformed values [-1.41, -0.71, 0.00, 0.71, 1.41]."
+  },
+  {
+    "id": 2004,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "multiple-choice",
+    "title": "Which range is associated with MinMaxScaler in the scaler notes?",
+    "options": [
+      "Exactly -1 to 1",
+      "0 to 1",
+      "Any value with mean 0",
+      "Only positive integers"
+    ],
+    "answer": 1,
+    "explanation": "The notes state that MinMaxScaler transforms values into the range 0 to 1."
+  },
+  {
+    "id": 2005,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which regularization method can make some coefficients exactly zero, causing the model to ignore those features?",
+    "options": [
+      "Lasso",
+      "Ridge",
+      "MinMax scaling",
+      "Softmax"
+    ],
+    "answer": 0,
+    "explanation": "The supervised-learning notes describe Lasso as L1 regularization and state that some coefficients can become exactly zero."
+  },
+  {
+    "id": 2006,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which outcome structure is used by binary logistic regression?",
+    "options": [
+      "Two possible classes such as 0/1 or yes/no",
+      "Three or more unordered classes",
+      "Ordered classes only",
+      "A continuous target with no classes"
+    ],
+    "answer": 0,
+    "explanation": "The logistic-regression notes describe binary outcomes with examples such as success/failure, 0/1, and true/false."
+  },
+  {
+    "id": 2007,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "What does the logistic, or sigmoid, function do to a real-valued input?",
+    "options": [
+      "Maps it to a value between 0 and 1",
+      "Maps it only to -1 or 1",
+      "Converts it into a word count",
+      "Sorts it into ascending order"
+    ],
+    "answer": 0,
+    "explanation": "The notes describe the sigmoid as an S-shaped function that maps any real-valued number to a value between 0 and 1, without reaching either limit."
+  },
+  {
+    "id": 2008,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "According to the threshold rule shown in the logistic-regression notes, a predicted value greater than 0.5 is assigned to which class?",
+    "options": [
+      "Class 0",
+      "Class 1",
+      "Both classes",
+      "No class"
+    ],
+    "answer": 1,
+    "explanation": "The notes state that a predicted value greater than 0.5 is prediction 1; otherwise it is 0."
+  },
+  {
+    "id": 2009,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which statement describes multinomial logistic regression in the notes?",
+    "options": [
+      "It has more than two possible discrete outcomes",
+      "It can only predict yes or no",
+      "It requires the outcome categories to be ordered",
+      "It predicts a continuous measurement"
+    ],
+    "answer": 0,
+    "explanation": "The notes define multinomial logistic regression for categorical dependent variables with two or more discrete outcomes, and contrast it with the binary case."
+  },
+  {
+    "id": 2010,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which example is ordinal rather than merely multinomial?",
+    "options": [
+      "Transport type: car, train, bus, bike",
+      "Pet food: wet, dry, junk",
+      "Math result: poor, average, good",
+      "School destination: college, trade school, industry"
+    ],
+    "answer": 2,
+    "explanation": "Poor, average, and good have a natural order, which is the defining feature of the ordinal setting."
+  },
+  {
+    "id": 2011,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "multiple-choice",
+    "title": "In multinomial logistic regression, what does softmax convert into class probabilities?",
+    "options": [
+      "The model's scores or logits",
+      "Feature names",
+      "Posterior labels only",
+      "The test-set indices"
+    ],
+    "answer": 0,
+    "explanation": "The softmax notes state that softmax converts the model's scores, also called logits, into class probabilities."
+  },
+  {
+    "id": 2012,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "multiple-choice",
+    "title": "For z = [2.5, 1.2, 0.3] corresponding to Setosa, Versicolor, and Virginica, which class is predicted?",
+    "options": [
+      "Setosa",
+      "Versicolor",
+      "Virginica",
+      "No class because the values are logits"
+    ],
+    "answer": 0,
+    "explanation": "The notes give softmax probabilities of approximately [0.723, 0.197, 0.080], so Setosa has the largest probability."
+  },
+  {
+    "id": 2013,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "multiple-choice",
+    "title": "What do the class probabilities produced by softmax sum to?",
+    "options": [
+      "0",
+      "0.5",
+      "1",
+      "The number of classes"
+    ],
+    "answer": 2,
+    "explanation": "Softmax normalizes the class scores into a probability distribution whose entries sum to 1."
+  },
+  {
+    "id": 2014,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "multiple-choice",
+    "title": "In the ordinal example, if P(Y<=3)=0.80 and P(Y<=2)=0.40, what is P(Y=3)?",
+    "options": [
+      "0.20",
+      "0.30",
+      "0.40",
+      "0.80"
+    ],
+    "answer": 2,
+    "explanation": "The notes obtain a middle ordinal class by subtraction: P(Y=3)=P(Y<=3)-P(Y<=2)=0.80-0.40=0.40."
+  },
+  {
+    "id": 2015,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "multiple-choice",
+    "title": "Why can a displayed tie between ordinal-class probabilities disappear when full precision is used?",
+    "options": [
+      "Rounded values can hide a small difference",
+      "Softmax always removes the largest class",
+      "Ordinal probabilities are not numeric",
+      "All probabilities are rounded down to zero"
+    ],
+    "answer": 0,
+    "explanation": "The notes show values such as 0.3999998 and 0.4000001, which round to the same displayed value even though one is larger."
+  },
+  {
+    "id": 2016,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Why is the Naive Bayes assumption called naive?",
+    "options": [
+      "It assumes conditional independence among the input features",
+      "It ignores the target variable",
+      "It never uses probability",
+      "It requires no training data"
+    ],
+    "answer": 0,
+    "explanation": "The Naive Bayes notes call the assumption naive because the input features are treated as conditionally independent."
+  },
+  {
+    "id": 2017,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which Naive Bayes variant is described as suitable for continuous features assumed to follow a normal distribution?",
+    "options": [
+      "Gaussian Naive Bayes",
+      "Bernoulli Naive Bayes",
+      "Multinomial Naive Bayes",
+      "Categorical Naive Bayes"
+    ],
+    "answer": 0,
+    "explanation": "The notes describe Gaussian Naive Bayes as suitable for continuous data whose features follow a normal distribution."
+  },
+  {
+    "id": 2018,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which Naive Bayes variant is associated with discrete data where word counts matter?",
+    "options": [
+      "Multinomial Naive Bayes",
+      "Gaussian Naive Bayes",
+      "Bernoulli Naive Bayes",
+      "Categorical Naive Bayes"
+    ],
+    "answer": 0,
+    "explanation": "The notes identify Multinomial Naive Bayes as useful for discrete data, especially text classification where word counts matter."
+  },
+  {
+    "id": 2019,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which Naive Bayes variant is designed for binary or Boolean features, such as word presence or absence?",
+    "options": [
+      "Bernoulli Naive Bayes",
+      "Gaussian Naive Bayes",
+      "Multinomial Naive Bayes",
+      "Categorical Naive Bayes"
+    ],
+    "answer": 0,
+    "explanation": "Bernoulli Naive Bayes is described as appropriate for binary or Boolean features and for text presence/absence data."
+  },
+  {
+    "id": 2020,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which Naive Bayes variant is specifically described for categorical data with discrete, non-numeric values?",
+    "options": [
+      "Categorical Naive Bayes",
+      "Gaussian Naive Bayes",
+      "Bernoulli Naive Bayes",
+      "Multinomial Naive Bayes"
+    ],
+    "answer": 0,
+    "explanation": "The notes describe Categorical Naive Bayes as intended for categorical data with discrete, non-numeric values."
+  },
+  {
+    "id": 2021,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "According to the Naive Bayes procedure in the notes, what is the first step?",
+    "options": [
+      "Convert the dataset into frequency tables",
+      "Choose the class with the maximum posterior",
+      "Normalize the final predictions",
+      "Apply a sigmoid function"
+    ],
+    "answer": 0,
+    "explanation": "The notes list converting the dataset into frequency tables as step 1, followed by likelihood tables and posterior calculation."
+  },
+  {
+    "id": 2022,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "In the notation used by the Naive Bayes notes, what is P(y)?",
+    "options": [
+      "The class probability",
+      "The conditional probability P(x_i | y)",
+      "The evidence denominator only",
+      "The standard deviation"
+    ],
+    "answer": 0,
+    "explanation": "The notes explicitly call P(y) the class probability."
+  },
+  {
+    "id": 2023,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Why can the evidence denominator be ignored when comparing Naive Bayes classes for one fixed observation?",
+    "options": [
+      "It is the same for every candidate class",
+      "It is always equal to zero",
+      "It is the same as the prior probability",
+      "It is only used by GaussianNB"
+    ],
+    "answer": 0,
+    "explanation": "For a fixed observation, the evidence denominator does not depend on the candidate class, so it does not change which numerator is largest."
+  },
+  {
+    "id": 2024,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "In the golf example with Rainy, Hot, High, and False, which class has the larger normalized posterior?",
+    "options": [
+      "NO",
+      "YES",
+      "Both are equal",
+      "The notes do not calculate it"
+    ],
+    "answer": 0,
+    "explanation": "The notes calculate P(Play=YES|X)=0.22 and P(Play=NO|X)=0.60, so the prediction is NO."
+  },
+  {
+    "id": 2025,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which is listed as an advantage of the Naive Bayes classifier?",
+    "options": [
+      "It is easy to implement and fast",
+      "It always needs a very large training set",
+      "It is sensitive to every irrelevant feature",
+      "It requires the features to be ordered"
+    ],
+    "answer": 0,
+    "explanation": "The notes list being easy to implement and fast, needing less training data, and being less sensitive to irrelevant features as advantages."
+  },
+  {
+    "id": 2051,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "fill-blank",
+    "title": "The mean of values transformed by StandardScaler becomes approximately _____.",
+    "answer": "0",
+    "caseSensitive": false,
+    "explanation": "The scaler notes state that StandardScaler makes the mean approximately 0."
+  },
+  {
+    "id": 2052,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "fill-blank",
+    "title": "MinMaxScaler transforms values into a range whose upper bound is _____.",
+    "answer": "1",
+    "caseSensitive": false,
+    "explanation": "The notes state that MinMaxScaler transforms values into the range 0 to 1."
+  },
+  {
+    "id": 2053,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "The S-shaped function used by binary logistic regression is the _____ function.",
+    "answer": "sigmoid",
+    "caseSensitive": false,
+    "explanation": "The logistic-regression notes identify the logistic function as the sigmoid function."
+  },
+  {
+    "id": 2054,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "Logistic regression for more than two discrete outcome classes is called _____ logistic regression.",
+    "answer": "multinomial",
+    "caseSensitive": false,
+    "explanation": "The notes use multinomial logistic regression for categorical outcomes with more than two possible outcomes."
+  },
+  {
+    "id": 2055,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "fill-blank",
+    "title": "The unnormalized class scores supplied to softmax are called _____.",
+    "answer": "logits",
+    "caseSensitive": false,
+    "explanation": "The softmax notes call the values z=[2.5,1.2,0.3] logits or scores."
+  },
+  {
+    "id": 2056,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "fill-blank",
+    "title": "The operation used to choose the class with the highest probability is _____.",
+    "answer": "argmax",
+    "caseSensitive": false,
+    "explanation": "The notes select the predicted class with argmax of the class probabilities."
+  },
+  {
+    "id": 2057,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "Naive Bayes assumes conditional _____ among the input features.",
+    "answer": "independence",
+    "caseSensitive": false,
+    "explanation": "Conditional independence among the input features is the simplifying assumption described in the notes."
+  },
+  {
+    "id": 2058,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The probability P(y) is also called the _____ probability.",
+    "answer": "class",
+    "caseSensitive": false,
+    "explanation": "The notation section of the notes labels P(y) as the class probability."
+  },
+  {
+    "id": 2059,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The final Naive Bayes prediction is the class with the _____ posterior probability.",
+    "answer": "maximum",
+    "caseSensitive": false,
+    "explanation": "The notes state that the class with the maximum posterior value is the final prediction."
+  },
+  {
+    "id": 2060,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The Naive Bayes assumption treats the features as making an _____ contribution to the outcome.",
+    "answer": "equal",
+    "caseSensitive": false,
+    "explanation": "The notes describe the fundamental assumption as each feature making an independent and equal contribution."
+  },
+  {
+    "id": 2081,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "fill-blank",
+    "title": "True or False: StandardScaler restricts every transformed value to the range 0 to 1. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notes associate the 0-to-1 range with MinMaxScaler; StandardScaler does not restrict values to a fixed range."
+  },
+  {
+    "id": 2082,
+    "subject": "scalers",
+    "label": "Feature Scaling",
+    "type": "fill-blank",
+    "title": "True or False: MinMaxScaler is sensitive to outliers. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "Sensitivity to outliers is listed as a MinMaxScaler characteristic in the notes."
+  },
+  {
+    "id": 2083,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "True or False: Binary logistic regression is used for more than two discrete outcome classes. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notes define binary logistic regression for dichotomous outcomes; more than two outcomes are described under multinomial logistic regression."
+  },
+  {
+    "id": 2084,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "True or False: The sigmoid function reaches exactly 0 and exactly 1 for finite inputs. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notes say the sigmoid maps into values between 0 and 1 but never exactly at those limits."
+  },
+  {
+    "id": 2085,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "fill-blank",
+    "title": "True or False: Multinomial logistic regression uses the softmax function. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "The softmax notes contrast binary logistic regression using sigmoid with multinomial logistic regression using softmax."
+  },
+  {
+    "id": 2086,
+    "subject": "softmax",
+    "label": "Softmax / Ordinal Logistic",
+    "type": "fill-blank",
+    "title": "True or False: In ordinal logistic regression, the order of the outcome categories matters. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "The notes distinguish ordinal classes from merely different categories because their order matters."
+  },
+  {
+    "id": 2087,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: Naive Bayes assumes conditional independence among the input features. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "Conditional independence is the basic assumption identified in the Naive Bayes notes."
+  },
+  {
+    "id": 2088,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: Gaussian Naive Bayes is the variant described for binary or Boolean features. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notes associate binary or Boolean features with Bernoulli Naive Bayes and continuous normal data with Gaussian Naive Bayes."
+  },
+  {
+    "id": 2089,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: For one fixed observation, the Naive Bayes evidence denominator is the same for every candidate class. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "The notes explain that the denominator does not depend on y, so it is constant while classes are compared."
+  },
+  {
+    "id": 2090,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: The final Naive Bayes prediction is the class with the smallest posterior probability. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notes state that the class with the maximum posterior value is selected."
+  },
+  {
+    "id": 2101,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact splitting and logistic-model imports from the logistic-regression notebook.",
+    "explanation": "The notebook imports train_test_split from model_selection and LogisticRegression from linear_model.",
+    "code": [
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "model_selection",
+          "aria": "dataset splitting module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "dataset splitting function"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "linear_model",
+          "aria": "linear models module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "LogisticRegression",
+          "aria": "logistic model class"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2102,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact classifier operations from the logistic-regression notebook.",
+    "explanation": "The notebook constructs the classifier, trains it with fit, predicts labels with predict, and evaluates it with score.",
+    "code": [
+      [
+        {
+          "text": "log_reg = "
+        },
+        {
+          "blank": "LogisticRegression()",
+          "aria": "logistic regression constructor"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)            #X_test is a dataframe"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "score",
+          "aria": "evaluation method"
+        },
+        {
+          "text": "(X_test,y_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2103,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact Gaussian Naive Bayes model operations from the notebook.",
+    "explanation": "The notebook constructs GaussianNB, fits it with training data, and predicts labels for X_test.",
+    "code": [
+      [
+        {
+          "text": "gnb = "
+        },
+        {
+          "blank": "GaussianNB()",
+          "aria": "Gaussian Naive Bayes constructor"
+        }
+      ],
+      [
+        {
+          "text": "gnb."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "y_pred = gnb."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2104,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact imports used by the categorical fruit classifier.",
+    "explanation": "The notebook uses pandas, CategoricalNB, and LabelEncoder for the categorical fruit example.",
+    "code": [
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "pandas",
+          "aria": "dataframe library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "pd",
+          "aria": "pandas alias"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "naive_bayes",
+          "aria": "Naive Bayes module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "CategoricalNB",
+          "aria": "categorical classifier class"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "preprocessing",
+          "aria": "preprocessing module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "LabelEncoder",
+          "aria": "categorical encoder class"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 2105,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact encoder methods for the categorical fruit example.",
+    "explanation": "The notebook uses fit_transform to learn and encode the training categories, then transform for new categories.",
+    "code": [
+      [
+        {
+          "text": "df['Color'] = le_color."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Color categories"
+        },
+        {
+          "text": "(df['Color'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Size'] = le_size."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Size categories"
+        },
+        {
+          "text": "(df['Size'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Fruit'] = le_fruit."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Fruit categories"
+        },
+        {
+          "text": "(df['Fruit'])"
+        }
+      ],
+      [
+        {
+          "text": "'Color': le_color."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Color with learned mapping"
+        },
+        {
+          "text": "(['Red']),"
+        }
+      ],
+      [
+        {
+          "text": "'Size': le_size."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Size with learned mapping"
+        },
+        {
+          "text": "(['Large'])"
+        }
+      ]
+    ]
+  }
+]

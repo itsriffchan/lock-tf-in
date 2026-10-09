@@ -1,0 +1,56 @@
+[
+  {
+    "id": 101,
+    "subject": "programming",
+    "label": "Programming",
+    "type": "multiple-choice",
+    "title": "Which keyword declares a constant in JavaScript?",
+    "options": ["let", "var", "const", "static"],
+    "answer": 2,
+    "explanation": "const declares a variable whose binding cannot be reassigned."
+  },
+  {
+    "id": 102,
+    "subject": "programming",
+    "label": "Programming",
+    "type": "multi-answer",
+    "title": "Which three are common programming concepts?",
+    "options": ["Variables", "Loops", "Functions", "Stylesheets", "Selectors"],
+    "answers": [0, 2, 3],
+    "selectCount": 3,
+    "explanation": "Variables store values, loops repeat logic, and functions package reusable behavior."
+  },
+  {
+    "id": 103,
+    "subject": "programming",
+    "label": "Programming",
+    "type": "fill-blank",
+    "title": "A loop that repeats while a condition is true is called a _____ loop.",
+    "answer": "while",
+    "caseSensitive": false,
+    "explanation": "A while loop continues running as long as its condition remains true."
+  },
+  {
+    "id": 104,
+    "subject": "programming",
+    "label": "Programming",
+    "type": "code-fill",
+    "title": "Complete the function so it returns the product of two numbers.",
+    "explanation": "The return statement should multiply the two parameters.",
+    "code": [
+      [
+        { "text": "function multiply(a, b) {" }
+      ],
+      [
+        { "text": "  return ", "className": "code-keyword" },
+        { "blank": "a", "aria": "first value" },
+        { "text": " * " },
+        { "blank": "b", "aria": "second value" },
+        { "text": ";" }
+      ],
+      [
+        { "text": "}" }
+      ]
+    ]
+  }
+]

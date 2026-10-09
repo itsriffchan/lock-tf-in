@@ -1,0 +1,1720 @@
+[
+  {
+    "id": 1001,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "In the Iris linear-regression notebook, which variable is used to predict petal width?",
+    "options": [
+      "petal_length",
+      "sepal_length",
+      "sepal_width",
+      "species"
+    ],
+    "answer": 0,
+    "explanation": "The notebook assigns X = iris[['petal_length']] and y = iris[['petal_width']]."
+  },
+  {
+    "id": 1002,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which import used in the notebook correctly provides LinearRegression?",
+    "options": [
+      "from sklearn.linear_model import LinearRegression",
+      "from sklearn.model_selection import LinearRegression",
+      "from sklearn.preprocessing import LinearRegression",
+      "from sklearn.metrics import LinearRegression"
+    ],
+    "answer": 0,
+    "explanation": "LinearRegression is imported from sklearn.linear_model."
+  },
+  {
+    "id": 1003,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "What proportion of the Iris data is assigned to the test set in the first linear-regression example?",
+    "options": [
+      "20%",
+      "30%",
+      "40%",
+      "60%"
+    ],
+    "answer": 2,
+    "explanation": "The call uses test_size=0.4, so 40% is reserved for testing."
+  },
+  {
+    "id": 1004,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "What does reshape(-1, 1) do to X_train in the notebook?",
+    "options": [
+      "Creates a one-row array",
+      "Creates a 2D column vector",
+      "Removes missing values",
+      "Sorts the observations"
+    ],
+    "answer": 1,
+    "explanation": "The notebook comment says -1 infers the number of rows and 1 creates one column."
+  },
+  {
+    "id": 1005,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which attribute stores the fitted linear model's intercept?",
+    "options": [
+      "lr.coef_",
+      "lr.intercept_",
+      "lr.score_",
+      "lr.slope_"
+    ],
+    "answer": 1,
+    "explanation": "The notebook assigns c = lr.intercept_."
+  },
+  {
+    "id": 1006,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which attribute stores the fitted model coefficients?",
+    "options": [
+      "lr.intercept_",
+      "lr.predict_",
+      "lr.coef_",
+      "lr.params_"
+    ],
+    "answer": 2,
+    "explanation": "The notebook assigns m = lr.coef_."
+  },
+  {
+    "id": 1007,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which function evaluates R-squared in the notebook?",
+    "options": [
+      "accuracy_score",
+      "mean_squared_error",
+      "r2_score",
+      "recall_score"
+    ],
+    "answer": 2,
+    "explanation": "The code imports r2_score from sklearn.metrics."
+  },
+  {
+    "id": 1008,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "In the multiple linear-regression example, what is the target variable?",
+    "options": [
+      "sepal_length",
+      "sepal_width",
+      "petal_length",
+      "petal_width"
+    ],
+    "answer": 0,
+    "explanation": "The example assigns y = iris['sepal_length']."
+  },
+  {
+    "id": 1009,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "Which set contains all three predictors used in the multiple linear-regression example?",
+    "options": [
+      "sepal_width, petal_length, petal_width",
+      "sepal_length, petal_length, species",
+      "sepal_length, sepal_width, species",
+      "petal_length, petal_width, species"
+    ],
+    "answer": 0,
+    "explanation": "X contains sepal_width, petal_length, and petal_width."
+  },
+  {
+    "id": 1010,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multiple-choice",
+    "title": "What is the purpose of lr.predict(X_test) in the notebook?",
+    "options": [
+      "Fit the model again",
+      "Generate target estimates for test features",
+      "Split the dataset",
+      "Calculate feature means"
+    ],
+    "answer": 1,
+    "explanation": "predict applies the fitted model to X_test to produce estimated targets."
+  },
+  {
+    "id": 1011,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which outcome structure calls for binary logistic regression?",
+    "options": [
+      "Exactly two possible classes",
+      "Three unordered classes",
+      "Four ordered levels",
+      "A continuous target"
+    ],
+    "answer": 0,
+    "explanation": "The notes define binary logistic regression as having dichotomous outcomes such as yes/no or 0/1."
+  },
+  {
+    "id": 1012,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which function maps any real-valued input to a value between 0 and 1?",
+    "options": [
+      "Softmax only",
+      "Sigmoid",
+      "R-squared",
+      "Gaussian density only"
+    ],
+    "answer": 1,
+    "explanation": "The logistic function is the sigmoid, an S-shaped mapping into the interval between 0 and 1."
+  },
+  {
+    "id": 1013,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "According to the plotted threshold rule in the materials, a predicted value greater than 0.5 is assigned to which class?",
+    "options": [
+      "-1",
+      "0",
+      "1",
+      "The mean class"
+    ],
+    "answer": 2,
+    "explanation": "The notes and notebook comments use values above 0.5 for class 1 and otherwise class 0."
+  },
+  {
+    "id": 1014,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which import correctly provides train_test_split?",
+    "options": [
+      "from sklearn.model_processor import train_test_split",
+      "from sklearn.model_selection import train_test_split",
+      "from sklearn.preprocessing import train_test_split",
+      "from sklearn.linear_model import train_test_split"
+    ],
+    "answer": 1,
+    "explanation": "train_test_split comes from sklearn.model_selection; sklearn.model_processor is not the module used."
+  },
+  {
+    "id": 1015,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "In the insurance example, what is the single predictor before scaling?",
+    "options": [
+      "bought_insurance",
+      "age",
+      "threshold",
+      "insurance_data"
+    ],
+    "answer": 1,
+    "explanation": "The notebook assigns X = df[['age']]."
+  },
+  {
+    "id": 1016,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "What is the target in the insurance example?",
+    "options": [
+      "age",
+      "scaled_age",
+      "bought_insurance",
+      "x_value"
+    ],
+    "answer": 2,
+    "explanation": "The notebook assigns y = df.bought_insurance."
+  },
+  {
+    "id": 1017,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which method trains the logistic-regression model?",
+    "options": [
+      "log_reg.transform(X_train)",
+      "log_reg.fit(X_train, y_train)",
+      "log_reg.score(X_train, y_train)",
+      "log_reg.predict(X_train)"
+    ],
+    "answer": 1,
+    "explanation": "fit trains the model using training features and labels."
+  },
+  {
+    "id": 1018,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "What does log_reg.score(X_test, y_test) measure for this classifier?",
+    "options": [
+      "Classification accuracy on the test set",
+      "The number of input features",
+      "Only recall",
+      "The fitted intercept"
+    ],
+    "answer": 0,
+    "explanation": "For LogisticRegression, score returns mean classification accuracy."
+  },
+  {
+    "id": 1019,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Why is x_new converted back to a DataFrame after scaling in the insurance notebook?",
+    "options": [
+      "To add another observation",
+      "To avoid a warning about invalid feature names",
+      "To retrain StandardScaler",
+      "To change the class threshold"
+    ],
+    "answer": 1,
+    "explanation": "The notebook comment explicitly says the conversion avoids the warning that X lacks valid feature names."
+  },
+  {
+    "id": 1020,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which dataset loader is used in the breast-cancer logistic-regression notebooks?",
+    "options": [
+      "load_iris",
+      "load_diabetes",
+      "load_breast_cancer",
+      "load_wine"
+    ],
+    "answer": 2,
+    "explanation": "Both notebooks import and call load_breast_cancer()."
+  },
+  {
+    "id": 1021,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "What is the test size in the breast-cancer train/test split?",
+    "options": [
+      "0.2",
+      "0.25",
+      "0.3",
+      "0.4"
+    ],
+    "answer": 2,
+    "explanation": "The notebooks use test_size=0.3."
+  },
+  {
+    "id": 1022,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which statement best describes multinomial logistic regression?",
+    "options": [
+      "It predicts a continuous value",
+      "It handles more than two discrete outcome classes",
+      "It requires binary features",
+      "It only handles ordered classes"
+    ],
+    "answer": 1,
+    "explanation": "The notes define it for categorical dependent variables with more than two outcomes."
+  },
+  {
+    "id": 1023,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which case is ordinal rather than multinomial?",
+    "options": [
+      "Transport mode: car, train, bus, bike",
+      "Pet food: wet, dry, junk",
+      "Performance: poor, average, good",
+      "Flower species: setosa, versicolor, virginica"
+    ],
+    "answer": 2,
+    "explanation": "Poor, average, and good have a natural order, so they are ordinal."
+  },
+  {
+    "id": 1024,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multiple-choice",
+    "title": "Which class-probability mechanism is described for ordinal logistic regression?",
+    "options": [
+      "Independent Gaussian densities",
+      "Cumulative logistic functions with thresholds",
+      "A single unbounded linear line",
+      "Word-count likelihoods"
+    ],
+    "answer": 1,
+    "explanation": "The softmax notes describe cumulative logits based on sigmoid functions and cut points."
+  },
+  {
+    "id": 1025,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "What does softmax convert into class probabilities?",
+    "options": [
+      "Feature names",
+      "Logits or scores",
+      "Confusion matrices",
+      "Class labels"
+    ],
+    "answer": 1,
+    "explanation": "Softmax converts the model's class scores, also called logits, into probabilities."
+  },
+  {
+    "id": 1026,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "For scores z = [2.5, 1.2, 0.3], which class is predicted in the notes?",
+    "options": [
+      "Setosa",
+      "Versicolor",
+      "Virginica",
+      "A tie is reported"
+    ],
+    "answer": 0,
+    "explanation": "The shown softmax probabilities are approximately [0.723, 0.197, 0.080], so Setosa has the maximum."
+  },
+  {
+    "id": 1027,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "Which operation selects the predicted class from softmax probabilities?",
+    "options": [
+      "argmin",
+      "mean",
+      "argmax",
+      "variance"
+    ],
+    "answer": 2,
+    "explanation": "The predicted class is the one at the maximum probability, selected by argmax."
+  },
+  {
+    "id": 1028,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "The probabilities produced by softmax across all classes sum to what value?",
+    "options": [
+      "0",
+      "0.5",
+      "1",
+      "The number of classes"
+    ],
+    "answer": 2,
+    "explanation": "Softmax normalizes exponentiated logits so the class probabilities sum to 1."
+  },
+  {
+    "id": 1029,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "In the ordinal example, how is P(Y=3) obtained?",
+    "options": [
+      "P(Y<=3) + P(Y<=2)",
+      "P(Y<=3) - P(Y<=2)",
+      "1 - P(Y<=3)",
+      "P(Y<=2) - P(Y<=1)"
+    ],
+    "answer": 1,
+    "explanation": "An individual middle-class probability is the difference between adjacent cumulative probabilities."
+  },
+  {
+    "id": 1030,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "If probabilities are [0.10, 0.40, 0.40, 0.10] and the implementation returns the first maximum, what is predicted?",
+    "options": [
+      "Low",
+      "Medium",
+      "High",
+      "Very High"
+    ],
+    "answer": 1,
+    "explanation": "The first maximum occurs at Medium."
+  },
+  {
+    "id": 1031,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multiple-choice",
+    "title": "Why can a displayed tie disappear when full precision is considered?",
+    "options": [
+      "Probabilities are always integers",
+      "Rounded values may hide a small difference",
+      "Softmax removes all ties",
+      "Ordinal classes cannot tie"
+    ],
+    "answer": 1,
+    "explanation": "The notes show values that round equally even though one is slightly larger at full precision."
+  },
+  {
+    "id": 1032,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Why is Naive Bayes described as 'naive'?",
+    "options": [
+      "It ignores the target",
+      "It assumes conditional independence among input features",
+      "It never uses probabilities",
+      "It requires no training data"
+    ],
+    "answer": 1,
+    "explanation": "Its simplifying assumption is conditional independence of features given the class."
+  },
+  {
+    "id": 1033,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which Naive Bayes variant is suited to continuous features assumed normally distributed?",
+    "options": [
+      "BernoulliNB",
+      "CategoricalNB",
+      "MultinomialNB",
+      "GaussianNB"
+    ],
+    "answer": 3,
+    "explanation": "Gaussian Naive Bayes assumes continuous feature values follow a Gaussian distribution within each class."
+  },
+  {
+    "id": 1034,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which variant is especially appropriate when word counts matter?",
+    "options": [
+      "Multinomial Naive Bayes",
+      "Gaussian Naive Bayes",
+      "Ordinal regression",
+      "Categorical Naive Bayes"
+    ],
+    "answer": 0,
+    "explanation": "The notes identify Multinomial Naive Bayes for discrete data such as text word counts."
+  },
+  {
+    "id": 1035,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which variant is designed for binary or Boolean features?",
+    "options": [
+      "Gaussian Naive Bayes",
+      "Bernoulli Naive Bayes",
+      "Categorical Naive Bayes",
+      "Linear regression"
+    ],
+    "answer": 1,
+    "explanation": "Bernoulli Naive Bayes models binary features such as word presence or absence."
+  },
+  {
+    "id": 1036,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which variant is used in the fruit example with Color and Size?",
+    "options": [
+      "GaussianNB",
+      "BernoulliNB",
+      "CategoricalNB",
+      "MultinomialNB"
+    ],
+    "answer": 2,
+    "explanation": "The fruit notebook initializes CategoricalNB for encoded categorical predictors."
+  },
+  {
+    "id": 1037,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "What does LabelEncoder do in the categorical fruit notebook?",
+    "options": [
+      "Standardizes values around zero",
+      "Converts categorical labels into numeric codes",
+      "Splits training and testing rows",
+      "Computes class probabilities"
+    ],
+    "answer": 1,
+    "explanation": "LabelEncoder transforms Color, Size, and Fruit categories into numeric labels."
+  },
+  {
+    "id": 1038,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which two features form X in the categorical fruit example?",
+    "options": [
+      "Color and Fruit",
+      "Size and Fruit",
+      "Color and Size",
+      "Fruit only"
+    ],
+    "answer": 2,
+    "explanation": "X is df[['Color', 'Size']], while Fruit is the target."
+  },
+  {
+    "id": 1039,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which fitted GaussianNB attribute contains per-class feature means?",
+    "options": [
+      "gnb.var_",
+      "gnb.theta_",
+      "gnb.classes_only_",
+      "gnb.coef_"
+    ],
+    "answer": 1,
+    "explanation": "The diabetes notebook assigns means = gnb.theta_."
+  },
+  {
+    "id": 1040,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which fitted GaussianNB attribute contains per-class feature variances?",
+    "options": [
+      "gnb.var_",
+      "gnb.theta_",
+      "gnb.scale_",
+      "gnb.sigma"
+    ],
+    "answer": 0,
+    "explanation": "The diabetes notebook assigns variances = gnb.var_."
+  },
+  {
+    "id": 1041,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "In the golf example, which class is predicted for Rainy, Hot, High humidity, and Wind=False?",
+    "options": [
+      "YES",
+      "NO",
+      "A tie",
+      "Cannot be compared"
+    ],
+    "answer": 1,
+    "explanation": "The notes calculate 0.60 for NO versus 0.22 for YES after normalization."
+  },
+  {
+    "id": 1042,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Why can the evidence denominator be ignored when choosing the most probable Naive Bayes class?",
+    "options": [
+      "It is always zero",
+      "It is the same for every class being compared",
+      "It equals the prior",
+      "It only applies to GaussianNB"
+    ],
+    "answer": 1,
+    "explanation": "For a fixed observation, the evidence does not depend on the candidate class, so it does not change the argmax."
+  },
+  {
+    "id": 1043,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multiple-choice",
+    "title": "Which function creates the frequency cross-tabulation in the categorical notebook?",
+    "options": [
+      "pd.concat",
+      "pd.crosstab",
+      "pd.read_csv",
+      "pd.DataFrame.predict"
+    ],
+    "answer": 1,
+    "explanation": "The code uses pd.crosstab(X[feature], y, ...)."
+  },
+  {
+    "id": 1044,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multi-answer",
+    "title": "Which two metrics are imported in the multiple linear-regression example? (Choose 2)",
+    "options": [
+      "r2_score",
+      "mean_squared_error",
+      "accuracy_score",
+      "recall_score"
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "selectCount": 2,
+    "explanation": "The example imports r2_score and mean_squared_error from sklearn.metrics."
+  },
+  {
+    "id": 1045,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "multi-answer",
+    "title": "Which three columns are predictors in the multiple linear-regression example? (Choose 3)",
+    "options": [
+      "sepal_length",
+      "sepal_width",
+      "petal_length",
+      "petal_width",
+      "species"
+    ],
+    "answers": [
+      1,
+      2,
+      3
+    ],
+    "selectCount": 3,
+    "explanation": "The target is sepal_length; the three listed measurements form X."
+  },
+  {
+    "id": 1046,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multi-answer",
+    "title": "Which four examples in the notes have binary outcomes? (Choose 4)",
+    "options": [
+      "Loan offer: yes/no",
+      "Cancer risk: high/low",
+      "Football win: yes/no",
+      "Spam/not spam",
+      "Shirt size: XS/S/M/L/XL",
+      "Transport type in 2040"
+    ],
+    "answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "selectCount": 4,
+    "explanation": "The first four each have two possible classes; shirt size is ordinal and transport type is multinomial."
+  },
+  {
+    "id": 1047,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "multi-answer",
+    "title": "Which two actions are performed by StandardScaler in the insurance workflow? (Choose 2)",
+    "options": [
+      "fit_transform is applied to the age training data",
+      "transform is applied to new age data",
+      "It predicts bought_insurance directly",
+      "It changes the threshold to 1.0"
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "selectCount": 2,
+    "explanation": "The scaler is fit and applied to df[['age']], then reused with transform for new observations."
+  },
+  {
+    "id": 1048,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multi-answer",
+    "title": "Which two statements correctly compare binary and multinomial logistic regression? (Choose 2)",
+    "options": [
+      "Binary logistic regression uses sigmoid",
+      "Multinomial logistic regression uses softmax",
+      "Binary logistic regression requires at least three classes",
+      "Multinomial logistic regression predicts only ordered classes"
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "selectCount": 2,
+    "explanation": "The notes pair binary classification with sigmoid and three-or-more-class multinomial classification with softmax."
+  },
+  {
+    "id": 1049,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "multi-answer",
+    "title": "Which three steps appear in the softmax example? (Choose 3)",
+    "options": [
+      "Exponentiate each score",
+      "Sum the exponentials",
+      "Divide each exponential by the sum",
+      "Subtract the class mean from every label",
+      "Discard the largest score"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "selectCount": 3,
+    "explanation": "Softmax exponentiates logits, sums them, and normalizes each exponential by that sum."
+  },
+  {
+    "id": 1050,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multi-answer",
+    "title": "Which three advantages of Naive Bayes are listed in the notes? (Choose 3)",
+    "options": [
+      "Easy and fast to implement",
+      "Needs less training data",
+      "Not sensitive to irrelevant features",
+      "Never makes classification errors",
+      "Requires dependent features"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "selectCount": 3,
+    "explanation": "The notes list speed/ease, lower training-data needs, and low sensitivity to irrelevant features."
+  },
+  {
+    "id": 1051,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multi-answer",
+    "title": "Which four are listed applications of Naive Bayes? (Choose 4)",
+    "options": [
+      "Spam filtration",
+      "Sentiment analysis",
+      "Classifying articles",
+      "Real-time predictions",
+      "Drawing regression lines",
+      "Sorting DataFrame columns"
+    ],
+    "answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "selectCount": 4,
+    "explanation": "All four appear in the applications list; the remaining choices are unrelated operations."
+  },
+  {
+    "id": 1052,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multi-answer",
+    "title": "Which three steps describe the stated Naive Bayes workflow? (Choose 3)",
+    "options": [
+      "Convert the dataset into frequency tables",
+      "Generate a likelihood table",
+      "Use Bayes theorem for posterior probability",
+      "Fit a least-squares line",
+      "Apply softmax to every binary feature"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "selectCount": 3,
+    "explanation": "The notes give these three steps in order."
+  },
+  {
+    "id": 1053,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "multi-answer",
+    "title": "Which two imports are used for model evaluation in GaussianNB-Code2? (Choose 2)",
+    "options": [
+      "accuracy_score",
+      "recall_score",
+      "r2_score",
+      "mean_squared_error"
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "selectCount": 2,
+    "explanation": "The notebook imports recall_score and accuracy_score from sklearn.metrics, although it calculates accuracy in the shown cell."
+  },
+  {
+    "id": 1054,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "fill-blank",
+    "title": "The function used to split features and targets into training and testing subsets is _____.",
+    "answer": "train_test_split",
+    "caseSensitive": false,
+    "explanation": "The notebooks import train_test_split from sklearn.model_selection."
+  },
+  {
+    "id": 1055,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "fill-blank",
+    "title": "In the first Iris example, the best-fit line is plotted in _____ while the observations are blue.",
+    "answer": "red",
+    "caseSensitive": false,
+    "explanation": "The plot call uses color='red' for the prediction line."
+  },
+  {
+    "id": 1056,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "fill-blank",
+    "title": "True or False: In reshape(-1, 1), the value 1 means the resulting array has one column. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "The notebook comment explicitly states that 1 means one column."
+  },
+  {
+    "id": 1057,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "The S-shaped function used by binary logistic regression is the _____ function.",
+    "answer": "sigmoid",
+    "caseSensitive": false,
+    "explanation": "The notes identify the logistic function as the sigmoid function."
+  },
+  {
+    "id": 1058,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "A dependent variable with ordered categories is modeled by _____ logistic regression.",
+    "answer": "ordinal",
+    "caseSensitive": false,
+    "explanation": "Ordinal logistic regression is for outcomes with a natural ordering."
+  },
+  {
+    "id": 1059,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "True or False: sklearn.model_processor is the module used to import train_test_split. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "The notebooks import train_test_split from sklearn.model_selection."
+  },
+  {
+    "id": 1060,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "True or False: LogisticRegression.predict() is used to fit the model. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "fit trains the model; predict generates labels from a fitted model."
+  },
+  {
+    "id": 1061,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "fill-blank",
+    "title": "In the insurance notebook, the default classification threshold stated in the comment is _____.",
+    "answer": "0.5",
+    "caseSensitive": false,
+    "explanation": "The LogisticRegression initialization is annotated with default threshold value = 0.5."
+  },
+  {
+    "id": 1062,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "fill-blank",
+    "title": "The unnormalized class scores supplied to softmax are called _____.",
+    "answer": "logits",
+    "caseSensitive": false,
+    "explanation": "The notes call z values logits or scores."
+  },
+  {
+    "id": 1063,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "fill-blank",
+    "title": "The operation that returns the index of the largest class probability is _____.",
+    "answer": "argmax",
+    "caseSensitive": false,
+    "explanation": "The notes choose the prediction using argmax."
+  },
+  {
+    "id": 1064,
+    "subject": "softmax",
+    "label": "Softmax",
+    "type": "fill-blank",
+    "title": "True or False: Ordinal logistic regression treats Poor, Fair, Good, and Excellent as unordered labels. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "Their natural order is the defining feature of the ordinal setting."
+  },
+  {
+    "id": 1065,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The probability P(y) is also called the _____ probability.",
+    "answer": "class",
+    "caseSensitive": false,
+    "explanation": "The notation section states that P(y) is the class probability."
+  },
+  {
+    "id": 1066,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The probability P(x_i | y) is called _____ probability.",
+    "answer": "conditional",
+    "caseSensitive": false,
+    "explanation": "The notation section labels P(x_i | y) as conditional probability."
+  },
+  {
+    "id": 1067,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: Gaussian Naive Bayes is intended for continuous data under a normal-distribution assumption. _____",
+    "answer": "True",
+    "caseSensitive": false,
+    "explanation": "The notes state both the continuous-data use and Gaussian-distribution assumption."
+  },
+  {
+    "id": 1068,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "True or False: Bernoulli Naive Bayes is designed primarily for continuous normally distributed features. _____",
+    "answer": "False",
+    "caseSensitive": false,
+    "explanation": "Bernoulli Naive Bayes is designed for binary or Boolean features."
+  },
+  {
+    "id": 1069,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "fill-blank",
+    "title": "The final Naive Bayes prediction is the class with the _____ posterior probability.",
+    "answer": "maximum",
+    "caseSensitive": false,
+    "explanation": "The notes state that the class with the maximum posterior value is selected."
+  },
+  {
+    "id": 1070,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "code-fill",
+    "title": "Complete the exact scikit-learn imports used in the multiple linear-regression example.",
+    "explanation": "Model splitting, linear regression, and regression metrics come from model_selection, linear_model, and metrics respectively.",
+    "code": [
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "model_selection",
+          "aria": "dataset splitting module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "dataset splitting function"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "linear_model",
+          "aria": "linear models module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "LinearRegression",
+          "aria": "regression model class"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "metrics",
+          "aria": "evaluation module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "r2_score",
+          "aria": "R squared metric"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "blank": "mean_squared_error",
+          "aria": "squared error metric"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1071,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "code-fill",
+    "title": "Complete the exact library imports used to load and plot the Iris data.",
+    "explanation": "The notebook uses seaborn for the built-in Iris dataset and matplotlib.pyplot for plotting.",
+    "code": [
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "seaborn",
+          "aria": "dataset visualization library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "sns",
+          "aria": "seaborn alias"
+        }
+      ],
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "matplotlib.pyplot",
+          "aria": "plotting module"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "plt",
+          "aria": "plotting alias"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1072,
+    "subject": "linear-regression",
+    "label": "Linear Regression",
+    "type": "code-fill",
+    "title": "Complete the model-training and prediction methods from the exact linear-regression workflow.",
+    "explanation": "fit learns from the training data, while predict applies the trained model to unseen feature rows.",
+    "code": [
+      [
+        {
+          "text": "# Create the Model"
+        }
+      ],
+      [
+        {
+          "text": "lr = "
+        },
+        {
+          "blank": "LinearRegression()",
+          "aria": "linear regression constructor"
+        }
+      ],
+      [],
+      [
+        {
+          "text": "# Train the Model"
+        }
+      ],
+      [
+        {
+          "text": "lr."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [],
+      [
+        {
+          "text": "# Prediction"
+        }
+      ],
+      [
+        {
+          "text": "y_pred = lr."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1073,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact general-purpose imports from the breast-cancer logistic-regression notebook.",
+    "explanation": "The notebook aliases NumPy, pandas, matplotlib.pyplot, and sklearn as np, pd, plt, and sk.",
+    "code": [
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "numpy",
+          "aria": "numerical library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "np",
+          "aria": "NumPy alias"
+        }
+      ],
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "pandas",
+          "aria": "dataframe library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "pd",
+          "aria": "pandas alias"
+        }
+      ],
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "matplotlib.pyplot",
+          "aria": "plotting module"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "plt",
+          "aria": "plotting alias"
+        }
+      ],
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "sklearn",
+          "aria": "machine learning library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "sk",
+          "aria": "scikit-learn alias"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1074,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact splitting and logistic-model imports.",
+    "explanation": "train_test_split is in model_selection, while LogisticRegression is in linear_model.",
+    "code": [
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "model_selection",
+          "aria": "dataset splitting module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "dataset splitting function"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "linear_model",
+          "aria": "linear models module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "LogisticRegression",
+          "aria": "logistic model class"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1075,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact scaling workflow for the age column and a new age value.",
+    "explanation": "fit_transform learns scaling parameters and transforms the original age column; transform reuses those learned parameters for new data.",
+    "code": [
+      [
+        {
+          "text": "from sklearn.preprocessing import "
+        },
+        {
+          "blank": "StandardScaler",
+          "aria": "standardization class"
+        }
+      ],
+      [
+        {
+          "text": "scaler = "
+        },
+        {
+          "blank": "StandardScaler()",
+          "aria": "standardization constructor"
+        }
+      ],
+      [
+        {
+          "text": "scaled_age = scaler."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit and scale method"
+        },
+        {
+          "text": "(df[['age']])"
+        }
+      ],
+      [
+        {
+          "text": "df['age'] = scaled_age"
+        }
+      ],
+      [
+        {
+          "text": "x_new = scaler."
+        },
+        {
+          "blank": "transform",
+          "aria": "scale using learned parameters"
+        },
+        {
+          "text": "(x_new)           #x_new becomes array"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1076,
+    "subject": "logistic-regression",
+    "label": "Logistic Regression",
+    "type": "code-fill",
+    "title": "Complete the exact classifier operations for training, prediction, and evaluation.",
+    "explanation": "fit trains the classifier, predict produces labels, and score evaluates mean classification accuracy.",
+    "code": [
+      [
+        {
+          "text": "log_reg = "
+        },
+        {
+          "blank": "LogisticRegression()",
+          "aria": "logistic regression constructor"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)            #X_test is a dataframe"
+        }
+      ],
+      [
+        {
+          "text": "log_reg."
+        },
+        {
+          "blank": "score",
+          "aria": "evaluation method"
+        },
+        {
+          "text": "(X_test,y_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1077,
+    "subject": "logistic-regression",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact imports used in the diabetes Gaussian Naive Bayes notebook.",
+    "explanation": "The notebook imports data tools, train_test_split, GaussianNB, and accuracy_score from their corresponding packages.",
+    "code": [
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "pandas",
+          "aria": "dataframe library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "pd",
+          "aria": "pandas alias"
+        }
+      ],
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "numpy",
+          "aria": "numerical library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "np",
+          "aria": "NumPy alias"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "model_selection",
+          "aria": "dataset splitting module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "train_test_split",
+          "aria": "dataset splitting function"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "naive_bayes",
+          "aria": "Naive Bayes module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "GaussianNB",
+          "aria": "Gaussian classifier class"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "metrics",
+          "aria": "evaluation module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "accuracy_score",
+          "aria": "accuracy function"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1078,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact training-versus-testing scaling methods in GaussianNB-Code2.",
+    "explanation": "The scaler is fitted only on x_train through fit_transform; x_test is scaled with transform using the training parameters.",
+    "code": [
+      [
+        {
+          "text": "# Feature Scaling  "
+        }
+      ],
+      [
+        {
+          "text": "sc = "
+        },
+        {
+          "blank": "StandardScaler()",
+          "aria": "standardization constructor"
+        },
+        {
+          "text": "  "
+        }
+      ],
+      [
+        {
+          "text": "x_train = sc."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "fit and scale training data"
+        },
+        {
+          "text": "(x_train)  "
+        }
+      ],
+      [
+        {
+          "text": "x_test = sc."
+        },
+        {
+          "blank": "transform",
+          "aria": "scale test data using learned parameters"
+        },
+        {
+          "text": "(x_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1079,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact Gaussian Naive Bayes model operations.",
+    "explanation": "GaussianNB constructs the classifier, fit trains it, and predict produces labels for the test set.",
+    "code": [
+      [
+        {
+          "text": "gnb = "
+        },
+        {
+          "blank": "GaussianNB()",
+          "aria": "Gaussian Naive Bayes constructor"
+        }
+      ],
+      [
+        {
+          "text": "gnb."
+        },
+        {
+          "blank": "fit",
+          "aria": "training method"
+        },
+        {
+          "text": "(X_train, y_train)"
+        }
+      ],
+      [
+        {
+          "text": "y_pred = gnb."
+        },
+        {
+          "blank": "predict",
+          "aria": "prediction method"
+        },
+        {
+          "text": "(X_test)"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1080,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact imports used by the categorical fruit classifier.",
+    "explanation": "The fruit notebook uses pandas, CategoricalNB, and LabelEncoder.",
+    "code": [
+      [
+        {
+          "text": "import "
+        },
+        {
+          "blank": "pandas",
+          "aria": "dataframe library"
+        },
+        {
+          "text": " as "
+        },
+        {
+          "blank": "pd",
+          "aria": "pandas alias"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "naive_bayes",
+          "aria": "Naive Bayes module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "CategoricalNB",
+          "aria": "categorical classifier class"
+        }
+      ],
+      [
+        {
+          "text": "from sklearn."
+        },
+        {
+          "blank": "preprocessing",
+          "aria": "preprocessing module"
+        },
+        {
+          "text": " import "
+        },
+        {
+          "blank": "LabelEncoder",
+          "aria": "categorical encoder class"
+        }
+      ]
+    ]
+  },
+  {
+    "id": 1081,
+    "subject": "naive-bayes",
+    "label": "Naive Bayes",
+    "type": "code-fill",
+    "title": "Complete the exact encoder methods for training categories and new categories.",
+    "explanation": "fit_transform learns each category mapping while encoding the dataset; transform applies those existing mappings to new values.",
+    "code": [
+      [
+        {
+          "text": "df['Color'] = le_color."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Color categories"
+        },
+        {
+          "text": "(df['Color'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Size'] = le_size."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Size categories"
+        },
+        {
+          "text": "(df['Size'])"
+        }
+      ],
+      [
+        {
+          "text": "df['Fruit'] = le_fruit."
+        },
+        {
+          "blank": "fit_transform",
+          "aria": "learn and encode Fruit categories"
+        },
+        {
+          "text": "(df['Fruit'])"
+        }
+      ],
+      [
+        {
+          "text": "'Color': le_color."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Color with learned mapping"
+        },
+        {
+          "text": "(['Red']),"
+        }
+      ],
+      [
+        {
+          "text": "'Size': le_size."
+        },
+        {
+          "blank": "transform",
+          "aria": "encode new Size with learned mapping"
+        },
+        {
+          "text": "(['Large'])"
+        }
+      ]
+    ]
+  }
+]
