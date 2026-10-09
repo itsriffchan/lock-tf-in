@@ -126,7 +126,7 @@ If asked to implement upcoming question types, support:
 1. `multi-answer`: Multiple checkboxes (`answers: [0, 2, 3]`, `selectCount: 3`).
 2. `fill-blank`: Single text input (`answer: "while"`, `caseSensitive: false`).
 
-In all CS0075 question banks listed in `question-banks/manifest.json`, use the single subject ID `cs0075-code-snippets`, displayed as “CS0075 Machine Learning Algorithms.” Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review. IDs must be unique across the combined banks.
+In `CS0075-Code-Snippets-and-Fill-Blanks-Question-Bank.json`, use the single subject ID `cs0075-code-snippets`, displayed as “CS0075 Machine Learning Algorithms.” Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review.
 
 ---
 

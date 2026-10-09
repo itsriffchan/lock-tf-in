@@ -61,8 +61,6 @@ lock-tf-in/
 ├── question-banks/         # Modular question datasets categorized by subject
 │   ├── manifest.json       # List of bank JSON filenames loaded by the app
 │   ├── template.json       # Reference schema for modular question banks
-│   ├── CS0075-Supervised-Learning-to-Naive-Bayes-Question-Bank.json
-│   ├── CS0075-Regression-Naive-Bayes-Question-Bank.json
 │   └── CS0075-Code-Snippets-and-Fill-Blanks-Question-Bank.json
 ├── design.md               # UI/UX architecture and design system documentation
 ├── agents.md               # AI agent operations guide, codebase conventions & rules
