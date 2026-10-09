@@ -162,6 +162,7 @@ body.dark { color-scheme: dark; }
 @media (max-width: 680px) { .results-actions .text-button { width: 100%; margin-left: 0; text-align: left; }.results-actions .primary-button, .results-actions .secondary-button { flex: 1; } }
 
 /* Multi-answer & Fill-in-the-blank question styles */
+.dashboard-lower { grid-template-columns: minmax(0, 1fr); }
 .subject-card-icon.green { background: #edf7f0; color: var(--green); }
 .dark .subject-card-icon.green { background: #1f3b2c; color: #a5e6bf; }
 .subject-dot.green { background: var(--green); }

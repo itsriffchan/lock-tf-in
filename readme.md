@@ -10,19 +10,15 @@
 
 ## 📖 Overview
 
-**lock tf in — Reviewer** is a responsive, zero-build study application crafted for efficient exam preparation. It combines an editorial dashboard, topic-based quizzes, interactive code-completion challenges, and concise study cheatsheets into a distraction-free environment.
+**lock tf in — Reviewer** is a responsive, zero-build study application crafted for efficient exam preparation. It combines an editorial dashboard, CS0075 topic-based quizzes, interactive code-completion challenges, and a matching answer key into a distraction-free environment.
 
-Students can practice on individual subjects or mixed sessions, toggle between immediate feedback and deferred test modes, review detailed mistake breakdowns, and drill specifically on incorrect answers until mastered.
+Students can practice CS0075 questions in mixed sessions, toggle between immediate feedback and deferred test modes, review detailed mistake breakdowns, and drill specifically on incorrect answers until mastered.
 
 ---
 
 ## ✨ Features
 
-- **🎯 Multi-Subject Review**:
-  - **Programming Basics**: Variables, control flow, functions, and data structures.
-  - **Web Development**: Semantic HTML, CSS layout/styling, and responsive design.
-  - **Design Principles**: Visual hierarchy, proximity, layout grouping, and contrast.
-  - **CS0075 Machine Learning Algorithms**: Code snippets and concepts from linear regression, logistic regression, Naive Bayes, imports, data preprocessing, KNN, and regularization.
+- **🎯 CS0075 Review**: Code snippets and concepts from linear regression, logistic regression, Naive Bayes, imports, data preprocessing, KNN, and regularization.
 - **⚡ Dual Evaluation Modes**:
   - **Right Away (Immediate)**: Instant feedback and explanations after each answer.
   - **At the End (Exam Simulation)**: Answers are stored silently; complete score and question-by-question breakdown are presented at the end.
@@ -57,7 +53,7 @@ lock-tf-in/
 ├── styles.css              # Custom CSS design system, typography, dark mode & responsiveness
 ├── script.js               # Application logic, quiz engine, state machine, and dynamic rendering
 ├── template.json           # Reference schema template for defining new question types
-├── questions.json          # Master question database (used as fallback or standalone bank)
+├── questions.json          # Legacy standalone bank; the app loads question-banks/manifest.json
 ├── question-banks/         # Modular question datasets categorized by subject
 │   ├── manifest.json       # List of bank JSON filenames loaded by the app
 │   ├── template.json       # Reference schema for modular question banks
@@ -75,7 +71,7 @@ Because **lock tf in** is built with modern vanilla web technologies, there are 
 
 ### Recommended: Run with a Local Web Server
 
-The app loads the JSON banks listed in `question-banks/manifest.json`. To let the browser fetch the manifest and bank files without `file:///` CORS restrictions, run a local static server:
+The app loads the JSON banks listed in `question-banks/manifest.json`. There is no embedded question-bank fallback; the app needs to run over HTTP so the browser can fetch the manifest and bank files without `file:///` CORS restrictions. To run a local static server:
 
 #### Using Node.js:
 ```bash

@@ -79,7 +79,7 @@ stateDiagram-v2
 | `finishSession()` | Computes total, answered, correct, and incorrect question IDs, stores in `state.results`, and invokes `showResultsScreen()`. |
 | `showResultsScreen()` | Renders session summary, filter tabs (`all`, `correct`, `incorrect`), review rows with `renderResultItems()`, and retry buttons. |
 | `renderResultItems(filter)` | Renders filtered question result cards into `#resultsList` with answers vs expected correct solutions. |
-| `loadQuestionBank()` | Loads the JSON filenames in `question-banks/manifest.json`, fetches each bank, and falls back to the in-memory question array if loading fails. |
+| `loadQuestionBank()` | Loads the JSON filenames in `question-banks/manifest.json` and displays loading/error states if a bank cannot be fetched. |
 
 > [!WARNING]
 > **Refactoring Note**: Notice that in [script.js](file:///c:/Users/raisi/Documents/Coding%20Projects/lock-tf-in/script.js), `renderQuizSetup` and `renderResultItems` appear more than once due to historical overrides. When refactoring or making edits to these methods, ensure you modify the active/final implementation in the file.
