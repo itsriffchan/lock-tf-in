@@ -48,6 +48,14 @@ body.dark { --ink: #eef1f7; --muted: #9ea7b6; --line: #313947; --surface: #20273
 .brand-mark svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transform: rotate(7deg); }
 .page-wrap { padding-top: 35px; padding-bottom: 58px; }
 .hero-grid { min-height: 275px; padding: 37px 43px; grid-template-columns: 1fr 300px; }
+.hero-copy { display: flex; align-items: center; }
+.hero-copy h1 { max-width: 600px; margin: 0; }
+.question-disclaimer { overflow: hidden; margin-top: 12px; padding: 10px 0; border-block: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 12px; white-space: nowrap; }
+.question-disclaimer-track { display: flex; width: 200%; align-items: center; animation: disclaimer-scroll 32s linear infinite; }
+.question-disclaimer-copy { display: flex; flex: 0 0 50%; align-items: center; justify-content: space-around; gap: 20px; padding: 0 12px; }
+.question-disclaimer:hover .question-disclaimer-track, .question-disclaimer:focus-within .question-disclaimer-track { animation-play-state: paused; }
+@keyframes disclaimer-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .question-disclaimer-track { animation: none; } }
 .section-heading { margin-top: 34px; margin-bottom: 16px; }
 .quiz-header { margin-bottom: 20px; }
 .quiz-header h1 { font-size: 35px; margin-bottom: 5px; }
