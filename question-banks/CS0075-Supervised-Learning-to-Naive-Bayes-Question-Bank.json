@@ -1,7 +1,7 @@
 [
   {
-    "id": 2001,
-    "subject": "intro-ml",
+    "id": 3001,
+    "subject": "cs0075-code-snippets",
     "label": "Introduction to Machine Learning",
     "type": "multiple-choice",
     "title": "In the module's learning-and-prediction workflow, what does a trained model use to produce predicted data?",
@@ -15,8 +15,8 @@
     "explanation": "The workflow shows new data entering the trained model during the prediction phase to produce predicted data."
   },
   {
-    "id": 2002,
-    "subject": "intro-ml",
+    "id": 3002,
+    "subject": "cs0075-code-snippets",
     "label": "Introduction to Machine Learning",
     "type": "multiple-choice",
     "title": "Which activity is listed as part of preprocessing in the module's machine-learning workflow?",
@@ -30,8 +30,8 @@
     "explanation": "The introductory workflow lists clean data and format data under preprocessing."
   },
   {
-    "id": 2003,
-    "subject": "scalers",
+    "id": 3003,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "multiple-choice",
     "title": "For the scaler example with original values [10, 20, 30, 40, 50], what value is produced for 30 by StandardScaler?",
@@ -45,8 +45,8 @@
     "explanation": "The scaler notes show the transformed values [-1.41, -0.71, 0.00, 0.71, 1.41]."
   },
   {
-    "id": 2004,
-    "subject": "scalers",
+    "id": 3004,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "multiple-choice",
     "title": "Which range is associated with MinMaxScaler in the scaler notes?",
@@ -60,8 +60,8 @@
     "explanation": "The notes state that MinMaxScaler transforms values into the range 0 to 1."
   },
   {
-    "id": 2005,
-    "subject": "linear-regression",
+    "id": 3005,
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which regularization method can make some coefficients exactly zero, causing the model to ignore those features?",
@@ -75,8 +75,8 @@
     "explanation": "The supervised-learning notes describe Lasso as L1 regularization and state that some coefficients can become exactly zero."
   },
   {
-    "id": 2006,
-    "subject": "logistic-regression",
+    "id": 3006,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which outcome structure is used by binary logistic regression?",
@@ -90,8 +90,8 @@
     "explanation": "The logistic-regression notes describe binary outcomes with examples such as success/failure, 0/1, and true/false."
   },
   {
-    "id": 2007,
-    "subject": "logistic-regression",
+    "id": 3007,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "What does the logistic, or sigmoid, function do to a real-valued input?",
@@ -105,8 +105,8 @@
     "explanation": "The notes describe the sigmoid as an S-shaped function that maps any real-valued number to a value between 0 and 1, without reaching either limit."
   },
   {
-    "id": 2008,
-    "subject": "logistic-regression",
+    "id": 3008,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "According to the threshold rule shown in the logistic-regression notes, a predicted value greater than 0.5 is assigned to which class?",
@@ -120,8 +120,8 @@
     "explanation": "The notes state that a predicted value greater than 0.5 is prediction 1; otherwise it is 0."
   },
   {
-    "id": 2009,
-    "subject": "logistic-regression",
+    "id": 3009,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which statement describes multinomial logistic regression in the notes?",
@@ -135,8 +135,8 @@
     "explanation": "The notes define multinomial logistic regression for categorical dependent variables with two or more discrete outcomes, and contrast it with the binary case."
   },
   {
-    "id": 2010,
-    "subject": "logistic-regression",
+    "id": 3010,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which example is ordinal rather than merely multinomial?",
@@ -150,8 +150,8 @@
     "explanation": "Poor, average, and good have a natural order, which is the defining feature of the ordinal setting."
   },
   {
-    "id": 2011,
-    "subject": "softmax",
+    "id": 3011,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "multiple-choice",
     "title": "In multinomial logistic regression, what does softmax convert into class probabilities?",
@@ -165,8 +165,8 @@
     "explanation": "The softmax notes state that softmax converts the model's scores, also called logits, into class probabilities."
   },
   {
-    "id": 2012,
-    "subject": "softmax",
+    "id": 3012,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "multiple-choice",
     "title": "For z = [2.5, 1.2, 0.3] corresponding to Setosa, Versicolor, and Virginica, which class is predicted?",
@@ -180,8 +180,8 @@
     "explanation": "The notes give softmax probabilities of approximately [0.723, 0.197, 0.080], so Setosa has the largest probability."
   },
   {
-    "id": 2013,
-    "subject": "softmax",
+    "id": 3013,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "multiple-choice",
     "title": "What do the class probabilities produced by softmax sum to?",
@@ -195,8 +195,8 @@
     "explanation": "Softmax normalizes the class scores into a probability distribution whose entries sum to 1."
   },
   {
-    "id": 2014,
-    "subject": "softmax",
+    "id": 3014,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "multiple-choice",
     "title": "In the ordinal example, if P(Y<=3)=0.80 and P(Y<=2)=0.40, what is P(Y=3)?",
@@ -210,8 +210,8 @@
     "explanation": "The notes obtain a middle ordinal class by subtraction: P(Y=3)=P(Y<=3)-P(Y<=2)=0.80-0.40=0.40."
   },
   {
-    "id": 2015,
-    "subject": "softmax",
+    "id": 3015,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "multiple-choice",
     "title": "Why can a displayed tie between ordinal-class probabilities disappear when full precision is used?",
@@ -225,8 +225,8 @@
     "explanation": "The notes show values such as 0.3999998 and 0.4000001, which round to the same displayed value even though one is larger."
   },
   {
-    "id": 2016,
-    "subject": "naive-bayes",
+    "id": 3016,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Why is the Naive Bayes assumption called naive?",
@@ -240,8 +240,8 @@
     "explanation": "The Naive Bayes notes call the assumption naive because the input features are treated as conditionally independent."
   },
   {
-    "id": 2017,
-    "subject": "naive-bayes",
+    "id": 3017,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which Naive Bayes variant is described as suitable for continuous features assumed to follow a normal distribution?",
@@ -255,8 +255,8 @@
     "explanation": "The notes describe Gaussian Naive Bayes as suitable for continuous data whose features follow a normal distribution."
   },
   {
-    "id": 2018,
-    "subject": "naive-bayes",
+    "id": 3018,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which Naive Bayes variant is associated with discrete data where word counts matter?",
@@ -270,8 +270,8 @@
     "explanation": "The notes identify Multinomial Naive Bayes as useful for discrete data, especially text classification where word counts matter."
   },
   {
-    "id": 2019,
-    "subject": "naive-bayes",
+    "id": 3019,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which Naive Bayes variant is designed for binary or Boolean features, such as word presence or absence?",
@@ -285,8 +285,8 @@
     "explanation": "Bernoulli Naive Bayes is described as appropriate for binary or Boolean features and for text presence/absence data."
   },
   {
-    "id": 2020,
-    "subject": "naive-bayes",
+    "id": 3020,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which Naive Bayes variant is specifically described for categorical data with discrete, non-numeric values?",
@@ -300,8 +300,8 @@
     "explanation": "The notes describe Categorical Naive Bayes as intended for categorical data with discrete, non-numeric values."
   },
   {
-    "id": 2021,
-    "subject": "naive-bayes",
+    "id": 3021,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "According to the Naive Bayes procedure in the notes, what is the first step?",
@@ -315,8 +315,8 @@
     "explanation": "The notes list converting the dataset into frequency tables as step 1, followed by likelihood tables and posterior calculation."
   },
   {
-    "id": 2022,
-    "subject": "naive-bayes",
+    "id": 3022,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "In the notation used by the Naive Bayes notes, what is P(y)?",
@@ -330,8 +330,8 @@
     "explanation": "The notes explicitly call P(y) the class probability."
   },
   {
-    "id": 2023,
-    "subject": "naive-bayes",
+    "id": 3023,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Why can the evidence denominator be ignored when comparing Naive Bayes classes for one fixed observation?",
@@ -345,8 +345,8 @@
     "explanation": "For a fixed observation, the evidence denominator does not depend on the candidate class, so it does not change which numerator is largest."
   },
   {
-    "id": 2024,
-    "subject": "naive-bayes",
+    "id": 3024,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "In the golf example with Rainy, Hot, High, and False, which class has the larger normalized posterior?",
@@ -360,8 +360,8 @@
     "explanation": "The notes calculate P(Play=YES|X)=0.22 and P(Play=NO|X)=0.60, so the prediction is NO."
   },
   {
-    "id": 2025,
-    "subject": "naive-bayes",
+    "id": 3025,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which is listed as an advantage of the Naive Bayes classifier?",
@@ -375,8 +375,8 @@
     "explanation": "The notes list being easy to implement and fast, needing less training data, and being less sensitive to irrelevant features as advantages."
   },
   {
-    "id": 2051,
-    "subject": "scalers",
+    "id": 3026,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "fill-blank",
     "title": "The mean of values transformed by StandardScaler becomes approximately _____.",
@@ -385,8 +385,8 @@
     "explanation": "The scaler notes state that StandardScaler makes the mean approximately 0."
   },
   {
-    "id": 2052,
-    "subject": "scalers",
+    "id": 3027,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "fill-blank",
     "title": "MinMaxScaler transforms values into a range whose upper bound is _____.",
@@ -395,8 +395,8 @@
     "explanation": "The notes state that MinMaxScaler transforms values into the range 0 to 1."
   },
   {
-    "id": 2053,
-    "subject": "logistic-regression",
+    "id": 3028,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "The S-shaped function used by binary logistic regression is the _____ function.",
@@ -405,8 +405,8 @@
     "explanation": "The logistic-regression notes identify the logistic function as the sigmoid function."
   },
   {
-    "id": 2054,
-    "subject": "logistic-regression",
+    "id": 3029,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "Logistic regression for more than two discrete outcome classes is called _____ logistic regression.",
@@ -415,8 +415,8 @@
     "explanation": "The notes use multinomial logistic regression for categorical outcomes with more than two possible outcomes."
   },
   {
-    "id": 2055,
-    "subject": "softmax",
+    "id": 3030,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "fill-blank",
     "title": "The unnormalized class scores supplied to softmax are called _____.",
@@ -425,8 +425,8 @@
     "explanation": "The softmax notes call the values z=[2.5,1.2,0.3] logits or scores."
   },
   {
-    "id": 2056,
-    "subject": "softmax",
+    "id": 3031,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "fill-blank",
     "title": "The operation used to choose the class with the highest probability is _____.",
@@ -435,8 +435,8 @@
     "explanation": "The notes select the predicted class with argmax of the class probabilities."
   },
   {
-    "id": 2057,
-    "subject": "naive-bayes",
+    "id": 3032,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "Naive Bayes assumes conditional _____ among the input features.",
@@ -445,8 +445,8 @@
     "explanation": "Conditional independence among the input features is the simplifying assumption described in the notes."
   },
   {
-    "id": 2058,
-    "subject": "naive-bayes",
+    "id": 3033,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The probability P(y) is also called the _____ probability.",
@@ -455,8 +455,8 @@
     "explanation": "The notation section of the notes labels P(y) as the class probability."
   },
   {
-    "id": 2059,
-    "subject": "naive-bayes",
+    "id": 3034,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The final Naive Bayes prediction is the class with the _____ posterior probability.",
@@ -465,8 +465,8 @@
     "explanation": "The notes state that the class with the maximum posterior value is the final prediction."
   },
   {
-    "id": 2060,
-    "subject": "naive-bayes",
+    "id": 3035,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The Naive Bayes assumption treats the features as making an _____ contribution to the outcome.",
@@ -475,8 +475,8 @@
     "explanation": "The notes describe the fundamental assumption as each feature making an independent and equal contribution."
   },
   {
-    "id": 2081,
-    "subject": "scalers",
+    "id": 3036,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "fill-blank",
     "title": "True or False: StandardScaler restricts every transformed value to the range 0 to 1. _____",
@@ -485,8 +485,8 @@
     "explanation": "The notes associate the 0-to-1 range with MinMaxScaler; StandardScaler does not restrict values to a fixed range."
   },
   {
-    "id": 2082,
-    "subject": "scalers",
+    "id": 3037,
+    "subject": "cs0075-code-snippets",
     "label": "Feature Scaling",
     "type": "fill-blank",
     "title": "True or False: MinMaxScaler is sensitive to outliers. _____",
@@ -495,8 +495,8 @@
     "explanation": "Sensitivity to outliers is listed as a MinMaxScaler characteristic in the notes."
   },
   {
-    "id": 2083,
-    "subject": "logistic-regression",
+    "id": 3038,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "True or False: Binary logistic regression is used for more than two discrete outcome classes. _____",
@@ -505,8 +505,8 @@
     "explanation": "The notes define binary logistic regression for dichotomous outcomes; more than two outcomes are described under multinomial logistic regression."
   },
   {
-    "id": 2084,
-    "subject": "logistic-regression",
+    "id": 3039,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "True or False: The sigmoid function reaches exactly 0 and exactly 1 for finite inputs. _____",
@@ -515,8 +515,8 @@
     "explanation": "The notes say the sigmoid maps into values between 0 and 1 but never exactly at those limits."
   },
   {
-    "id": 2085,
-    "subject": "softmax",
+    "id": 3040,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "fill-blank",
     "title": "True or False: Multinomial logistic regression uses the softmax function. _____",
@@ -525,8 +525,8 @@
     "explanation": "The softmax notes contrast binary logistic regression using sigmoid with multinomial logistic regression using softmax."
   },
   {
-    "id": 2086,
-    "subject": "softmax",
+    "id": 3041,
+    "subject": "cs0075-code-snippets",
     "label": "Softmax / Ordinal Logistic",
     "type": "fill-blank",
     "title": "True or False: In ordinal logistic regression, the order of the outcome categories matters. _____",
@@ -535,8 +535,8 @@
     "explanation": "The notes distinguish ordinal classes from merely different categories because their order matters."
   },
   {
-    "id": 2087,
-    "subject": "naive-bayes",
+    "id": 3042,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: Naive Bayes assumes conditional independence among the input features. _____",
@@ -545,8 +545,8 @@
     "explanation": "Conditional independence is the basic assumption identified in the Naive Bayes notes."
   },
   {
-    "id": 2088,
-    "subject": "naive-bayes",
+    "id": 3043,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: Gaussian Naive Bayes is the variant described for binary or Boolean features. _____",
@@ -555,8 +555,8 @@
     "explanation": "The notes associate binary or Boolean features with Bernoulli Naive Bayes and continuous normal data with Gaussian Naive Bayes."
   },
   {
-    "id": 2089,
-    "subject": "naive-bayes",
+    "id": 3044,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: For one fixed observation, the Naive Bayes evidence denominator is the same for every candidate class. _____",
@@ -565,8 +565,8 @@
     "explanation": "The notes explain that the denominator does not depend on y, so it is constant while classes are compared."
   },
   {
-    "id": 2090,
-    "subject": "naive-bayes",
+    "id": 3045,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: The final Naive Bayes prediction is the class with the smallest posterior probability. _____",
@@ -575,8 +575,8 @@
     "explanation": "The notes state that the class with the maximum posterior value is selected."
   },
   {
-    "id": 2101,
-    "subject": "logistic-regression",
+    "id": 3046,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact splitting and logistic-model imports from the logistic-regression notebook.",
@@ -617,8 +617,8 @@
     ]
   },
   {
-    "id": 2102,
-    "subject": "logistic-regression",
+    "id": 3047,
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact classifier operations from the logistic-regression notebook.",
@@ -672,8 +672,8 @@
     ]
   },
   {
-    "id": 2103,
-    "subject": "naive-bayes",
+    "id": 3048,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact Gaussian Naive Bayes model operations from the notebook.",
@@ -715,8 +715,8 @@
     ]
   },
   {
-    "id": 2104,
-    "subject": "naive-bayes",
+    "id": 3049,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact imports used by the categorical fruit classifier.",
@@ -773,8 +773,8 @@
     ]
   },
   {
-    "id": 2105,
-    "subject": "naive-bayes",
+    "id": 3050,
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact encoder methods for the categorical fruit example.",

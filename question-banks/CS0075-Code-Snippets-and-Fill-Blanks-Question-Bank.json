@@ -5,7 +5,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Load the Iris dataset, keep the two petal columns, and assign the predictor and target.",
-    "explanation": "load_dataset loads Iris; petal_length becomes X and petal_width becomes y.",
+    "explanation": "Completed code:\n```python\nimport seaborn as sns\niris = sns.load_dataset(\"iris\")\niris = iris[['petal_length', 'petal_width']]\nX = iris[['petal_length']]\ny = iris[['petal_width']]\n```\n\nExplanation: load_dataset loads Iris; petal_length becomes X and petal_width becomes y.",
     "code": [
       [
         {
@@ -55,7 +55,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Create the scatter plot and label both axes using the notebook's exact syntax.",
-    "explanation": "The plotting object calls scatter, xlabel, ylabel, and title.",
+    "explanation": "Completed code:\n```python\nimport matplotlib.pyplot as plt\nplt.scatter(X, y)\nplt.xlabel('Petal Length')\nplt.ylabel('Petal Width')\nplt.title('Scatter Plot of Petal Length vs. Petal Width')\n```\n\nExplanation: The plotting object calls scatter, xlabel, ylabel, and title.",
     "code": [
       [
         {
@@ -118,7 +118,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Split 40% of the Iris data into the test set with reproducible state 23, then train LinearRegression.",
-    "explanation": "test_size specifies the test proportion and random_state makes the split reproducible.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=23)\nfrom sklearn.linear_model import LinearRegression\nlr = LinearRegression()\nlr.fit(X_train, y_train)\n```\n\nExplanation: test_size specifies the test proportion and random_state makes the split reproducible.",
     "code": [
       [
         {
@@ -189,7 +189,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Retrieve the fitted intercept and coefficients, then predict the training values.",
-    "explanation": "Fitted sklearn attributes end in underscores; predict produces the model outputs.",
+    "explanation": "Completed code:\n```python\nc = lr.intercept_\nm = lr.coef_\nY_pred_train = m*X_train + c\nY_pred_train.flatten()\nY_pred_train1 = lr.predict(X_train)\n```\n\nExplanation: Fitted sklearn attributes end in underscores; predict produces the model outputs.",
     "code": [
       [
         {
@@ -246,7 +246,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Plot the training observations and the fitted regression line.",
-    "explanation": "scatter plots the observations, plot draws the prediction line, and show displays the figure.",
+    "explanation": "Completed code:\n```python\nimport matplotlib.pyplot as plt\nplt.scatter(X_train, y_train, color='blue')\nplt.plot(X_train, Y_pred_train1, color='red')\nplt.xlabel('Petal Length')\nplt.ylabel('Petal Width')\nplt.show()\n```\n\nExplanation: scatter plots the observations, plot draws the prediction line, and show displays the figure.",
     "code": [
       [
         {
@@ -321,7 +321,7 @@
     "label": "Linear Regression Code",
     "type": "code-fill",
     "title": "Train the multiple linear-regression model and evaluate its test predictions.",
-    "explanation": "fit trains the model, predict generates y_pred, and the two imported metrics evaluate its errors and fit.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.metrics import r2_score, mean_squared_error\nlr = LinearRegression()\nlr.fit(X_train, y_train)\ny_pred = lr.predict(X_test)\nprint(\"Coefficients:\", lr.coef_)\nprint(\"Intercept:\", lr.intercept_)\nprint(\"Mean Squared Error:\", mean_squared_error(y_test, y_pred))\nprint(\"R^2 Score:\", r2_score(y_test, y_pred))\n```\n\nExplanation: fit trains the model, predict generates y_pred, and the two imported metrics evaluate its errors and fit.",
     "code": [
       [
         {
@@ -428,7 +428,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Load the breast-cancer dataset and create its feature DataFrame.",
-    "explanation": "The dataset loader returns df_cancer; DataFrame uses its data and feature_names.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.datasets import load_breast_cancer\ndf_cancer = load_breast_cancer()\nprint(df_cancer.keys())\ndf=pd.DataFrame(df_cancer.data,columns=df_cancer.feature_names)\ndf.head()\n```\n\nExplanation: The dataset loader returns df_cancer; DataFrame uses its data and feature_names.",
     "code": [
       [
         {
@@ -509,7 +509,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Use 30% test data with reproducible state 1, then create LogisticRegression with a maximum of 100 iterations and train it.",
-    "explanation": "test_size and random_state configure the split; max_iter sets the model's maximum iterations.",
+    "explanation": "Completed code:\n```python\nX = df_cancer.data\ny = df_cancer.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)\nlogistic = LogisticRegression(max_iter=100)\nlogistic.fit(X_train, y_train)\n```\n\nExplanation: test_size and random_state configure the split; max_iter sets the model's maximum iterations.",
     "code": [
       [
         {
@@ -587,7 +587,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Check training and testing accuracy, then generate the predicted labels.",
-    "explanation": "score evaluates accuracy and predict returns the labels for X_test.",
+    "explanation": "Completed code:\n```python\nprint(\"Model Accuracy - Training : {:.2f}\".format(logistic.score(X_train, y_train)))\nprint(\"Model Accuracy - Testing: {:.2f}\".format(logistic.score(X_test, y_test)))\ny_predict = logistic.predict(X_test)\nprint('Predicted Labels for Y:', y_predict)\n```\n\nExplanation: score evaluates accuracy and predict returns the labels for X_test.",
     "code": [
       [
         {
@@ -638,7 +638,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Scale the breast-cancer DataFrame without losing its column names.",
-    "explanation": "fit_transform learns scaling parameters and returns scaled values, which are wrapped in a DataFrame with the original columns.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nscaled_df = pd.DataFrame(scaler.fit_transform(df),columns=df.columns)\nscaled_df\n```\n\nExplanation: fit_transform learns scaling parameters and returns scaled values, which are wrapped in a DataFrame with the original columns.",
     "code": [
       [
         {
@@ -690,7 +690,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Load insurance_data.csv from a generic data folder, use age as X and bought_insurance as y, then make a 30% reproducible test split with state 0.",
-    "explanation": "read_csv loads the file; test_size and random_state configure the requested split.",
+    "explanation": "Completed code:\n```python\ndf = pd.read_csv(\"/path/to/data/insurance_data.csv\")\ndf.head()\nX = df[['age']]\ny = df.bought_insurance\nX_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state=0)\n```\n\nExplanation: read_csv loads the file; test_size and random_state configure the requested split.",
     "code": [
       [
         {
@@ -764,7 +764,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Train the insurance classifier, evaluate it, and predict a new age of 50.",
-    "explanation": "fit trains the model, score evaluates the test set, and predict classifies the new DataFrame row.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.linear_model import LogisticRegression\nlog_reg = LogisticRegression()\nlog_reg.fit(X_train, y_train)\nlog_reg.score(X_test,y_test)\nx_new = pd.DataFrame([[50]], columns=['age'])\nlog_reg.predict(x_new)\n```\n\nExplanation: fit trains the model, score evaluates the test set, and predict classifies the new DataFrame row.",
     "code": [
       [
         {
@@ -847,7 +847,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Scale age correctly: fit on the dataset, then transform a new observation without refitting.",
-    "explanation": "fit_transform is used on df[['age']], whereas transform alone is used on x_new.",
+    "explanation": "Completed code:\n```python\nscaler = StandardScaler()\nscaled_age = scaler.fit_transform(df[['age']])\ndf['age'] = scaled_age\nx_new = pd.DataFrame([[50]], columns=['age'])\nx_new = scaler.transform(x_new)           #x_new becomes array\nprediction = log_reg.predict(x_new)            \n```\n\nExplanation: fit_transform is used on df[['age']], whereas transform alone is used on x_new.",
     "code": [
       [
         {
@@ -912,7 +912,7 @@
     "label": "Logistic Regression Code",
     "type": "code-fill",
     "title": "Train the linear SVM and compute accuracy, precision, and recall.",
-    "explanation": "SVC is fitted, used for prediction, and evaluated through the metrics module.",
+    "explanation": "Completed code:\n```python\nfrom sklearn import svm, metrics\nclassify = svm.SVC(kernel='linear')\nclassify.fit(X_train, y_train)\ny_predict = classify.predict(X_test)\nprint('Model Accuracy:', metrics.accuracy_score(y_test, y_predict).round(4))\nprint('Precision:', metrics.precision_score(y_test, y_predict).round(4))\nprint('Recall:', metrics.recall_score(y_test, y_predict).round(4))\n```\n\nExplanation: SVC is fitted, used for prediction, and evaluated through the metrics module.",
     "code": [
       [
         {
@@ -1006,7 +1006,7 @@
     "label": "Naive Bayes Code",
     "type": "code-fill",
     "title": "Use 30% of the diabetes data for testing with reproducible state 1, then train GaussianNB.",
-    "explanation": "test_size and random_state configure the split; fit trains the GaussianNB model.",
+    "explanation": "Completed code:\n```python\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)\ngnb = GaussianNB()\ngnb.fit(X_train, y_train)\n```\n\nExplanation: test_size and random_state configure the split; fit trains the GaussianNB model.",
     "code": [
       [
         {
@@ -1063,7 +1063,7 @@
     "label": "Naive Bayes Code",
     "type": "code-fill",
     "title": "Retrieve GaussianNB's learned means, variances, and class labels.",
-    "explanation": "The fitted attributes theta_, var_, and classes_ all require trailing underscores.",
+    "explanation": "Completed code:\n```python\nmeans = gnb.theta_\nvariances = gnb.var_\nfor class_idx in range(len(gnb.classes_)):\n```\n\nExplanation: The fitted attributes theta_, var_, and classes_ all require trailing underscores.",
     "code": [
       [
         {
@@ -1103,7 +1103,7 @@
     "label": "Naive Bayes Code",
     "type": "code-fill",
     "title": "Predict the diabetes test labels and calculate accuracy and the confusion matrix.",
-    "explanation": "predict creates y_pred; accuracy_score and confusion_matrix compare it with y_test.",
+    "explanation": "Completed code:\n```python\ny_pred = gnb.predict(X_test)\naccuracy = accuracy_score(y_test, y_pred)\nfrom sklearn.metrics import confusion_matrix  \ncm = confusion_matrix(y_test, y_pred)  \n```\n\nExplanation: predict creates y_pred; accuracy_score and confusion_matrix compare it with y_test.",
     "code": [
       [
         {
@@ -1156,190 +1156,12 @@
     ]
   },
   {
-    "id": 2021,
-    "subject": "cs0075-code-snippets",
-    "label": "Naive Bayes Code",
-    "type": "code-fill",
-    "title": "Build the new diabetes observation as a DataFrame and predict its class.",
-    "explanation": "The DataFrame uses the same eight feature names before gnb.predict is called.",
-    "code": [
-      [
-        {
-          "text": "x_new = pd."
-        },
-        {
-          "blank": "DataFrame",
-          "aria": "DataFrame constructor"
-        },
-        {
-          "text": "(x_new, columns=["
-        },
-        {
-          "blank": "'Pregnancies'",
-          "aria": "first feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'Glucose'",
-          "aria": "second feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'BloodPressure'",
-          "aria": "third feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'SkinThickness'",
-          "aria": "fourth feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'Insulin'",
-          "aria": "fifth feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'BMI'",
-          "aria": "sixth feature name"
-        },
-        {
-          "text": ","
-        }
-      ],
-      [
-        {
-          "text": "                                     "
-        },
-        {
-          "blank": "'DiabetesPedigreeFunction'",
-          "aria": "seventh feature name"
-        },
-        {
-          "text": ","
-        },
-        {
-          "blank": "'Age'",
-          "aria": "eighth feature name"
-        },
-        {
-          "text": "])"
-        }
-      ],
-      [
-        {
-          "text": "prediction = gnb."
-        },
-        {
-          "blank": "predict",
-          "aria": "prediction method"
-        },
-        {
-          "text": "(x_new)"
-        }
-      ]
-    ]
-  },
-  {
-    "id": 2024,
-    "subject": "cs0075-code-snippets",
-    "label": "Naive Bayes Code",
-    "type": "code-fill",
-    "title": "Encode the fruit columns, then separate Color and Size from the Fruit target.",
-    "explanation": "Each encoder learns its own mappings through fit_transform; X contains Color and Size.",
-    "code": [
-      [
-        {
-          "text": "le_color = "
-        },
-        {
-          "blank": "LabelEncoder()",
-          "aria": "Color encoder constructor"
-        }
-      ],
-      [
-        {
-          "text": "le_size = "
-        },
-        {
-          "blank": "LabelEncoder()",
-          "aria": "Size encoder constructor"
-        }
-      ],
-      [
-        {
-          "text": "le_fruit = "
-        },
-        {
-          "blank": "LabelEncoder()",
-          "aria": "Fruit encoder constructor"
-        }
-      ],
-      [
-        {
-          "text": "df['Color'] = le_color."
-        },
-        {
-          "blank": "fit_transform",
-          "aria": "learn-and-encode method"
-        },
-        {
-          "text": "(df['Color'])"
-        }
-      ],
-      [
-        {
-          "text": "df['Size'] = le_size."
-        },
-        {
-          "blank": "fit_transform",
-          "aria": "learn-and-encode method"
-        },
-        {
-          "text": "(df['Size'])"
-        }
-      ],
-      [
-        {
-          "text": "df['Fruit'] = le_fruit."
-        },
-        {
-          "blank": "fit_transform",
-          "aria": "learn-and-encode method"
-        },
-        {
-          "text": "(df['Fruit'])"
-        }
-      ],
-      [
-        {
-          "text": "X = df[['Color', 'Size']]"
-        }
-      ],
-      [
-        {
-          "text": "y = df['Fruit']"
-        }
-      ]
-    ]
-  },
-  {
     "id": 2025,
     "subject": "cs0075-code-snippets",
     "label": "Naive Bayes Code",
     "type": "code-fill",
     "title": "Train CategoricalNB, encode a new Red/Large observation, and decode its prediction.",
-    "explanation": "The trained encoders use transform for new values, while inverse_transform restores the fruit label.",
+    "explanation": "Completed code:\n```python\ncnb = CategoricalNB()\ncnb.fit(X, y)\n    'Color': le_color.transform(['Red']),\n    'Size': le_size.transform(['Large'])\nprediction = cnb.predict(new_data)\npredicted_fruit = le_fruit.inverse_transform(prediction)\n```\n\nExplanation: The trained encoders use transform for new values, while inverse_transform restores the fruit label.",
     "code": [
       [
         {
@@ -1420,7 +1242,7 @@
     "title": "What fitted LinearRegression attribute is used to access the coefficients? _____",
     "answer": "coef_",
     "caseSensitive": true,
-    "explanation": "The exact attribute is coef_ with a trailing underscore."
+    "explanation": "Answer: `coef_`\n\nExplanation: The exact attribute is coef_ with a trailing underscore."
   },
   {
     "id": 2027,
@@ -1430,7 +1252,7 @@
     "title": "What fitted LinearRegression attribute is used to access the intercept? _____",
     "answer": "intercept_",
     "caseSensitive": true,
-    "explanation": "The exact attribute is intercept_ with a trailing underscore."
+    "explanation": "Answer: `intercept_`\n\nExplanation: The exact attribute is intercept_ with a trailing underscore."
   },
   {
     "id": 2028,
@@ -1440,7 +1262,7 @@
     "title": "What function from sklearn.metrics calculates the coefficient of determination in the notebook? _____",
     "answer": "r2_score",
     "caseSensitive": true,
-    "explanation": "The notebook imports and calls r2_score."
+    "explanation": "Answer: `r2_score`\n\nExplanation: The notebook imports and calls r2_score."
   },
   {
     "id": 2029,
@@ -1450,7 +1272,7 @@
     "title": "What function calculates the mean squared error in the multiple linear-regression example? _____",
     "answer": "mean_squared_error",
     "caseSensitive": true,
-    "explanation": "The exact imported function is mean_squared_error."
+    "explanation": "Answer: `mean_squared_error`\n\nExplanation: The exact imported function is mean_squared_error."
   },
   {
     "id": 2030,
@@ -1460,7 +1282,7 @@
     "title": "Which method trains the LinearRegression object on X_train and y_train? _____",
     "answer": "fit",
     "caseSensitive": true,
-    "explanation": "The model is trained with lr.fit(X_train, y_train)."
+    "explanation": "Answer: `fit`\n\nExplanation: The model is trained with lr.fit(X_train, y_train)."
   },
   {
     "id": 2031,
@@ -1470,7 +1292,7 @@
     "title": "Which method generates Y_pred_train1 from X_train? _____",
     "answer": "predict",
     "caseSensitive": true,
-    "explanation": "The notebook uses lr.predict(X_train)."
+    "explanation": "Answer: `predict`\n\nExplanation: The notebook uses lr.predict(X_train)."
   },
   {
     "id": 2034,
@@ -1480,7 +1302,7 @@
     "title": "Complete the parameter name needed to allow LogisticRegression a maximum of 100 iterations: LogisticRegression(_____=100)",
     "answer": "max_iter",
     "caseSensitive": true,
-    "explanation": "max_iter controls the maximum number of solver iterations."
+    "explanation": "Answer: `max_iter`\n\nExplanation: max_iter controls the maximum number of solver iterations."
   },
   {
     "id": 2037,
@@ -1490,7 +1312,7 @@
     "title": "Which method both learns scaling parameters and transforms the supplied data? _____",
     "answer": "fit_transform",
     "caseSensitive": true,
-    "explanation": "fit_transform combines fitting and transformation."
+    "explanation": "Answer: `fit_transform`\n\nExplanation: fit_transform combines fitting and transformation."
   },
   {
     "id": 2038,
@@ -1500,7 +1322,7 @@
     "title": "Which method applies already-learned scaling parameters to new data? _____",
     "answer": "transform",
     "caseSensitive": true,
-    "explanation": "transform does not refit the scaler."
+    "explanation": "Answer: `transform`\n\nExplanation: transform does not refit the scaler."
   },
   {
     "id": 2039,
@@ -1510,7 +1332,7 @@
     "title": "What method returns the classifier's mean accuracy for the supplied X and y? _____",
     "answer": "score",
     "caseSensitive": true,
-    "explanation": "The notebook calls log_reg.score on training and test sets."
+    "explanation": "Answer: `score`\n\nExplanation: The notebook calls log_reg.score on training and test sets."
   },
   {
     "id": 2042,
@@ -1520,7 +1342,7 @@
     "title": "What fitted GaussianNB attribute stores the per-class feature means? _____",
     "answer": "theta_",
     "caseSensitive": true,
-    "explanation": "The exact attribute is theta_ with a trailing underscore."
+    "explanation": "Answer: `theta_`\n\nExplanation: The exact attribute is theta_ with a trailing underscore."
   },
   {
     "id": 2043,
@@ -1530,7 +1352,7 @@
     "title": "What fitted GaussianNB attribute stores the per-class feature variances? _____",
     "answer": "var_",
     "caseSensitive": true,
-    "explanation": "The exact attribute is var_ with a trailing underscore."
+    "explanation": "Answer: `var_`\n\nExplanation: The exact attribute is var_ with a trailing underscore."
   },
   {
     "id": 2044,
@@ -1540,7 +1362,7 @@
     "title": "What fitted GaussianNB attribute lists the known class labels? _____",
     "answer": "classes_",
     "caseSensitive": true,
-    "explanation": "The exact attribute is classes_ with a trailing underscore."
+    "explanation": "Answer: `classes_`\n\nExplanation: The exact attribute is classes_ with a trailing underscore."
   },
   {
     "id": 2045,
@@ -1550,7 +1372,7 @@
     "title": "What variable stores the Gaussian Naive Bayes model in the notebooks? _____",
     "answer": "gnb",
     "caseSensitive": true,
-    "explanation": "The model is created with gnb = GaussianNB()."
+    "explanation": "Answer: `gnb`\n\nExplanation: The model is created with gnb = GaussianNB()."
   },
   {
     "id": 2046,
@@ -1560,7 +1382,7 @@
     "title": "What variable stores the Categorical Naive Bayes model in the fruit notebook? _____",
     "answer": "cnb",
     "caseSensitive": true,
-    "explanation": "The model is created with cnb = CategoricalNB()."
+    "explanation": "Answer: `cnb`\n\nExplanation: The model is created with cnb = CategoricalNB()."
   },
   {
     "id": 2047,
@@ -1570,7 +1392,7 @@
     "title": "Which pandas function creates the feature-versus-class frequency table? _____",
     "answer": "crosstab",
     "caseSensitive": true,
-    "explanation": "The notebook calls pd.crosstab."
+    "explanation": "Answer: `crosstab`\n\nExplanation: The notebook calls pd.crosstab."
   },
   {
     "id": 2048,
@@ -1580,7 +1402,7 @@
     "title": "Which pandas function combines each feature frequency table into frequency_table? _____",
     "answer": "concat",
     "caseSensitive": true,
-    "explanation": "The notebook calls pd.concat."
+    "explanation": "Answer: `concat`\n\nExplanation: The notebook calls pd.concat."
   },
   {
     "id": 2049,
@@ -1590,7 +1412,7 @@
     "title": "Which LabelEncoder method learns category mappings and encodes the training column? _____",
     "answer": "fit_transform",
     "caseSensitive": true,
-    "explanation": "The training columns use fit_transform."
+    "explanation": "Answer: `fit_transform`\n\nExplanation: The training columns use fit_transform."
   },
   {
     "id": 2050,
@@ -1600,7 +1422,7 @@
     "title": "Which LabelEncoder method encodes new categories using an existing mapping? _____",
     "answer": "transform",
     "caseSensitive": true,
-    "explanation": "The new Color and Size values use transform."
+    "explanation": "Answer: `transform`\n\nExplanation: The new Color and Size values use transform."
   },
   {
     "id": 2051,
@@ -1610,7 +1432,7 @@
     "title": "Which LabelEncoder method converts the encoded prediction back to a fruit name? _____",
     "answer": "inverse_transform",
     "caseSensitive": true,
-    "explanation": "The prediction is decoded with le_fruit.inverse_transform."
+    "explanation": "Answer: `inverse_transform`\n\nExplanation: The prediction is decoded with le_fruit.inverse_transform."
   },
   {
     "id": 2052,
@@ -1620,7 +1442,7 @@
     "title": "Complete the import: from sklearn._____ import train_test_split",
     "answer": "model_selection",
     "caseSensitive": true,
-    "explanation": "train_test_split is imported from sklearn.model_selection."
+    "explanation": "Answer: `model_selection`\n\nExplanation: train_test_split is imported from sklearn.model_selection."
   },
   {
     "id": 2053,
@@ -1630,7 +1452,7 @@
     "title": "Complete the import: from sklearn._____ import LinearRegression",
     "answer": "linear_model",
     "caseSensitive": true,
-    "explanation": "LinearRegression is imported from sklearn.linear_model."
+    "explanation": "Answer: `linear_model`\n\nExplanation: LinearRegression is imported from sklearn.linear_model."
   },
   {
     "id": 2054,
@@ -1640,7 +1462,7 @@
     "title": "Complete the import: from sklearn._____ import LogisticRegression",
     "answer": "linear_model",
     "caseSensitive": true,
-    "explanation": "LogisticRegression is imported from sklearn.linear_model."
+    "explanation": "Answer: `linear_model`\n\nExplanation: LogisticRegression is imported from sklearn.linear_model."
   },
   {
     "id": 2055,
@@ -1650,7 +1472,7 @@
     "title": "Complete the import: from sklearn._____ import StandardScaler",
     "answer": "preprocessing",
     "caseSensitive": true,
-    "explanation": "StandardScaler is imported from sklearn.preprocessing."
+    "explanation": "Answer: `preprocessing`\n\nExplanation: StandardScaler is imported from sklearn.preprocessing."
   },
   {
     "id": 2056,
@@ -1660,7 +1482,7 @@
     "title": "Complete the import: from sklearn._____ import GaussianNB",
     "answer": "naive_bayes",
     "caseSensitive": true,
-    "explanation": "GaussianNB is imported from sklearn.naive_bayes."
+    "explanation": "Answer: `naive_bayes`\n\nExplanation: GaussianNB is imported from sklearn.naive_bayes."
   },
   {
     "id": 2057,
@@ -1670,7 +1492,7 @@
     "title": "Complete the import: from sklearn._____ import CategoricalNB",
     "answer": "naive_bayes",
     "caseSensitive": true,
-    "explanation": "CategoricalNB is imported from sklearn.naive_bayes."
+    "explanation": "Answer: `naive_bayes`\n\nExplanation: CategoricalNB is imported from sklearn.naive_bayes."
   },
   {
     "id": 2058,
@@ -1680,7 +1502,7 @@
     "title": "Complete the import: from sklearn._____ import LabelEncoder",
     "answer": "preprocessing",
     "caseSensitive": true,
-    "explanation": "LabelEncoder is imported from sklearn.preprocessing."
+    "explanation": "Answer: `preprocessing`\n\nExplanation: LabelEncoder is imported from sklearn.preprocessing."
   },
   {
     "id": 2059,
@@ -1690,7 +1512,7 @@
     "title": "Complete the import: from sklearn._____ import accuracy_score",
     "answer": "metrics",
     "caseSensitive": true,
-    "explanation": "accuracy_score is imported from sklearn.metrics."
+    "explanation": "Answer: `metrics`\n\nExplanation: accuracy_score is imported from sklearn.metrics."
   },
   {
     "id": 2060,
@@ -1700,7 +1522,7 @@
     "title": "Complete the import: from sklearn._____ import confusion_matrix",
     "answer": "metrics",
     "caseSensitive": true,
-    "explanation": "confusion_matrix is imported from sklearn.metrics."
+    "explanation": "Answer: `metrics`\n\nExplanation: confusion_matrix is imported from sklearn.metrics."
   },
   {
     "id": 2061,
@@ -1710,7 +1532,7 @@
     "title": "Complete the import: from sklearn._____ import r2_score",
     "answer": "metrics",
     "caseSensitive": true,
-    "explanation": "r2_score is imported from sklearn.metrics."
+    "explanation": "Answer: `metrics`\n\nExplanation: r2_score is imported from sklearn.metrics."
   },
   {
     "id": 2064,
@@ -1720,7 +1542,7 @@
     "title": "Complete the import needed to load scikit-learn's built-in breast-cancer dataset: from sklearn.datasets import _____",
     "answer": "load_breast_cancer",
     "caseSensitive": true,
-    "explanation": "load_breast_cancer is the dataset loader used by the logistic-regression notebooks."
+    "explanation": "Answer: `load_breast_cancer`\n\nExplanation: load_breast_cancer is the dataset loader used by the logistic-regression notebooks."
   },
   {
     "id": 2065,
@@ -1730,7 +1552,7 @@
     "title": "Complete the import: import _____ as pd",
     "answer": "pandas",
     "caseSensitive": true,
-    "explanation": "The notebooks use the conventional pandas alias pd."
+    "explanation": "Answer: `pandas`\n\nExplanation: The notebooks use the conventional pandas alias pd."
   },
   {
     "id": 2066,
@@ -1740,7 +1562,7 @@
     "title": "Complete the import: import _____ as np",
     "answer": "numpy",
     "caseSensitive": true,
-    "explanation": "The notebooks use the conventional NumPy alias np."
+    "explanation": "Answer: `numpy`\n\nExplanation: The notebooks use the conventional NumPy alias np."
   },
   {
     "id": 2067,
@@ -1750,7 +1572,7 @@
     "title": "Complete the import: import _____ as sns",
     "answer": "seaborn",
     "caseSensitive": true,
-    "explanation": "The linear-regression notebook imports seaborn as sns."
+    "explanation": "Answer: `seaborn`\n\nExplanation: The linear-regression notebook imports seaborn as sns."
   },
   {
     "id": 2068,
@@ -1760,7 +1582,7 @@
     "title": "Complete the import: import matplotlib._____ as plt",
     "answer": "pyplot",
     "caseSensitive": true,
-    "explanation": "The plotting module is matplotlib.pyplot."
+    "explanation": "Answer: `pyplot`\n\nExplanation: The plotting module is matplotlib.pyplot."
   },
   {
     "id": 2069,
@@ -1768,7 +1590,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Inspect missing values, count them per column, and calculate the mean of Age.",
-    "explanation": "isna identifies missing entries, sum counts them by column, and mean calculates the average Age.",
+    "explanation": "Completed code:\n```python\nprint(df.isna())\nmissing_values_summary = df.isna().sum()\nage_mean = df['Age'].mean()\n```\n\nExplanation: isna identifies missing entries, sum counts them by column, and mean calculates the average Age.",
     "code": [
       [
         {
@@ -1828,7 +1650,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Create one imputer that uses the most frequent Outcome and another that uses the mean Age.",
-    "explanation": "SimpleImputer uses strategy to choose the replacement rule and missing_values to identify NaN entries.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.impute import SimpleImputer\nimputerMode = SimpleImputer(strategy='most_frequent', missing_values=np.nan)\nimputerMean = SimpleImputer(strategy='mean', missing_values=np.nan)\n```\n\nExplanation: SimpleImputer uses strategy to choose the replacement rule and missing_values to identify NaN entries.",
     "code": [
       [
         {
@@ -1913,7 +1735,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Fit the mean imputer on Age and the mode imputer on Outcome, then replace each column's missing values.",
-    "explanation": "fit learns the replacement statistic; transform applies it to the corresponding column.",
+    "explanation": "Completed code:\n```python\nimputerMean.fit(df[['Age']])\ndf['Age'] = imputerMean.transform(df[['Age']])\nimputerMode.fit(df[['Outcome']])\ndf['Outcome'] = imputerMode.transform(df[['Outcome']])\n```\n\nExplanation: fit learns the replacement statistic; transform applies it to the corresponding column.",
     "code": [
       [
         {
@@ -2013,7 +1835,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Complete the function that detects values that cannot be converted to integers.",
-    "explanation": "enumerate supplies indices, int attempts conversion, and the exception handler records invalid rows.",
+    "explanation": "Completed code:\n```python\ndef validate_integer_values(df, column_name):\n    invalid_indices = []\n    for idx, value in enumerate(df[column_name]):\n        try:\n            int_value = int(value)\n        except (ValueError, TypeError):\n            noise_loc = idx\n            invalid_indices.append(noise_loc+2)\n    return invalid_indices\n```\n\nExplanation: enumerate supplies indices, int attempts conversion, and the exception handler records invalid rows.",
     "code": [
       [
         {
@@ -2103,7 +1925,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Complete the function that records the spreadsheet row numbers containing missing values.",
-    "explanation": "enumerate supplies indices, pd.isnull detects NaN, and append records each adjusted row number.",
+    "explanation": "Completed code:\n```python\ndef check_missing_values(df, column_name):\n    missing_indices = []\n    for idx, value in enumerate(df[column_name]):\n        if pd.isnull(value):   # True if value is NaN\n            missing_indices.append(idx+2)\n    return missing_indices\n```\n\nExplanation: enumerate supplies indices, pd.isnull detects NaN, and append records each adjusted row number.",
     "code": [
       [
         {
@@ -2164,7 +1986,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Standardize DiabetesPedigreeFunction and save the result as Scaled_DPF.",
-    "explanation": "StandardScaler learns the column's scaling parameters and fit_transform applies them.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.preprocessing import StandardScaler\ncolumn_to_scale = df[['DiabetesPedigreeFunction']]\nscaler = StandardScaler()\nscaled_column = scaler.fit_transform(column_to_scale)\ndf['Scaled_DPF'] = scaled_column\n```\n\nExplanation: StandardScaler learns the column's scaling parameters and fit_transform applies them.",
     "code": [
       [
         {
@@ -2231,7 +2053,7 @@
     "label": "Data Preprocessing Code",
     "type": "code-fill",
     "title": "Select every numeric column and rescale them with MinMaxScaler.",
-    "explanation": "select_dtypes identifies numeric columns and fit_transform rescales only those columns.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.preprocessing import MinMaxScaler\nscaler = MinMaxScaler()\nnumeric_cols = df.select_dtypes(include='number').columns\ndf[numeric_cols] = scaler.fit_transform(df[numeric_cols])\n```\n\nExplanation: select_dtypes identifies numeric columns and fit_transform rescales only those columns.",
     "code": [
       [
         {
@@ -2300,7 +2122,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Load Iris and split its data and target reproducibly with state 0.",
-    "explanation": "load_iris returns the dataset; train_test_split uses random_state to reproduce the same split.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.datasets import load_iris\niris_dataset = load_iris()\nfrom sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'], random_state=0)\n```\n\nExplanation: load_iris returns the dataset; train_test_split uses random_state to reproduce the same split.",
     "code": [
       [
         {
@@ -2373,7 +2195,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Create a DataFrame from the Iris training features while preserving their feature names.",
-    "explanation": "DataFrame receives X_train and uses iris_dataset.feature_names as its columns.",
+    "explanation": "Completed code:\n```python\nprint(X_train.shape)\nprint(X_test.shape)\niris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)\n```\n\nExplanation: DataFrame receives X_train and uses iris_dataset.feature_names as its columns.",
     "code": [
       [
         {
@@ -2419,7 +2241,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Test K values from 1 through 9 by training each KNN model and recording its training and testing accuracy.",
-    "explanation": "n_neighbors receives the current K; fit trains each model, predict generates labels, and accuracy_score evaluates them.",
+    "explanation": "Completed code:\n```python\nfrom sklearn.metrics import accuracy_score\nfrom sklearn.neighbors import KNeighborsClassifier\nneighbors = range(1, 10)\nfor n in neighbors:\n    knn = KNeighborsClassifier(n_neighbors=n)\n    knn.fit(X_train, y_train)\n    train_accuracies.append(accuracy_score(y_train, knn.predict(X_train)))\n    test_accuracies.append(accuracy_score(y_test, knn.predict(X_test)))\n```\n\nExplanation: n_neighbors receives the current K; fit trains each model, predict generates labels, and accuracy_score evaluates them.",
     "code": [
       [
         {
@@ -2526,7 +2348,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Train the Iris KNN model with K=3, predict the test set, and display the predicted species names and test score.",
-    "explanation": "n_neighbors selects K; predict creates numeric labels and target_names maps them to species names.",
+    "explanation": "Completed code:\n```python\nknn = KNeighborsClassifier(n_neighbors=3)\nknn.fit(X_train, y_train)\nprediction = knn.predict(X_test)\nprint(iris_dataset['target_names'][prediction])\nprint(\"Test set score: {:.2f}\".format(knn.score(X_test, y_test)))\n```\n\nExplanation: n_neighbors selects K; predict creates numeric labels and target_names maps them to species names.",
     "code": [
       [
         {
@@ -2596,7 +2418,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Create a breast-cancer DataFrame, separate target from predictors, and make a stratified split with reproducible state 66.",
-    "explanation": "drop removes the target from X; stratify preserves class proportions and random_state reproduces the split.",
+    "explanation": "Completed code:\n```python\ndf = pd.DataFrame(data=cancer.data, columns=cancer.feature_names)\ndf['target'] = cancer.target\nX = df.drop(columns='target')  # Features\ny = df['target']               # Target\nX_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=66)\n```\n\nExplanation: drop removes the target from X; stratify preserves class proportions and random_state reproduces the split.",
     "code": [
       [
         {
@@ -2673,7 +2495,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Train the breast-cancer KNN model with K=6, then generate test predictions and test accuracy.",
-    "explanation": "n_neighbors selects K, fit trains the model, predict returns labels, and score returns accuracy.",
+    "explanation": "Completed code:\n```python\nknn = KNeighborsClassifier(n_neighbors=6)     #build the model\nknn.fit(X_train, y_train)                     #train the model\nprint(\"Test set predictions: {}\".format(knn.predict(X_test)))\nprint(\"Test set accuracy: {:.2f}\".format(knn.score(X_test, y_test)))\n```\n\nExplanation: n_neighbors selects K, fit trains the model, predict returns labels, and score returns accuracy.",
     "code": [
       [
         {
@@ -2738,7 +2560,7 @@
     "label": "KNN Code",
     "type": "code-fill",
     "title": "Convert a prepared feature dictionary into one row, predict its cancer class, and map the numeric result to a label.",
-    "explanation": "DataFrame constructs the input row, predict returns the class index, and prediction[0] selects the label position.",
+    "explanation": "Completed code:\n```python\nnew_data = pd.DataFrame([data_dict])\nprediction = knn.predict(new_data)\ntarget_names = ['malignant', 'benign']\npredicted_label = target_names[prediction[0]]\n```\n\nExplanation: DataFrame constructs the input row, predict returns the class index, and prediction[0] selects the label position.",
     "code": [
       [
         {
@@ -2789,7 +2611,7 @@
     "label": "Regularization Code",
     "type": "code-fill",
     "title": "Load Boston.csv from a generic data folder and remove rows containing missing values in place.",
-    "explanation": "read_csv loads the table; dropna removes incomplete rows and inplace modifies boston directly.",
+    "explanation": "Completed code:\n```python\nboston = pd.read_csv('/path/to/data/Boston.csv')\nboston.dropna(inplace = True)    \n```\n\nExplanation: read_csv loads the table; dropna removes incomplete rows and inplace modifies boston directly.",
     "code": [
       [
         {
@@ -2830,7 +2652,7 @@
     "label": "Regularization Code",
     "type": "code-fill",
     "title": "Select the Boston predictors and medv target, then make a 30% reproducible test split with state 0.",
-    "explanation": "iloc selects the predictor columns; test_size and random_state configure the split.",
+    "explanation": "Completed code:\n```python\nX = df.iloc[:, 1:14]            #features \ny = df['medv']                  #target\nX_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state = 0)\n```\n\nExplanation: iloc selects the predictor columns; test_size and random_state configure the split.",
     "code": [
       [
         {
@@ -2890,7 +2712,7 @@
     "label": "Regularization Code",
     "type": "code-fill",
     "title": "Train ordinary linear regression, predict the test set, and calculate R-squared and MSE.",
-    "explanation": "fit trains the model, predict creates y_test_pred, and the metrics functions evaluate it.",
+    "explanation": "Completed code:\n```python\nlm = LinearRegression()\nlm.fit(X_train, y_train)\ny_test_pred = lm.predict(X_test)\nprint('R^2:', metrics.r2_score(y_test, y_test_pred))\nprint('MSE:',metrics.mean_squared_error(y_test, y_test_pred))\n```\n\nExplanation: fit trains the model, predict creates y_test_pred, and the metrics functions evaluate it.",
     "code": [
       [
         {
@@ -2957,7 +2779,7 @@
     "label": "Regularization Code",
     "type": "code-fill",
     "title": "Train default Ridge and Lasso models, report their scores, and count the coefficients each model keeps nonzero.",
-    "explanation": "fit trains each regularized model; score evaluates it and coef_ exposes the fitted coefficients.",
+    "explanation": "Completed code:\n```python\nridge = Ridge().fit(X_train,y_train)\nprint(\"Score : {:.2f}\".format(ridge.score(X_train,y_train)))\nprint(\"Features Used : {}\".format(np.sum(ridge.coef_ != 0)))\nlasso = Lasso().fit(X_train,y_train)\nprint(\"Score : {:.2f}\".format(lasso.score(X_train,y_train)))\nprint(\"Features Used : {}\".format(np.sum(lasso.coef_ != 0)))\n```\n\nExplanation: fit trains each regularized model; score evaluates it and coef_ exposes the fitted coefficients.",
     "code": [
       [
         {
@@ -3053,7 +2875,7 @@
     "label": "Regularization Code",
     "type": "code-fill",
     "title": "Fit Ridge and Lasso using the supplied alpha values 10 and 0.01.",
-    "explanation": "alpha sets regularization strength, while fit trains each configured model.",
+    "explanation": "Completed code:\n```python\nridge = Ridge(alpha=10).fit(X_train,y_train)\nridge = Ridge(alpha=0.01).fit(X_train,y_train)\nlasso = Lasso(alpha=10).fit(X_train,y_train)\nlasso = Lasso(alpha=0.01).fit(X_train,y_train)\n```\n\nExplanation: alpha sets regularization strength, while fit trains each configured model.",
     "code": [
       [
         {
@@ -3141,7 +2963,7 @@
     "title": "Complete the import for the missing-value replacement class: from sklearn.impute import _____",
     "answer": "SimpleImputer",
     "caseSensitive": true,
-    "explanation": "SimpleImputer is imported from sklearn.impute."
+    "explanation": "Answer: `SimpleImputer`\n\nExplanation: SimpleImputer is imported from sklearn.impute."
   },
   {
     "id": 2089,
@@ -3151,7 +2973,7 @@
     "title": "Which sklearn module contains SimpleImputer? sklearn._____",
     "answer": "impute",
     "caseSensitive": true,
-    "explanation": "The complete module path is sklearn.impute."
+    "explanation": "Answer: `impute`\n\nExplanation: The complete module path is sklearn.impute."
   },
   {
     "id": 2090,
@@ -3161,7 +2983,7 @@
     "title": "In SimpleImputer(strategy='mean'), what parameter chooses the replacement rule? _____",
     "answer": "strategy",
     "caseSensitive": true,
-    "explanation": "strategy selects rules such as mean or most_frequent."
+    "explanation": "Answer: `strategy`\n\nExplanation: strategy selects rules such as mean or most_frequent."
   },
   {
     "id": 2091,
@@ -3171,7 +2993,7 @@
     "title": "Which SimpleImputer parameter specifies what value represents missing data? _____",
     "answer": "missing_values",
     "caseSensitive": true,
-    "explanation": "missing_values identifies the marker to replace, such as np.nan."
+    "explanation": "Answer: `missing_values`\n\nExplanation: missing_values identifies the marker to replace, such as np.nan."
   },
   {
     "id": 2092,
@@ -3181,7 +3003,7 @@
     "title": "Which pandas DataFrame method used in the notebook returns True where values are missing? _____",
     "answer": "isna",
     "caseSensitive": true,
-    "explanation": "The notebook calls df.isna()."
+    "explanation": "Answer: `isna`\n\nExplanation: The notebook calls df.isna()."
   },
   {
     "id": 2093,
@@ -3191,7 +3013,7 @@
     "title": "Which DataFrame method selects columns by data type before MinMax scaling? _____",
     "answer": "select_dtypes",
     "caseSensitive": true,
-    "explanation": "The notebook uses df.select_dtypes(include='number')."
+    "explanation": "Answer: `select_dtypes`\n\nExplanation: The notebook uses df.select_dtypes(include='number')."
   },
   {
     "id": 2094,
@@ -3201,7 +3023,7 @@
     "title": "Complete the KNN import: from sklearn.neighbors import _____",
     "answer": "KNeighborsClassifier",
     "caseSensitive": true,
-    "explanation": "KNeighborsClassifier is imported from sklearn.neighbors."
+    "explanation": "Answer: `KNeighborsClassifier`\n\nExplanation: KNeighborsClassifier is imported from sklearn.neighbors."
   },
   {
     "id": 2095,
@@ -3211,7 +3033,7 @@
     "title": "Which sklearn module contains KNeighborsClassifier? sklearn._____",
     "answer": "neighbors",
     "caseSensitive": true,
-    "explanation": "The complete module path is sklearn.neighbors."
+    "explanation": "Answer: `neighbors`\n\nExplanation: The complete module path is sklearn.neighbors."
   },
   {
     "id": 2096,
@@ -3221,7 +3043,7 @@
     "title": "In KNeighborsClassifier(_____=3), which parameter sets K?",
     "answer": "n_neighbors",
     "caseSensitive": true,
-    "explanation": "n_neighbors specifies how many neighbors vote on the prediction."
+    "explanation": "Answer: `n_neighbors`\n\nExplanation: n_neighbors specifies how many neighbors vote on the prediction."
   },
   {
     "id": 2097,
@@ -3231,7 +3053,7 @@
     "title": "Which train_test_split parameter preserves the class proportions of y? _____",
     "answer": "stratify",
     "caseSensitive": true,
-    "explanation": "Passing stratify=y preserves the target-class distribution across the split."
+    "explanation": "Answer: `stratify`\n\nExplanation: Passing stratify=y preserves the target-class distribution across the split."
   },
   {
     "id": 2098,
@@ -3241,7 +3063,7 @@
     "title": "Which pandas method removes rows containing missing values? _____",
     "answer": "dropna",
     "caseSensitive": true,
-    "explanation": "The Boston example calls boston.dropna."
+    "explanation": "Answer: `dropna`\n\nExplanation: The Boston example calls boston.dropna."
   },
   {
     "id": 2099,
@@ -3251,7 +3073,7 @@
     "title": "Which dropna parameter makes the method modify the original DataFrame? _____",
     "answer": "inplace",
     "caseSensitive": true,
-    "explanation": "Setting inplace=True modifies the existing DataFrame."
+    "explanation": "Answer: `inplace`\n\nExplanation: Setting inplace=True modifies the existing DataFrame."
   },
   {
     "id": 2100,
@@ -3261,7 +3083,7 @@
     "title": "Complete the import for L2-regularized linear regression: from sklearn.linear_model import _____",
     "answer": "Ridge",
     "caseSensitive": true,
-    "explanation": "Ridge performs L2-regularized linear regression."
+    "explanation": "Answer: `Ridge`\n\nExplanation: Ridge performs L2-regularized linear regression."
   },
   {
     "id": 2101,
@@ -3271,7 +3093,7 @@
     "title": "Complete the import for L1-regularized linear regression: from sklearn.linear_model import _____",
     "answer": "Lasso",
     "caseSensitive": true,
-    "explanation": "Lasso performs L1-regularized linear regression."
+    "explanation": "Answer: `Lasso`\n\nExplanation: Lasso performs L1-regularized linear regression."
   },
   {
     "id": 2102,
@@ -3281,6 +3103,6 @@
     "title": "Which Ridge and Lasso parameter controls regularization strength? _____",
     "answer": "alpha",
     "caseSensitive": true,
-    "explanation": "alpha controls how strongly the coefficients are penalized."
+    "explanation": "Answer: `alpha`\n\nExplanation: alpha controls how strongly the coefficients are penalized."
   }
 ]

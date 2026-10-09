@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="question-disclaimer" aria-label="Question note">
+      <div class="question-disclaimer-track">
+        <div class="question-disclaimer-copy">
+          <span>Questions are extracted from the course module; wording and formatting may be a bit janky.</span>
+          <span aria-hidden="true">✦</span>
+        </div>
+        <div class="question-disclaimer-copy" aria-hidden="true">
+          <span>Questions are extracted from the course module; wording and formatting may be a bit janky.</span>
+          <span>✦</span>
+        </div>
+      </div>
+    </div>
     <div class="app-shell">
       <aside class="sidebar" id="sidebar">
         <div class="brand">
@@ -27,9 +39,6 @@
           </button>
           <button class="nav-link" data-view="quizzer" type="button">
             <span class="nav-icon">✦</span><span>Quizzer</span>
-          </button>
-          <button class="nav-link" data-view="notes" type="button">
-            <span class="nav-icon">▤</span><span>Study notes</span>
           </button>
         </nav>
 
@@ -55,7 +64,6 @@
           <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation" type="button">☰</button>
           <div class="breadcrumb"><span>Workspace</span><span>/</span><strong id="breadcrumbCurrent">Dashboard</strong></div>
           <div class="topbar-actions">
-            <button class="icon-button" id="searchButton" aria-label="Focus search" type="button">⌕</button>
             <div class="avatar" aria-label="Student profile">JD</div>
           </div>
         </header>
@@ -71,19 +79,6 @@
                 <div class="hero-label">LOCK<br /><strong>TF IN</strong></div>
               </div>
             </div>
-            <div class="question-disclaimer" aria-label="Question note">
-              <div class="question-disclaimer-track">
-                <div class="question-disclaimer-copy">
-                  <span>Questions are extracted from the course module; wording and formatting may be a bit janky.</span>
-                  <span aria-hidden="true">✦</span>
-                </div>
-                <div class="question-disclaimer-copy" aria-hidden="true">
-                  <span>Questions are extracted from the course module; wording and formatting may be a bit janky.</span>
-                  <span>✦</span>
-                </div>
-              </div>
-            </div>
-
             <div class="section-heading"><div><p class="eyebrow">Overview</p><h2>What would you like to review?</h2></div><span class="muted">Updated just now</span></div>
             <div class="subject-grid" id="subjectGrid"></div>
 
@@ -120,10 +115,6 @@
             </div>
           </section>
 
-          <section class="view" id="notesView" data-view-panel="notes">
-            <div class="quiz-header"><div><p class="eyebrow accent">Reference library</p><h1>Study notes</h1><p class="view-intro">A small, searchable collection of reminders for your review sessions.</p></div></div>
-            <div class="notes-grid" id="notesGrid"></div>
-          </section>
         </div>
       </main>
     </div>

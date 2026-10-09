@@ -1,7 +1,7 @@
 [
   {
     "id": 1001,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "In the Iris linear-regression notebook, which variable is used to predict petal width?",
@@ -16,7 +16,7 @@
   },
   {
     "id": 1002,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which import used in the notebook correctly provides LinearRegression?",
@@ -31,7 +31,7 @@
   },
   {
     "id": 1003,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "What proportion of the Iris data is assigned to the test set in the first linear-regression example?",
@@ -46,7 +46,7 @@
   },
   {
     "id": 1004,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "What does reshape(-1, 1) do to X_train in the notebook?",
@@ -61,7 +61,7 @@
   },
   {
     "id": 1005,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which attribute stores the fitted linear model's intercept?",
@@ -76,7 +76,7 @@
   },
   {
     "id": 1006,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which attribute stores the fitted model coefficients?",
@@ -91,7 +91,7 @@
   },
   {
     "id": 1007,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which function evaluates R-squared in the notebook?",
@@ -106,7 +106,7 @@
   },
   {
     "id": 1008,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "In the multiple linear-regression example, what is the target variable?",
@@ -121,7 +121,7 @@
   },
   {
     "id": 1009,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "Which set contains all three predictors used in the multiple linear-regression example?",
@@ -136,7 +136,7 @@
   },
   {
     "id": 1010,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multiple-choice",
     "title": "What is the purpose of lr.predict(X_test) in the notebook?",
@@ -151,7 +151,7 @@
   },
   {
     "id": 1011,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which outcome structure calls for binary logistic regression?",
@@ -166,7 +166,7 @@
   },
   {
     "id": 1012,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which function maps any real-valued input to a value between 0 and 1?",
@@ -181,7 +181,7 @@
   },
   {
     "id": 1013,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "According to the plotted threshold rule in the materials, a predicted value greater than 0.5 is assigned to which class?",
@@ -196,7 +196,7 @@
   },
   {
     "id": 1014,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which import correctly provides train_test_split?",
@@ -211,7 +211,7 @@
   },
   {
     "id": 1015,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "In the insurance example, what is the single predictor before scaling?",
@@ -226,7 +226,7 @@
   },
   {
     "id": 1016,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "What is the target in the insurance example?",
@@ -241,7 +241,7 @@
   },
   {
     "id": 1017,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which method trains the logistic-regression model?",
@@ -256,7 +256,7 @@
   },
   {
     "id": 1018,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "What does log_reg.score(X_test, y_test) measure for this classifier?",
@@ -271,7 +271,7 @@
   },
   {
     "id": 1019,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Why is x_new converted back to a DataFrame after scaling in the insurance notebook?",
@@ -286,7 +286,7 @@
   },
   {
     "id": 1020,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which dataset loader is used in the breast-cancer logistic-regression notebooks?",
@@ -301,7 +301,7 @@
   },
   {
     "id": 1021,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "What is the test size in the breast-cancer train/test split?",
@@ -316,7 +316,7 @@
   },
   {
     "id": 1022,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which statement best describes multinomial logistic regression?",
@@ -331,7 +331,7 @@
   },
   {
     "id": 1023,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which case is ordinal rather than multinomial?",
@@ -346,7 +346,7 @@
   },
   {
     "id": 1024,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multiple-choice",
     "title": "Which class-probability mechanism is described for ordinal logistic regression?",
@@ -361,7 +361,7 @@
   },
   {
     "id": 1025,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "What does softmax convert into class probabilities?",
@@ -376,7 +376,7 @@
   },
   {
     "id": 1026,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "For scores z = [2.5, 1.2, 0.3], which class is predicted in the notes?",
@@ -391,7 +391,7 @@
   },
   {
     "id": 1027,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "Which operation selects the predicted class from softmax probabilities?",
@@ -406,7 +406,7 @@
   },
   {
     "id": 1028,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "The probabilities produced by softmax across all classes sum to what value?",
@@ -421,7 +421,7 @@
   },
   {
     "id": 1029,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "In the ordinal example, how is P(Y=3) obtained?",
@@ -436,7 +436,7 @@
   },
   {
     "id": 1030,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "If probabilities are [0.10, 0.40, 0.40, 0.10] and the implementation returns the first maximum, what is predicted?",
@@ -451,7 +451,7 @@
   },
   {
     "id": 1031,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multiple-choice",
     "title": "Why can a displayed tie disappear when full precision is considered?",
@@ -466,7 +466,7 @@
   },
   {
     "id": 1032,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Why is Naive Bayes described as 'naive'?",
@@ -481,7 +481,7 @@
   },
   {
     "id": 1033,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which Naive Bayes variant is suited to continuous features assumed normally distributed?",
@@ -496,7 +496,7 @@
   },
   {
     "id": 1034,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which variant is especially appropriate when word counts matter?",
@@ -511,7 +511,7 @@
   },
   {
     "id": 1035,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which variant is designed for binary or Boolean features?",
@@ -526,7 +526,7 @@
   },
   {
     "id": 1036,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which variant is used in the fruit example with Color and Size?",
@@ -541,7 +541,7 @@
   },
   {
     "id": 1037,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "What does LabelEncoder do in the categorical fruit notebook?",
@@ -556,7 +556,7 @@
   },
   {
     "id": 1038,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which two features form X in the categorical fruit example?",
@@ -571,7 +571,7 @@
   },
   {
     "id": 1039,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which fitted GaussianNB attribute contains per-class feature means?",
@@ -586,7 +586,7 @@
   },
   {
     "id": 1040,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which fitted GaussianNB attribute contains per-class feature variances?",
@@ -601,7 +601,7 @@
   },
   {
     "id": 1041,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "In the golf example, which class is predicted for Rainy, Hot, High humidity, and Wind=False?",
@@ -616,7 +616,7 @@
   },
   {
     "id": 1042,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Why can the evidence denominator be ignored when choosing the most probable Naive Bayes class?",
@@ -631,7 +631,7 @@
   },
   {
     "id": 1043,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multiple-choice",
     "title": "Which function creates the frequency cross-tabulation in the categorical notebook?",
@@ -646,7 +646,7 @@
   },
   {
     "id": 1044,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multi-answer",
     "title": "Which two metrics are imported in the multiple linear-regression example? (Choose 2)",
@@ -665,7 +665,7 @@
   },
   {
     "id": 1045,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "multi-answer",
     "title": "Which three columns are predictors in the multiple linear-regression example? (Choose 3)",
@@ -686,7 +686,7 @@
   },
   {
     "id": 1046,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multi-answer",
     "title": "Which four examples in the notes have binary outcomes? (Choose 4)",
@@ -709,7 +709,7 @@
   },
   {
     "id": 1047,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "multi-answer",
     "title": "Which two actions are performed by StandardScaler in the insurance workflow? (Choose 2)",
@@ -728,7 +728,7 @@
   },
   {
     "id": 1048,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multi-answer",
     "title": "Which two statements correctly compare binary and multinomial logistic regression? (Choose 2)",
@@ -747,7 +747,7 @@
   },
   {
     "id": 1049,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "multi-answer",
     "title": "Which three steps appear in the softmax example? (Choose 3)",
@@ -768,7 +768,7 @@
   },
   {
     "id": 1050,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multi-answer",
     "title": "Which three advantages of Naive Bayes are listed in the notes? (Choose 3)",
@@ -789,7 +789,7 @@
   },
   {
     "id": 1051,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multi-answer",
     "title": "Which four are listed applications of Naive Bayes? (Choose 4)",
@@ -812,7 +812,7 @@
   },
   {
     "id": 1052,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multi-answer",
     "title": "Which three steps describe the stated Naive Bayes workflow? (Choose 3)",
@@ -833,7 +833,7 @@
   },
   {
     "id": 1053,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "multi-answer",
     "title": "Which two imports are used for model evaluation in GaussianNB-Code2? (Choose 2)",
@@ -852,7 +852,7 @@
   },
   {
     "id": 1054,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "fill-blank",
     "title": "The function used to split features and targets into training and testing subsets is _____.",
@@ -862,7 +862,7 @@
   },
   {
     "id": 1055,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "fill-blank",
     "title": "In the first Iris example, the best-fit line is plotted in _____ while the observations are blue.",
@@ -872,7 +872,7 @@
   },
   {
     "id": 1056,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "fill-blank",
     "title": "True or False: In reshape(-1, 1), the value 1 means the resulting array has one column. _____",
@@ -882,7 +882,7 @@
   },
   {
     "id": 1057,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "The S-shaped function used by binary logistic regression is the _____ function.",
@@ -892,7 +892,7 @@
   },
   {
     "id": 1058,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "A dependent variable with ordered categories is modeled by _____ logistic regression.",
@@ -902,7 +902,7 @@
   },
   {
     "id": 1059,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "True or False: sklearn.model_processor is the module used to import train_test_split. _____",
@@ -912,7 +912,7 @@
   },
   {
     "id": 1060,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "True or False: LogisticRegression.predict() is used to fit the model. _____",
@@ -922,7 +922,7 @@
   },
   {
     "id": 1061,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "fill-blank",
     "title": "In the insurance notebook, the default classification threshold stated in the comment is _____.",
@@ -932,7 +932,7 @@
   },
   {
     "id": 1062,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "fill-blank",
     "title": "The unnormalized class scores supplied to softmax are called _____.",
@@ -942,7 +942,7 @@
   },
   {
     "id": 1063,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "fill-blank",
     "title": "The operation that returns the index of the largest class probability is _____.",
@@ -952,7 +952,7 @@
   },
   {
     "id": 1064,
-    "subject": "softmax",
+    "subject": "cs0075-code-snippets",
     "label": "Softmax",
     "type": "fill-blank",
     "title": "True or False: Ordinal logistic regression treats Poor, Fair, Good, and Excellent as unordered labels. _____",
@@ -962,7 +962,7 @@
   },
   {
     "id": 1065,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The probability P(y) is also called the _____ probability.",
@@ -972,7 +972,7 @@
   },
   {
     "id": 1066,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The probability P(x_i | y) is called _____ probability.",
@@ -982,7 +982,7 @@
   },
   {
     "id": 1067,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: Gaussian Naive Bayes is intended for continuous data under a normal-distribution assumption. _____",
@@ -992,7 +992,7 @@
   },
   {
     "id": 1068,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "True or False: Bernoulli Naive Bayes is designed primarily for continuous normally distributed features. _____",
@@ -1002,7 +1002,7 @@
   },
   {
     "id": 1069,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "fill-blank",
     "title": "The final Naive Bayes prediction is the class with the _____ posterior probability.",
@@ -1012,7 +1012,7 @@
   },
   {
     "id": 1070,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "code-fill",
     "title": "Complete the exact scikit-learn imports used in the multiple linear-regression example.",
@@ -1077,7 +1077,7 @@
   },
   {
     "id": 1071,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "code-fill",
     "title": "Complete the exact library imports used to load and plot the Iris data.",
@@ -1119,7 +1119,7 @@
   },
   {
     "id": 1072,
-    "subject": "linear-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Linear Regression",
     "type": "code-fill",
     "title": "Complete the model-training and prediction methods from the exact linear-regression workflow.",
@@ -1179,7 +1179,7 @@
   },
   {
     "id": 1073,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact general-purpose imports from the breast-cancer logistic-regression notebook.",
@@ -1253,7 +1253,7 @@
   },
   {
     "id": 1074,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact splitting and logistic-model imports.",
@@ -1295,7 +1295,7 @@
   },
   {
     "id": 1075,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact scaling workflow for the age column and a new age value.",
@@ -1352,7 +1352,7 @@
   },
   {
     "id": 1076,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Logistic Regression",
     "type": "code-fill",
     "title": "Complete the exact classifier operations for training, prediction, and evaluation.",
@@ -1407,7 +1407,7 @@
   },
   {
     "id": 1077,
-    "subject": "logistic-regression",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact imports used in the diabetes Gaussian Naive Bayes notebook.",
@@ -1497,7 +1497,7 @@
   },
   {
     "id": 1078,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact training-versus-testing scaling methods in GaussianNB-Code2.",
@@ -1548,7 +1548,7 @@
   },
   {
     "id": 1079,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact Gaussian Naive Bayes model operations.",
@@ -1591,7 +1591,7 @@
   },
   {
     "id": 1080,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact imports used by the categorical fruit classifier.",
@@ -1649,7 +1649,7 @@
   },
   {
     "id": 1081,
-    "subject": "naive-bayes",
+    "subject": "cs0075-code-snippets",
     "label": "Naive Bayes",
     "type": "code-fill",
     "title": "Complete the exact encoder methods for training categories and new categories.",

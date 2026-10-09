@@ -111,7 +111,7 @@ Keep `question-banks/manifest.json` and each bank it lists in the repository; ot
 
 1. Add a JSON file inside `question-banks/` using the question structure in [template.json](./template.json).
 2. Add the filename to `question-banks/manifest.json`.
-3. Serve or reload the app. Questions with new subject IDs are automatically shown as subjects; use an existing subject ID to add questions to an existing subject.
+3. Serve or reload the app. Questions with new subject IDs are automatically shown as subjects; use an existing subject ID to add questions to an existing subject. All CS0075 banks use `cs0075-code-snippets` and keep their topic names in `label`, so they appear under one subject.
 
 ---
 

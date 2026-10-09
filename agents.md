@@ -23,7 +23,7 @@ The application is powered by a centralized state container in [script.js](file:
 
 ```javascript
 const state = {
-  view: "dashboard",            // Active view: "dashboard" | "quizzer" | "notes"
+  view: "dashboard",            // Active view: "dashboard" | "quizzer" | "answer-key"
   sessionSubject: "all",        // Selected subject ID, or "all" while multiple subjects are selected
   sessionSubjects: null,        // Selected subject IDs; null means all available subjects initially
   sessionQuestionIds: null,     // Array of active question IDs in current session (or null for the selected subjects)
@@ -46,7 +46,7 @@ const state = {
 stateDiagram-v2
     [*] --> Dashboard
     Dashboard --> QuizSetup : Click "Start a quiz" / Subject card
-    Dashboard --> StudyNotes : Click "Study notes" / Search icon
+    Dashboard --> AnswerKey : Click "Answer key"
 
     QuizSetup --> ActiveQuiz : startQuiz()
     ActiveQuiz --> ActiveQuiz : Next / Skip Question
@@ -70,7 +70,6 @@ stateDiagram-v2
 | :--- | :--- |
 | `setView(view)` | Toggles `.active` classes on views and nav buttons, updates `#breadcrumbCurrent`, closes mobile sidebar, and triggers `renderQuiz()` if switching to quizzer. |
 | `renderSubjects()` | Injects subject bento cards into `#subjectGrid` on the dashboard. Attaches click listener to navigate to Quizzer with that subject pre-selected. |
-| `renderNotes()` | Injects study summary cards into `#notesGrid` on the Study Notes view. |
 | `renderAnswerKey()` | Renders code and fill-in questions as completed question cards in the Answer key view. |
 | `renderQuiz()` | Core router for Quizzer view: renders results screen if `state.showResults`, setup screen if `!state.quizActive`, or the active question container `#questionContainer`. |
 | `renderQuizSetup()` | Renders subject selector and mode choice cards into `#quizSetup`. |
@@ -127,7 +126,7 @@ If asked to implement upcoming question types, support:
 1. `multi-answer`: Multiple checkboxes (`answers: [0, 2, 3]`, `selectCount: 3`).
 2. `fill-blank`: Single text input (`answer: "while"`, `caseSensitive: false`).
 
-In `CS0075-Code-Snippets-and-Fill-Blanks-Question-Bank.json`, use the single subject ID `cs0075-code-snippets`, displayed as “CS0075 Machine Learning Algorithms.” Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review.
+In all CS0075 question banks listed in `question-banks/manifest.json`, use the single subject ID `cs0075-code-snippets`, displayed as “CS0075 Machine Learning Algorithms.” Keep the topic and exercise-format text in each question's `label` so it remains visible as a descriptor during review. IDs must be unique across the combined banks.
 
 ---
 

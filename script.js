@@ -1630,16 +1630,6 @@ function getSubjects() {
   }));
 }
 
-const notes = [
-  { subject: 'programming', color: 'blue', title: 'Programming essentials', body: 'Keep your logic readable: give values meaningful names, keep functions focused, and test small pieces often.', bullets: ['Variables store values', 'Functions package reusable logic', 'Arrays hold ordered collections'] },
-  { subject: 'web', color: 'coral', title: 'Web development reminders', body: 'HTML gives content structure, CSS controls presentation, and JavaScript adds behavior and interaction.', bullets: ['Use semantic HTML', 'Design for small screens first', 'Check keyboard accessibility'] },
-  { subject: 'design', color: 'gold', title: 'Design principles', body: 'Good interfaces reduce effort. Use hierarchy, consistent spacing, and enough contrast to make the next action obvious.', bullets: ['Group related content', 'Use contrast intentionally', 'Leave room to breathe'] },
-  { subject: 'linear-regression', color: 'blue', title: 'Linear Regression key takeaways', body: 'Models linear relationships between continuous inputs and continuous targets.', bullets: ['Minimizes Mean Squared Error (MSE)', 'R² indicates proportion of variance explained', 'Always split data into train and test sets to detect overfitting'] },
-  { subject: 'logistic-regression', color: 'coral', title: 'Logistic Regression reminders', body: 'Uses the sigmoid function to map log-odds into probabilities between 0 and 1.', bullets: ['Standard model for binary classification', 'Evaluated with Cross-Entropy (Log Loss)', 'Decision threshold default is typically 0.5'] },
-  { subject: 'softmax', color: 'gold', title: 'Softmax Regression rules', body: 'Generalizes logistic regression to multi-class classification problems.', bullets: ['Converts raw logits to a normalized probability distribution', 'Sum of all class probabilities equals 1.0', 'Optimized via Categorical Cross-Entropy'] },
-  { subject: 'naive-bayes', color: 'green', title: 'Naive Bayes principles', body: 'Probabilistic classifier applying Bayes Theorem under conditional feature independence.', bullets: ['Posterior proportional to Prior times Likelihood', 'Independence assumption simplifies calculations', 'Highly effective for spam detection and text NLP'] }
-];
-
 const state = {
   view: 'dashboard',
   sessionSubject: 'all',
@@ -1667,7 +1657,7 @@ function setView(view) {
   state.view = view;
   $$('.view').forEach((panel) => panel.classList.toggle('active', panel.dataset.viewPanel === view));
   $$('.nav-link[data-view]').forEach((link) => link.classList.toggle('active', link.dataset.view === view));
-  $('#breadcrumbCurrent').textContent = view === 'quizzer' ? 'Quizzer' : view === 'answer-key' ? 'Answer key' : view === 'notes' ? 'Study notes' : 'Dashboard';
+  $('#breadcrumbCurrent').textContent = view === 'quizzer' ? 'Quizzer' : view === 'answer-key' ? 'Answer key' : 'Dashboard';
   $('#sidebar')?.classList.remove('open');
   if (view === 'quizzer') renderQuiz();
   if (view === 'answer-key') renderAnswerKey();
@@ -1675,8 +1665,8 @@ function setView(view) {
 
 function ensureAnswerKeyView() {
   const nav = $('.main-nav');
-  const notesView = $('#notesView');
-  if (!nav || !notesView || $('#answerKeyView')) return;
+  const quizzerView = $('#quizzerView');
+  if (!nav || !quizzerView || $('#answerKeyView')) return;
 
   const quizzerButton = nav.querySelector('[data-view="quizzer"]');
   const answerKeyButton = document.createElement('button');
@@ -1707,7 +1697,7 @@ function ensureAnswerKeyView() {
       </aside>
     </div>
   `;
-  notesView.before(answerKeyView);
+  quizzerView.after(answerKeyView);
 }
 
 function renderSidebarSubjects() {
@@ -1762,19 +1752,6 @@ function renderSubjects() {
       renderSidebarSubjects();
     });
   });
-}
-
-function renderNotes() {
-  const notesGrid = $('#notesGrid');
-  if (!notesGrid) return;
-  notesGrid.innerHTML = notes.map((note) => `
-    <article class="note-card">
-      <p class="eyebrow"><span class="subject-dot ${note.color}"></span> ${escapeHtml(note.subject)}</p>
-      <h3>${escapeHtml(note.title)}</h3>
-      <p>${escapeHtml(note.body)}</p>
-      <ul>${note.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
-    </article>
-  `).join('');
 }
 
 function subjectQuestions() {
@@ -2455,11 +2432,6 @@ $('#answerModeToggle')?.addEventListener('change', (event) => {
 });
 
 $('#menuButton')?.addEventListener('click', () => $('#sidebar')?.classList.toggle('open'));
-$('#searchButton')?.addEventListener('click', () => {
-  setView('notes');
-  showToast('Study notes are ready to browse.');
-});
-
 $('#themeToggle')?.addEventListener('click', () => {
   state.dark = !state.dark;
   document.body.classList.toggle('dark', state.dark);
@@ -2472,7 +2444,6 @@ $$('[data-go-to]').forEach((button) => button.addEventListener('click', () => se
 document.body.classList.toggle('dark', state.dark);
 renderSidebarSubjects();
 renderSubjects();
-renderNotes();
 updateDashboard();
 renderQuiz();
 
